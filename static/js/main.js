@@ -1,11 +1,5 @@
 (() => {
-  const entries = document.querySelectorAll(".entry[data-status]");
-  const filters = document.querySelectorAll(".filter");
   const detail = document.getElementById("project-detail");
-  const projectsData = document.getElementById("projects-data");
-  const projects = projectsData ? JSON.parse(projectsData.textContent) : [];
-  const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
-
   const detailTitle = document.getElementById("detail-title");
   const detailStatus = document.getElementById("detail-status");
   const detailYear = document.getElementById("detail-year");
@@ -13,46 +7,92 @@
   const detailTags = document.getElementById("detail-tags");
   const detailAbout = document.getElementById("detail-about");
   const detailActions = document.getElementById("detail-actions");
+  const publicDir = document.querySelector('[data-directory="public"]');
+  const personalDir = document.querySelector('[data-directory="personal"]');
+  const filters = document.querySelectorAll(".filter");
 
+  let byId = {};
   let lastFocus = null;
 
-  const reveal = () => {
-    entries.forEach((el) => {
-      if (!el.classList.contains("is-hidden")) {
-        el.classList.add("is-visible");
-      }
-    });
+  const escapeHtml = (value) =>
+    String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+
+  const cardHtml = (p, i) => {
+    const title = p.url
+      ? `<a class="entry__title-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer" data-title-link>${escapeHtml(p.name)}</a>`
+      : `<span class="entry__title-text">${escapeHtml(p.name)}</span>`;
+
+    return `
+      <li
+        class="entry"
+        data-status="${escapeHtml(p.status)}"
+        data-visibility="${escapeHtml(p.visibility)}"
+        data-project-id="${escapeHtml(p.id)}"
+        style="--i: ${i}"
+      >
+        <div
+          class="entry__card"
+          role="button"
+          tabindex="0"
+          aria-haspopup="dialog"
+          aria-controls="project-detail"
+          data-open-detail
+        >
+          <div class="entry__meta">
+            <span class="entry__status" data-status="${escapeHtml(p.status)}">${escapeHtml(p.status)}</span>
+            <span class="entry__year">${escapeHtml(p.year || "")}</span>
+          </div>
+          <h3 class="entry__name">${title}</h3>
+          <p class="entry__tagline">${escapeHtml(p.tagline || "")}</p>
+          <span class="entry__go" aria-hidden="true">Details</span>
+        </div>
+      </li>
+    `;
   };
 
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (obs) => {
-        obs.forEach((item) => {
-          if (item.isIntersecting) {
-            item.target.classList.add("is-visible");
-            io.unobserve(item.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
-    );
-    entries.forEach((el) => io.observe(el));
-  } else {
-    reveal();
-  }
+  const observeEntries = () => {
+    const entries = document.querySelectorAll(".entry[data-status]");
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (obs) => {
+          obs.forEach((item) => {
+            if (item.isIntersecting) {
+              item.target.classList.add("is-visible");
+              io.unobserve(item.target);
+            }
+          });
+        },
+        { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+      );
+      entries.forEach((el) => io.observe(el));
+    } else {
+      entries.forEach((el) => el.classList.add("is-visible"));
+    }
+  };
 
-  filters.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const value = btn.dataset.filter;
-      filters.forEach((b) => b.classList.toggle("is-active", b === btn));
+  const renderProjects = (projects) => {
+    byId = Object.fromEntries(projects.map((p) => [p.id, p]));
+    const publicProjects = projects.filter((p) => p.visibility === "public");
+    const personalProjects = projects.filter((p) => p.visibility === "personal");
 
-      document.querySelectorAll('[data-directory="public"] .entry[data-status]').forEach((el) => {
-        const match = value === "all" || el.dataset.status === value;
-        el.classList.toggle("is-hidden", !match);
-        if (match) el.classList.add("is-visible");
-      });
-    });
-  });
+    if (publicDir) {
+      publicDir.innerHTML = publicProjects.length
+        ? publicProjects.map((p, i) => cardHtml(p, i)).join("")
+        : `<li class="entry entry--empty">No public projects yet — add them in <code>data/projects.json</code>.</li>`;
+    }
+
+    if (personalDir) {
+      personalDir.innerHTML = personalProjects.length
+        ? personalProjects.map((p, i) => cardHtml(p, i)).join("")
+        : `<li class="entry entry--empty">Personal shelf is empty.</li>`;
+    }
+
+    observeEntries();
+  };
 
   const closeDetail = () => {
     if (!detail || detail.hidden) return;
@@ -73,7 +113,8 @@
     detailStatus.dataset.status = project.status;
     detailYear.textContent = project.year || "";
     detailTagline.textContent = project.tagline || "";
-    detailAbout.textContent = project.about || project.tagline || "Add more info in data/projects.json under “about”.";
+    detailAbout.textContent =
+      project.about || project.tagline || 'Add more info in data/projects.json under "about".';
 
     detailTags.innerHTML = "";
     (project.tags || []).forEach((tag) => {
@@ -99,6 +140,19 @@
     const closeBtn = detail.querySelector(".detail__close");
     if (closeBtn) closeBtn.focus();
   };
+
+  filters.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const value = btn.dataset.filter;
+      filters.forEach((b) => b.classList.toggle("is-active", b === btn));
+
+      document.querySelectorAll('[data-directory="public"] .entry[data-status]').forEach((el) => {
+        const match = value === "all" || el.dataset.status === value;
+        el.classList.toggle("is-hidden", !match);
+        if (match) el.classList.add("is-visible");
+      });
+    });
+  });
 
   document.addEventListener("click", (event) => {
     const titleLink = event.target.closest("[data-title-link]");
@@ -138,4 +192,17 @@
       openDetail(card.dataset.projectId, opener);
     }
   });
+
+  fetch("/data/projects.json", { cache: "no-store" })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to load projects");
+      return res.json();
+    })
+    .then(renderProjects)
+    .catch(() => {
+      if (publicDir) {
+        publicDir.innerHTML =
+          '<li class="entry entry--empty">Could not load projects. Check <code>data/projects.json</code>.</li>';
+      }
+    });
 })();

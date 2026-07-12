@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+  command = "echo 'Static eJayJay hub — no build step'"
+
+[[redirects]]
+  from = "/p/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=60"
