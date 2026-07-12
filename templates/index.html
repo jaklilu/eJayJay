@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% from "macros.html" import wordmark, project_card %}
+
+{% block title %}eJayJay — projects hub{% endblock %}
+
+{% block body %}
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="top__mark" href="#top" aria-label="eJayJay">{{ wordmark() }}</a>
+  <nav class="top__nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="#personal">Personal</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__media">
+      <img
+        src="{{ url_for('static', filename='img/hero-atmosphere.png') }}"
+        alt=""
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+        decoding="async"
+        sizes="100vw"
+      >
+      <div class="hero__veil" aria-hidden="true"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__brand" aria-label="eJayJay">{{ wordmark() }}</p>
+      <h1 class="hero__headline">All my projects.</h1>
+      <p class="hero__lede">A living directory for work I ship, experiments in progress, and the personal shelf I keep organized.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#work">Browse work</a>
+        <a class="btn btn--ghost" href="#personal">Personal shelf</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-heading">
+    <div class="section__intro">
+      <h2 id="work-heading">Work</h2>
+      <p>Click a title to visit the site. Click anywhere else on a card for more details.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter work">
+      <button type="button" class="filter is-active" data-filter="all">All</button>
+      <button type="button" class="filter" data-filter="live">Live</button>
+      <button type="button" class="filter" data-filter="wip">In progress</button>
+      <button type="button" class="filter" data-filter="archive">Archive</button>
+    </div>
+
+    <ul class="directory" data-directory="public">
+      {% for p in public_projects %}
+      {{ project_card(p, loop.index0) }}
+      {% else %}
+      <li class="entry entry--empty">No public projects yet — add them in <code>data/projects.json</code>.</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="section section--personal" id="personal" aria-labelledby="personal-heading">
+    <div class="section__intro">
+      <h2 id="personal-heading">Personal</h2>
+      <p>Private organization — notes, archives, and things that stay off the showroom floor.</p>
+    </div>
+
+    <ul class="directory" data-directory="personal">
+      {% for p in personal_projects %}
+      {{ project_card(p, loop.index0) }}
+      {% else %}
+      <li class="entry entry--empty">Personal shelf is empty.</li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="footer__brand" aria-label="eJayJay">{{ wordmark() }}</p>
+  <p class="footer__note">Built as a permanent home for projects — public work and private order.</p>
+</footer>
+
+<div class="detail" id="project-detail" hidden>
+  <div class="detail__backdrop" data-close-detail tabindex="-1"></div>
+  <aside
+    class="detail__panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="detail-title"
+  >
+    <button type="button" class="detail__close" data-close-detail aria-label="Close details">×</button>
+    <p class="detail__meta">
+      <span class="detail__status" id="detail-status"></span>
+      <span class="detail__year" id="detail-year"></span>
+    </p>
+    <h2 class="detail__title" id="detail-title"></h2>
+    <p class="detail__tagline" id="detail-tagline"></p>
+    <div class="detail__tags" id="detail-tags"></div>
+    <div class="detail__about">
+      <h3 class="detail__about-label">About</h3>
+      <p class="detail__about-text" id="detail-about"></p>
+    </div>
+    <div class="detail__actions" id="detail-actions"></div>
+  </aside>
+</div>
+
+<script type="application/json" id="projects-data">{{ projects | tojson }}</script>
+{% endblock %}

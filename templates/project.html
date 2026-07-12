@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% from "macros.html" import wordmark %}
+
+{% block title %}{{ project.name }} — eJayJay{% endblock %}
+
+{% block body %}
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="top__mark" href="{{ url_for('index') }}" aria-label="eJayJay">{{ wordmark() }}</a>
+  <nav class="top__nav" aria-label="Primary">
+    <a href="{{ url_for('index') }}#work">Work</a>
+    <a href="{{ url_for('index') }}#personal">Personal</a>
+  </nav>
+</header>
+
+<main class="project-page">
+  <p class="project-page__status" data-status="{{ project.status }}">{{ project.status }}</p>
+  <h1 class="project-page__name">{{ project.name }}</h1>
+  <p class="project-page__tagline">{{ project.tagline }}</p>
+  {% if project.url %}
+  <a class="btn btn--primary" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">Visit project</a>
+  {% else %}
+  <p class="project-page__pending">No live URL yet — this entry is tracked on the hub until it ships.</p>
+  {% endif %}
+  <a class="project-page__back" href="{{ url_for('index') }}">← Back to hub</a>
+</main>
+{% endblock %}

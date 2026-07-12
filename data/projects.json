@@ -1,0 +1,134 @@
+[
+  {
+    "id": "biblebus",
+    "name": "The Bible Bus",
+    "tagline": "A year-long scripture reading journey through the entire Bible — about 15 minutes a day.",
+    "about": "Getting to know God, intimately. The Bible Bus is a transformative year-long scripture reading journey from Genesis to Revelation. New groups depart quarterly (January, April, July, October) with about 15 minutes of daily reading.",
+    "url": "https://thebiblebus.net/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "faith"],
+    "year": 2026
+  },
+  {
+    "id": "family-tree",
+    "name": "Family Tree",
+    "tagline": "Blood-related family tree — map people, connections, and lineage.",
+    "about": "An interactive family tree focused on blood-related lineage. Explore people, connections, and family structure in one place.",
+    "url": "https://familytree-jaklilu.pythonanywhere.com/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "family"],
+    "year": 2026
+  },
+  {
+    "id": "hibret-edir",
+    "name": "Hibret Edir",
+    "tagline": "Ethiopian mutual aid in Greater LA — community support when a loved one is lost.",
+    "about": "Hibret Edir Association serves the Greater Los Angeles Ethiopian community with mutual funeral support. Founded in 2011 — members contribute so no family faces burial costs alone.",
+    "url": "https://hibret-edir.netlify.app/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "community"],
+    "year": 2026
+  },
+  {
+    "id": "wegene-family-mahaber",
+    "name": "Wegene Family Mahaber",
+    "tagline": "Member-only hosting tracker for the family mahaber rotation.",
+    "about": "A member-only hosting tracker for Wegene Family Mahaber. Tracks whose turn it is to host, pass, or get ready in the automatic rotation.",
+    "url": "https://wegene-family-mahaber.netlify.app/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "family"],
+    "year": 2026
+  },
+  {
+    "id": "kids-mahaber",
+    "name": "Kids Mahaber",
+    "tagline": "Kids Mahaber community site — gatherings, updates, and connection.",
+    "about": "Kids Mahaber community site (Wix for now). PythonAnywhere API host can be wired back when the full app is restored.",
+    "url": "https://jaklilu5.wixsite.com/kidsmahaber",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "community"],
+    "year": 2026
+  },
+  {
+    "id": "tesfa-counseling",
+    "name": "Tesfa Counseling",
+    "tagline": "Virtual counseling for Ethiopians and Ethiopian families across the diaspora.",
+    "about": "Tesfa (ተስፋ) means hope. Virtual counseling for Ethiopians and Ethiopian families worldwide — culturally informed sessions for individuals, couples, families, and young adults.",
+    "url": "https://tesfacounseling.com/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "client"],
+    "year": 2026
+  },
+  {
+    "id": "db-advocacy-group",
+    "name": "DB Advocacy Group",
+    "tagline": "Hope for Debre Berhan’s children — daily meals for displaced kids in the IDP camp.",
+    "about": "Debre Berhan Advocacy Group supports displaced children with daily meals (breakfast, lunch, snack) at the IDP camp. Mission: no child should endure hunger.",
+    "url": "https://db-advocacy-group.netlify.app/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "client"],
+    "year": 2026
+  },
+  {
+    "id": "ethio-ai-solutions",
+    "name": "Ethio AI Solutions",
+    "tagline": "AI agents and workflow automation for small businesses — without the enterprise price tag.",
+    "about": "AI agents, workflow automation, and custom dashboards for small businesses. Practical automation without enterprise complexity or pricing.",
+    "url": "https://ethioaisolutions.com/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "ai"],
+    "year": 2026
+  },
+  {
+    "id": "school-of-life",
+    "name": "School of Life",
+    "tagline": "A Christ-centered path from empty success to Spirit-led life in every domain.",
+    "about": "A master framework rooted in Scripture: from the rat race and hidden conflict to surrender, the shift, and a Spirit-led walk in every domain of life.",
+    "url": "https://shool-of-life.netlify.app/site/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "education"],
+    "year": 2026
+  },
+  {
+    "id": "royal-family",
+    "name": "Royal Family",
+    "tagline": "Interactive royal family tree — explore relationships across the lineage.",
+    "about": "Interactive Royal Family Tree. Explore lineage, find relationships between people, and contribute verified family information.",
+    "url": "https://theroyalfamilytree.com/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "family"],
+    "year": 2026
+  },
+  {
+    "id": "notes",
+    "name": "Personal notes",
+    "tagline": "Private scratchpad for ideas, links, and planning.",
+    "about": "Private space for ideas, links, and planning. Expand this note anytime.",
+    "url": null,
+    "status": "live",
+    "visibility": "personal",
+    "tags": ["personal", "org"],
+    "year": 2026
+  },
+  {
+    "id": "archive-lab",
+    "name": "Lab archive",
+    "tagline": "Older experiments kept for reference — not public demos.",
+    "about": "Archive of older experiments kept for reference. Add project notes here as you organize.",
+    "url": null,
+    "status": "archive",
+    "visibility": "personal",
+    "tags": ["archive"],
+    "year": 2025
+  }
+]

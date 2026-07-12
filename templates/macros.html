@@ -1,0 +1,43 @@
+{# Brand wordmark: e unchanged; J green, a yellow, y red #}
+{% macro wordmark() -%}
+<span class="brand" aria-hidden="true"><span class="brand__e">e</span><span class="brand__j">J</span><span class="brand__a">a</span><span class="brand__y">y</span><span class="brand__j">J</span><span class="brand__a">a</span><span class="brand__y">y</span></span>
+{%- endmacro %}
+
+{% macro project_card(p, i) -%}
+<li
+  class="entry"
+  data-status="{{ p.status }}"
+  data-visibility="{{ p.visibility }}"
+  data-project-id="{{ p.id }}"
+  style="--i: {{ i }}"
+>
+  <div
+    class="entry__card"
+    role="button"
+    tabindex="0"
+    aria-haspopup="dialog"
+    aria-controls="project-detail"
+    data-open-detail
+  >
+    <div class="entry__meta">
+      <span class="entry__status" data-status="{{ p.status }}">{{ p.status }}</span>
+      <span class="entry__year">{{ p.year }}</span>
+    </div>
+    <h3 class="entry__name">
+      {% if p.url %}
+      <a
+        class="entry__title-link"
+        href="{{ p.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-title-link
+      >{{ p.name }}</a>
+      {% else %}
+      <span class="entry__title-text">{{ p.name }}</span>
+      {% endif %}
+    </h3>
+    <p class="entry__tagline">{{ p.tagline }}</p>
+    <span class="entry__go" aria-hidden="true">Details</span>
+  </div>
+</li>
+{%- endmacro %}
