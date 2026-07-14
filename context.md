@@ -10,7 +10,7 @@
 
 - Outbound project links (title + “Visit site”) require a password before opening.
 - Default password: `ejayjay` — change `GATE_PASSWORD` in `static/js/main.js`.
-- After one correct entry, session stays unlocked (`sessionStorage`).
+- After one correct entry, unlock is remembered in `localStorage` (persists across visits).
 - Client-side only (fine for casual gate; not cryptographic security on a static Netlify site).
 
 ---

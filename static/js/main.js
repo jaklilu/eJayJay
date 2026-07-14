@@ -1,7 +1,7 @@
 (() => {
   // Change this password anytime. Client-side only (not bank-level security).
   const GATE_PASSWORD = "ejayjay";
-  const GATE_SESSION_KEY = "ejayjay-link-unlocked";
+  const GATE_STORAGE_KEY = "ejayjay-link-unlocked";
 
   const detail = document.getElementById("project-detail");
   const detailTitle = document.getElementById("detail-title");
@@ -23,10 +23,20 @@
   let lastFocus = null;
   let pendingUrl = null;
 
-  const isUnlocked = () => sessionStorage.getItem(GATE_SESSION_KEY) === "1";
+  const isUnlocked = () => {
+    if (localStorage.getItem(GATE_STORAGE_KEY) === "1") return true;
+    // Migrate older session-only unlocks
+    if (sessionStorage.getItem(GATE_STORAGE_KEY) === "1") {
+      localStorage.setItem(GATE_STORAGE_KEY, "1");
+      sessionStorage.removeItem(GATE_STORAGE_KEY);
+      return true;
+    }
+    return false;
+  };
 
   const markUnlocked = () => {
-    sessionStorage.setItem(GATE_SESSION_KEY, "1");
+    localStorage.setItem(GATE_STORAGE_KEY, "1");
+    sessionStorage.removeItem(GATE_STORAGE_KEY);
   };
 
   const escapeHtml = (value) =>
