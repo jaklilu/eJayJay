@@ -8,7 +8,7 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "faith"],
-    "year": 2026
+    "year": 2025
   },
   {
     "id": "family-tree",
@@ -19,7 +19,7 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "family"],
-    "year": 2026
+    "year": 2025
   },
   {
     "id": "hibret-edir",
@@ -41,7 +41,7 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "family"],
-    "year": 2026
+    "year": 2025
   },
   {
     "id": "kids-mahaber",
@@ -52,7 +52,7 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "community"],
-    "year": 2026
+    "year": 2025
   },
   {
     "id": "tesfa-counseling",
@@ -85,7 +85,7 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "ai"],
-    "year": 2026
+    "year": 2024
   },
   {
     "id": "school-of-life",
@@ -108,6 +108,17 @@
     "visibility": "public",
     "tags": ["web", "family"],
     "year": 2026
+  },
+  {
+    "id": "cousins-crossconnect",
+    "name": "Cousin's CrossConnect",
+    "tagline": "Map how cousins connect — see each person’s place in the family web.",
+    "about": "Cousin's CrossConnect shows how relatives link to each other across the family. Browse each person and the cousins connected around them.",
+    "url": "https://jaklilu.pythonanywhere.com/",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "family"],
+    "year": 2023
   },
   {
     "id": "notes",

@@ -102,6 +102,26 @@
   </aside>
 </div>
 
+<div class="gate" id="link-gate" hidden>
+  <div class="gate__backdrop" data-close-gate tabindex="-1"></div>
+  <form class="gate__panel" id="link-gate-form" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <button type="button" class="gate__close" data-close-gate aria-label="Close">×</button>
+    <h2 class="gate__title" id="gate-title">Enter password</h2>
+    <p class="gate__lede">Links are protected. Enter the password to continue.</p>
+    <label class="gate__label" for="gate-password">Password</label>
+    <input
+      class="gate__input"
+      id="gate-password"
+      name="password"
+      type="password"
+      autocomplete="current-password"
+      required
+    >
+    <p class="gate__error" id="gate-error" hidden>Wrong password. Try again.</p>
+    <button class="btn btn--primary gate__submit" type="submit">Unlock</button>
+  </form>
+</div>
+
 <script src="/static/js/main.js" defer></script>
 </body>
 </html>

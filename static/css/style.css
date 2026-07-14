@@ -678,6 +678,119 @@ body.is-detail-open {
   color: var(--white);
 }
 
+/* —— Link password gate —— */
+body.is-gate-open {
+  overflow: hidden;
+}
+
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: grid;
+  place-items: center;
+  padding: var(--space);
+}
+
+.gate[hidden] {
+  display: none;
+}
+
+.gate__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(3, 8, 14, 0.78);
+  cursor: pointer;
+}
+
+.gate__panel {
+  position: relative;
+  z-index: 1;
+  width: min(22rem, 100%);
+  padding: 1.75rem 1.5rem 1.5rem;
+  background:
+    radial-gradient(80% 50% at 0% 0%, rgba(29, 191, 168, 0.12), transparent 55%),
+    linear-gradient(180deg, #101a24 0%, #070d14 100%);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.gate__close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.gate__close:hover,
+.gate__close:focus-visible {
+  border-color: rgba(232, 238, 244, 0.35);
+  color: #fff;
+  outline: none;
+}
+
+.gate__title {
+  margin: 0 0 0.45rem;
+  padding-right: 2rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.gate__lede {
+  margin: 0 0 1.15rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.gate__label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.gate__input {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: #0a121c;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.gate__input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.gate__error {
+  margin: 0 0 0.75rem;
+  color: #ff073a;
+  font-size: 0.9rem;
+}
+
+.gate__submit {
+  width: 100%;
+  color: var(--white);
+}
+
 /* —— Project detail —— */
 .project-page {
   width: min(100% - 2 * var(--space), 40rem);
