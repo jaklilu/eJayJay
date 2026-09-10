@@ -15,7 +15,7 @@
     "name": "Family Tree",
     "tagline": "Blood-related family tree — map people, connections, and lineage.",
     "about": "An interactive family tree focused on blood-related lineage. Explore people, connections, and family structure in one place.",
-    "url": "https://familytree-jaklilu.pythonanywhere.com/",
+    "url": "https://ethiofamilytree.com",
     "status": "live",
     "visibility": "public",
     "tags": ["web", "family"],
@@ -77,6 +77,17 @@
     "year": 2026
   },
   {
+    "id": "jessy-garage",
+    "name": "Jessy Garage Doors & Screens",
+    "tagline": "Garage door and screen services in Bell, CA — installation, repair, and maintenance.",
+    "about": "Jessy Garage Doors & Screens serves Bell, CA and the surrounding area with professional garage door and screen services including installation, repair, and maintenance.",
+    "url": "https://jessy-garage.netlify.app/en",
+    "status": "live",
+    "visibility": "public",
+    "tags": ["web", "client"],
+    "year": 2026
+  },
+  {
     "id": "ethio-ai-solutions",
     "name": "Ethio AI Solutions",
     "tagline": "AI agents and workflow automation for small businesses — without the enterprise price tag.",
@@ -114,7 +125,7 @@
     "name": "Cousin's CrossConnect",
     "tagline": "Map how cousins connect — see each person’s place in the family web.",
     "about": "Cousin's CrossConnect shows how relatives link to each other across the family. Browse each person and the cousins connected around them.",
-    "url": "https://jaklilu.pythonanywhere.com/",
+    "url": "https://cross-connect.netlify.app/",
     "status": "live",
     "visibility": "public",
     "tags": ["web", "family"],
