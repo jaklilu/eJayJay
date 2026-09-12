@@ -1053,3 +1053,395 @@ body.is-gate-open {
     transition: none;
   }
 }
+
+/* —— Dashboard Section —— */
+.section--dashboard {
+  padding-bottom: clamp(3rem, 8vh, 5rem);
+}
+
+.section--dashboard .section__intro h2 {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 50%, #7dffd6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.dashboard__refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal-deep);
+  background: rgba(29, 191, 168, 0.08);
+  border: 1px solid rgba(29, 191, 168, 0.25);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+}
+
+.dashboard__refresh:hover,
+.dashboard__refresh:focus-visible {
+  background: rgba(29, 191, 168, 0.15);
+  border-color: rgba(29, 191, 168, 0.45);
+  color: #7dffd6;
+  outline: none;
+}
+
+.dashboard__refresh.is-spinning .dashboard__refresh-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.dashboard__refresh-icon {
+  flex-shrink: 0;
+}
+
+.dashboard__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.dashboard__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--up {
+  background: #39ff14;
+  box-shadow: 0 0 8px rgba(57, 255, 20, 0.5);
+}
+
+.status-dot--down {
+  background: #ff073a;
+  box-shadow: 0 0 8px rgba(255, 7, 58, 0.5);
+}
+
+.status-dot--checking {
+  background: var(--amber);
+  box-shadow: 0 0 8px rgba(240, 180, 41, 0.4);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1rem;
+}
+
+/* Dashboard Status Card */
+.status-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.25rem 1.35rem;
+  background: 
+    linear-gradient(135deg, rgba(29, 191, 168, 0.06) 0%, transparent 50%),
+    var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s var(--ease);
+  opacity: 0;
+  transform: translateY(1rem);
+  animation: card-appear 0.5s var(--ease) forwards;
+  animation-delay: calc(var(--card-index, 0) * 80ms);
+}
+
+@keyframes card-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal) 0%, var(--teal-deep) 100%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+
+.status-card:hover,
+.status-card:focus-within {
+  border-color: rgba(29, 191, 168, 0.35);
+  background: 
+    linear-gradient(135deg, rgba(29, 191, 168, 0.1) 0%, transparent 50%),
+    #0f1c28;
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(29, 191, 168, 0.08);
+}
+
+.status-card:hover::before {
+  opacity: 1;
+}
+
+.status-card[data-status="up"]::before {
+  background: linear-gradient(90deg, #39ff14 0%, #5dffd0 100%);
+}
+
+.status-card[data-status="down"]::before {
+  background: linear-gradient(90deg, #ff073a 0%, var(--coral) 100%);
+}
+
+.status-card[data-status="checking"]::before {
+  background: linear-gradient(90deg, var(--amber) 0%, #ffe600 100%);
+  opacity: 1;
+}
+
+.status-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.status-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.status-card__name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.status-card__name a:hover,
+.status-card__name a:focus-visible {
+  color: var(--teal-deep);
+  outline: none;
+}
+
+.status-card__indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.status-card__indicator[data-status="up"] {
+  color: #39ff14;
+  background: rgba(57, 255, 20, 0.12);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+}
+
+.status-card__indicator[data-status="down"] {
+  color: #ff073a;
+  background: rgba(255, 7, 58, 0.12);
+  border: 1px solid rgba(255, 7, 58, 0.25);
+}
+
+.status-card__indicator[data-status="checking"] {
+  color: var(--amber);
+  background: rgba(240, 180, 41, 0.12);
+  border: 1px solid rgba(240, 180, 41, 0.25);
+}
+
+.status-card__indicator[data-status="unknown"] {
+  color: var(--ink-soft);
+  background: rgba(154, 171, 188, 0.1);
+  border: 1px solid rgba(154, 171, 188, 0.2);
+}
+
+.status-card__tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.status-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.status-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+}
+
+.status-card__last-check {
+  opacity: 0.8;
+}
+
+.status-card__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.status-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--teal-deep);
+  background: transparent;
+  border: 1px solid rgba(29, 191, 168, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s var(--ease);
+}
+
+.status-card__btn:hover,
+.status-card__btn:focus-visible {
+  background: rgba(29, 191, 168, 0.1);
+  border-color: rgba(29, 191, 168, 0.5);
+  color: #7dffd6;
+  outline: none;
+}
+
+.status-card__btn--visit {
+  background: rgba(29, 191, 168, 0.1);
+}
+
+.status-card__btn--refresh {
+  padding: 0.45rem;
+  min-width: 32px;
+}
+
+.status-card__btn--refresh.is-spinning svg {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Dashboard empty state */
+.dashboard__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+}
+
+/* Responsive dashboard */
+@media (max-width: 720px) {
+  .dashboard__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard__refresh {
+    justify-content: center;
+  }
+
+  .dashboard__legend {
+    justify-content: center;
+  }
+
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-card {
+    padding: 1.1rem 1.15rem;
+  }
+
+  .status-card__name {
+    font-size: 1.05rem;
+  }
+
+  .status-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+
+  .status-card__actions {
+    justify-content: stretch;
+  }
+
+  .status-card__btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .status-dot--checking {
+    animation: none;
+  }
+
+  .dashboard__refresh.is-spinning .dashboard__refresh-icon,
+  .status-card__btn--refresh.is-spinning svg {
+    animation: none;
+  }
+}
