@@ -112,7 +112,7 @@ Each entry:
 | The Bible Bus | https://thebiblebus.net/ | 2025 |
 | Family Tree | https://familytree-jaklilu.pythonanywhere.com/ | 2025 |
 | Hibret Edir | https://hibret-edir.netlify.app/ | 2026 |
-| Wegene Family Mahaber | https://wegene-family-mahaber.netlify.app/ | 2025 |
+| Wegene Family Mahaber | https://wegenefamilymahaber.netlify.app/ | 2025 |
 | Kids Mahaber | https://jaklilu5.wixsite.com/kidsmahaber | 2025 |
 | Tesfa Counseling | https://tesfacounseling.com/ | 2026 |
 | DB Advocacy Group | https://db-advocacy-group.netlify.app/ | 2026 |
