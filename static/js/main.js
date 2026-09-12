@@ -2,6 +2,7 @@
   // Change this password anytime. Client-side only (not bank-level security).
   const GATE_PASSWORD = "ejayjay";
   const GATE_STORAGE_KEY = "ejayjay-link-unlocked";
+  const STATUS_STORAGE_KEY = "ejayjay-site-status";
 
   const detail = document.getElementById("project-detail");
   const detailTitle = document.getElementById("detail-title");
@@ -290,16 +291,236 @@
     }
   });
 
+  // ============ Dashboard Status Checking ============
+
+  const dashboardGrid = document.getElementById("dashboard-grid");
+  const refreshAllBtn = document.getElementById("refresh-status");
+  const siteStatuses = new Map();
+
+  const loadSavedStatuses = () => {
+    try {
+      const saved = localStorage.getItem(STATUS_STORAGE_KEY);
+      if (saved) {
+        const data = JSON.parse(saved);
+        Object.entries(data).forEach(([id, info]) => {
+          siteStatuses.set(id, info);
+        });
+      }
+    } catch (e) {
+      // Ignore parse errors
+    }
+  };
+
+  const saveStatuses = () => {
+    try {
+      const data = {};
+      siteStatuses.forEach((info, id) => {
+        data[id] = info;
+      });
+      localStorage.setItem(STATUS_STORAGE_KEY, JSON.stringify(data));
+    } catch (e) {
+      // Ignore storage errors
+    }
+  };
+
+  const formatTimeAgo = (timestamp) => {
+    if (!timestamp) return "Never checked";
+    const diff = Date.now() - timestamp;
+    const minutes = Math.floor(diff / 60000);
+    if (minutes < 1) return "Just now";
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    return `${days}d ago`;
+  };
+
+  const checkSiteStatus = async (url, projectId) => {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
+    try {
+      const response = await fetch(url, {
+        method: "HEAD",
+        mode: "no-cors",
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      return "up";
+    } catch (error) {
+      clearTimeout(timeout);
+      if (error.name === "AbortError") {
+        return "down";
+      }
+      return "down";
+    }
+  };
+
+  const updateCardStatus = (projectId, status, lastCheck) => {
+    const card = document.querySelector(`.status-card[data-project-id="${projectId}"]`);
+    if (!card) return;
+
+    card.setAttribute("data-status", status);
+    
+    const indicator = card.querySelector(".status-card__indicator");
+    if (indicator) {
+      indicator.setAttribute("data-status", status);
+      const dot = indicator.querySelector(".status-dot");
+      if (dot) {
+        dot.className = `status-dot status-dot--${status}`;
+      }
+      const label = indicator.querySelector("span:last-child");
+      if (label) {
+        label.textContent = status === "up" ? "UP" : status === "down" ? "DOWN" : status === "checking" ? "..." : "?";
+      }
+    }
+
+    const lastCheckEl = card.querySelector(".status-card__last-check");
+    if (lastCheckEl && lastCheck) {
+      lastCheckEl.textContent = `Checked ${formatTimeAgo(lastCheck)}`;
+    }
+
+    const refreshBtn = card.querySelector(".status-card__btn--refresh");
+    if (refreshBtn && status !== "checking") {
+      refreshBtn.classList.remove("is-spinning");
+    }
+  };
+
+  const checkProjectStatus = async (project) => {
+    if (!project.url) return;
+
+    updateCardStatus(project.id, "checking", null);
+
+    const status = await checkSiteStatus(project.url, project.id);
+    const lastCheck = Date.now();
+
+    siteStatuses.set(project.id, { status, lastCheck, url: project.url });
+    saveStatuses();
+    updateCardStatus(project.id, status, lastCheck);
+  };
+
+  const statusCardHtml = (project, index) => {
+    const saved = siteStatuses.get(project.id);
+    const status = saved?.status || "unknown";
+    const lastCheck = saved?.lastCheck;
+    const statusLabel = status === "up" ? "UP" : status === "down" ? "DOWN" : "?";
+
+    return `
+      <article class="status-card" data-project-id="${escapeHtml(project.id)}" data-status="${status}" style="--card-index: ${index}">
+        <div class="status-card__header">
+          <h3 class="status-card__name">
+            <a href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.name)}</a>
+          </h3>
+          <div class="status-card__indicator" data-status="${status}">
+            <span class="status-dot status-dot--${status}"></span>
+            <span>${statusLabel}</span>
+          </div>
+        </div>
+        <p class="status-card__tagline">${escapeHtml(project.tagline || "")}</p>
+        <div class="status-card__footer">
+          <div class="status-card__meta">
+            <span class="status-card__last-check">${lastCheck ? `Checked ${formatTimeAgo(lastCheck)}` : "Not checked yet"}</span>
+          </div>
+          <div class="status-card__actions">
+            <a class="status-card__btn status-card__btn--visit" href="${escapeHtml(project.url)}" target="_blank" rel="noopener noreferrer">Visit</a>
+            <button type="button" class="status-card__btn status-card__btn--refresh" data-refresh-project="${escapeHtml(project.id)}" aria-label="Refresh status">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.83 1.04 6.5 2.72"/>
+                <path d="M21 3v6h-6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    `;
+  };
+
+  const renderDashboard = (projects) => {
+    if (!dashboardGrid) return;
+
+    loadSavedStatuses();
+
+    const dashboardProjects = projects.filter(
+      (p) => p.visibility === "public" && p.url && p.status === "live"
+    );
+
+    if (dashboardProjects.length === 0) {
+      dashboardGrid.innerHTML = '<div class="dashboard__empty">No live public projects with URLs to monitor.</div>';
+      return;
+    }
+
+    dashboardGrid.innerHTML = dashboardProjects
+      .map((p, i) => statusCardHtml(p, i))
+      .join("");
+
+    dashboardProjects.forEach((p, i) => {
+      setTimeout(() => checkProjectStatus(p), i * 200);
+    });
+  };
+
+  const refreshAllStatuses = (projects) => {
+    if (!dashboardGrid) return;
+
+    const dashboardProjects = projects.filter(
+      (p) => p.visibility === "public" && p.url && p.status === "live"
+    );
+
+    refreshAllBtn?.classList.add("is-spinning");
+
+    dashboardProjects.forEach((project, i) => {
+      const refreshBtn = document.querySelector(
+        `.status-card__btn--refresh[data-refresh-project="${project.id}"]`
+      );
+      if (refreshBtn) refreshBtn.classList.add("is-spinning");
+
+      setTimeout(() => {
+        checkProjectStatus(project);
+        if (i === dashboardProjects.length - 1) {
+          setTimeout(() => {
+            refreshAllBtn?.classList.remove("is-spinning");
+          }, 1000);
+        }
+      }, i * 200);
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const refreshSingle = event.target.closest("[data-refresh-project]");
+    if (refreshSingle) {
+      const projectId = refreshSingle.getAttribute("data-refresh-project");
+      const project = byId[projectId];
+      if (project) {
+        refreshSingle.classList.add("is-spinning");
+        checkProjectStatus(project);
+      }
+      return;
+    }
+  });
+
+  // ============ End Dashboard ============
+
   fetch("/data/projects.json", { cache: "no-store" })
     .then((res) => {
       if (!res.ok) throw new Error("Failed to load projects");
       return res.json();
     })
-    .then(renderProjects)
+    .then((projects) => {
+      renderProjects(projects);
+      renderDashboard(projects);
+
+      if (refreshAllBtn) {
+        refreshAllBtn.addEventListener("click", () => refreshAllStatuses(projects));
+      }
+    })
     .catch(() => {
       if (publicDir) {
         publicDir.innerHTML =
           '<li class="entry entry--empty">Could not load projects. Check <code>data/projects.json</code>.</li>';
+      }
+      if (dashboardGrid) {
+        dashboardGrid.innerHTML =
+          '<div class="dashboard__empty">Could not load projects.</div>';
       }
     });
 })();

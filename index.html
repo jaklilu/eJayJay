@@ -17,6 +17,7 @@
 <header class="top">
   <a class="top__mark" href="#top" aria-label="eJayJay"><span class="brand" aria-hidden="true"><span class="brand__e">e</span><span class="brand__j">J</span><span class="brand__a">a</span><span class="brand__y">y</span><span class="brand__j">J</span><span class="brand__a">a</span><span class="brand__y">y</span></span></a>
   <nav class="top__nav" aria-label="Primary">
+    <a href="#dashboard">Dashboard</a>
     <a href="#work">Work</a>
     <a href="#personal">Personal</a>
   </nav>
@@ -43,6 +44,33 @@
       <div class="hero__actions">
         <a class="btn btn--primary" href="#work">Browse work</a>
         <a class="btn btn--ghost" href="#personal">Personal shelf</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dashboard" id="dashboard" aria-labelledby="dashboard-heading">
+    <div class="section__intro">
+      <h2 id="dashboard-heading">Dashboard</h2>
+      <p>Live status of all managed sites — at a glance.</p>
+    </div>
+
+    <div class="dashboard">
+      <div class="dashboard__controls">
+        <button type="button" class="dashboard__refresh" id="refresh-status" aria-label="Refresh all statuses">
+          <svg class="dashboard__refresh-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.83 1.04 6.5 2.72"/>
+            <path d="M21 3v6h-6"/>
+          </svg>
+          <span>Refresh All</span>
+        </button>
+        <div class="dashboard__legend">
+          <span class="dashboard__legend-item"><span class="status-dot status-dot--up"></span> Up</span>
+          <span class="dashboard__legend-item"><span class="status-dot status-dot--down"></span> Down</span>
+          <span class="dashboard__legend-item"><span class="status-dot status-dot--checking"></span> Checking</span>
+        </div>
+      </div>
+      <div class="dashboard__grid" id="dashboard-grid">
+        <!-- Cards rendered by JavaScript -->
       </div>
     </div>
   </section>
