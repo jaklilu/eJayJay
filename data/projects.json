@@ -143,6 +143,17 @@
     "year": 2026
   },
   {
+    "id": "expenses",
+    "name": "Expenses",
+    "tagline": "Monthly bills from the bank statement — name and current payment.",
+    "about": "Snapshot of bills that post every month (same day ±2). Amount is the last 3 months averaged, so a raised premium like Tesla shows what you pay now.",
+    "url": "/personal/expenses/",
+    "status": "live",
+    "visibility": "personal",
+    "tags": ["personal", "money"],
+    "year": 2026
+  },
+  {
     "id": "notes",
     "name": "Personal notes",
     "tagline": "Private scratchpad for ideas, links, and planning.",

@@ -3,6 +3,11 @@
   command = "echo 'Static eJayJay hub — no build step'"
 
 [[redirects]]
+  from = "/expenses"
+  to = "/personal/expenses/"
+  status = 301
+
+[[redirects]]
   from = "/p/*"
   to = "/index.html"
   status = 200

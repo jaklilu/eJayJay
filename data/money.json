@@ -1,0 +1,1755 @@
+{
+  "source": "Bank of America checking statement",
+  "period": {
+    "start": "08/29/2025",
+    "end": "09/15/2026"
+  },
+  "note": "Transfers between your own accounts are excluded from recurring and expense totals.",
+  "snapshot": {
+    "recurring_last3": -5526.66,
+    "expenses_last3": -887.9,
+    "income_last3": 6428.87,
+    "recurring_typical_sum": 6324.26
+  },
+  "recurring": [
+    {
+      "name": "Tesla Insurance",
+      "category": "Insurance",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 13,
+      "typical_month": 1676.3,
+      "last3_avg": 1779.07,
+      "total": -21810.74,
+      "amounts": [
+        1424.38,
+        1424.42,
+        1676.29,
+        1676.3,
+        1680.7,
+        1779.07,
+        1783.47
+      ],
+      "recent": [
+        {
+          "date": "06/05/2026",
+          "amount": -1779.07,
+          "desc": "Tesla, Inc. 06/05 PURCHASE Fremont CA"
+        },
+        {
+          "date": "07/06/2026",
+          "amount": -1779.07,
+          "desc": "Tesla, Inc. 07/05 PURCHASE Fremont CA"
+        },
+        {
+          "date": "08/05/2026",
+          "amount": -1779.07,
+          "desc": "Tesla, Inc. 08/05 PURCHASE Fremont CA"
+        },
+        {
+          "date": "09/08/2026",
+          "amount": -1779.07,
+          "desc": "Tesla, Inc. 09/05 PURCHASE Fremont CA"
+        }
+      ]
+    },
+    {
+      "name": "Rent \u2014 Mimi",
+      "category": "Housing",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 13,
+      "typical_month": 1075.0,
+      "last3_avg": 1075.0,
+      "total": -13975.0,
+      "amounts": [
+        1075.0
+      ],
+      "recent": [
+        {
+          "date": "06/01/2026",
+          "amount": -1075.0,
+          "desc": "Zelle Recurring payment to Mimi for \"Rent\"; Conf# mc2i548jy"
+        },
+        {
+          "date": "07/01/2026",
+          "amount": -1075.0,
+          "desc": "Zelle Recurring payment to Mimi for \"Rent\"; Conf# n0l7fqee2"
+        },
+        {
+          "date": "08/03/2026",
+          "amount": -1075.0,
+          "desc": "Zelle Recurring payment to Mimi for \"Rent\"; Conf# rmke07h4p"
+        },
+        {
+          "date": "09/01/2026",
+          "amount": -1075.0,
+          "desc": "Zelle Recurring payment to Mimi for \"Rent\"; Conf# mugho7fai"
+        }
+      ]
+    },
+    {
+      "name": "Lorena Abzum",
+      "category": "Household",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 26,
+      "typical_month": 600.0,
+      "last3_avg": 400.33,
+      "total": -6781.0,
+      "amounts": [
+        1.0,
+        150.0,
+        260.0,
+        300.0
+      ],
+      "recent": [
+        {
+          "date": "07/22/2026",
+          "amount": -300.0,
+          "desc": "Zelle Recurring payment to Lorena Abzum Conf# l6zvg7w3q"
+        },
+        {
+          "date": "08/05/2026",
+          "amount": -300.0,
+          "desc": "Zelle Recurring payment to Lorena Abzum Conf# mxm9wf1z0"
+        },
+        {
+          "date": "08/19/2026",
+          "amount": -300.0,
+          "desc": "Zelle Recurring payment to Lorena Abzum Conf# i5lb5y9ga"
+        },
+        {
+          "date": "09/02/2026",
+          "amount": -1.0,
+          "desc": "Zelle Recurring payment to Lorena Abzum Conf# m2x1c9fdk"
+        }
+      ]
+    },
+    {
+      "name": "Kaiser premium",
+      "category": "Health",
+      "cadence": "monthly",
+      "month_count": 11,
+      "tx_count": 12,
+      "typical_month": 404.79,
+      "last3_avg": 403.35,
+      "total": -5214.48,
+      "amounts": [
+        399.03,
+        403.35,
+        404.79,
+        528.11
+      ],
+      "recent": [
+        {
+          "date": "05/28/2026",
+          "amount": -403.35,
+          "desc": "KAISER FOUNDAT 05/28 PURCHASE OAKLAND CA"
+        },
+        {
+          "date": "06/29/2026",
+          "amount": -403.35,
+          "desc": "KAISER FOUNDAT 06/28 PURCHASE OAKLAND CA"
+        },
+        {
+          "date": "07/28/2026",
+          "amount": -403.35,
+          "desc": "KAISER FOUNDAT 07/28 PURCHASE OAKLAND CA"
+        },
+        {
+          "date": "08/28/2026",
+          "amount": -403.35,
+          "desc": "KAISER FOUNDAT 08/28 PURCHASE OAKLAND CA"
+        }
+      ]
+    },
+    {
+      "name": "BofA Mastercard",
+      "category": "Credit cards",
+      "cadence": "monthly",
+      "month_count": 11,
+      "tx_count": 14,
+      "typical_month": 359.0,
+      "last3_avg": 415.0,
+      "total": -4195.0,
+      "amounts": [
+        27.0,
+        50.0,
+        66.0,
+        309.0,
+        348.0,
+        383.0,
+        414.0,
+        415.0
+      ],
+      "recent": [
+        {
+          "date": "04/22/2026",
+          "amount": -414.0,
+          "desc": "BA MASTERCARD Bill Payment"
+        },
+        {
+          "date": "05/20/2026",
+          "amount": -415.0,
+          "desc": "BA MASTERCARD Bill Payment"
+        },
+        {
+          "date": "06/22/2026",
+          "amount": -415.0,
+          "desc": "BA MASTERCARD Bill Payment"
+        },
+        {
+          "date": "07/20/2026",
+          "amount": -415.0,
+          "desc": "BA MASTERCARD Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Verizon Wireless",
+      "category": "Utilities",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 13,
+      "typical_month": 350.0,
+      "last3_avg": 350.0,
+      "total": -4230.0,
+      "amounts": [
+        30.0,
+        350.0
+      ],
+      "recent": [
+        {
+          "date": "05/22/2026",
+          "amount": -350.0,
+          "desc": "VER WIR L.A. Bill Payment"
+        },
+        {
+          "date": "06/23/2026",
+          "amount": -350.0,
+          "desc": "VER WIR L.A. Bill Payment"
+        },
+        {
+          "date": "07/23/2026",
+          "amount": -350.0,
+          "desc": "VER WIR L.A. Bill Payment"
+        },
+        {
+          "date": "08/21/2026",
+          "amount": -350.0,
+          "desc": "VER WIR L.A. Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Spectrum",
+      "category": "Utilities",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 16,
+      "typical_month": 331.55,
+      "last3_avg": 260.0,
+      "total": -3833.94,
+      "amounts": [
+        5.86,
+        53.0,
+        58.12,
+        103.01,
+        260.0,
+        301.55,
+        331.55
+      ],
+      "recent": [
+        {
+          "date": "05/18/2026",
+          "amount": -331.55,
+          "desc": "SPECTRUM TIME EARNER CABLE Bill Payment"
+        },
+        {
+          "date": "06/18/2026",
+          "amount": -260.0,
+          "desc": "SPECTRUM TIME EARNER CABLE Bill Payment"
+        },
+        {
+          "date": "07/17/2026",
+          "amount": -260.0,
+          "desc": "SPECTRUM TIME EARNER CABLE Bill Payment"
+        },
+        {
+          "date": "08/18/2026",
+          "amount": -260.0,
+          "desc": "SPECTRUM TIME EARNER CABLE Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Scheduled account payment",
+      "category": "Credit cards",
+      "cadence": "monthly",
+      "month_count": 2,
+      "tx_count": 2,
+      "typical_month": 216.0,
+      "last3_avg": 150.0,
+      "total": -300.0,
+      "amounts": [
+        84.0,
+        216.0
+      ],
+      "recent": [
+        {
+          "date": "08/20/2026",
+          "amount": -216.0,
+          "desc": "Online Scheduled Payment to ACCT# 8604 Confirmation# 2149402489"
+        },
+        {
+          "date": "09/08/2026",
+          "amount": -84.0,
+          "desc": "Online Scheduled Payment to ACCT# 6704 Confirmation# 2158331210"
+        }
+      ]
+    },
+    {
+      "name": "AXA Equitable",
+      "category": "Insurance",
+      "cadence": "quarterly",
+      "month_count": 4,
+      "tx_count": 4,
+      "typical_month": 183.32,
+      "last3_avg": 183.32,
+      "total": -733.28,
+      "amounts": [
+        183.32
+      ],
+      "recent": [
+        {
+          "date": "10/23/2025",
+          "amount": -183.32,
+          "desc": "AXA EQUITABLE PAYMENT CENTER Bill Payment"
+        },
+        {
+          "date": "01/23/2026",
+          "amount": -183.32,
+          "desc": "AXA EQUITABLE PAYMENT CENTER Bill Payment"
+        },
+        {
+          "date": "04/23/2026",
+          "amount": -183.32,
+          "desc": "AXA EQUITABLE PAYMENT CENTER Bill Payment"
+        },
+        {
+          "date": "07/23/2026",
+          "amount": -183.32,
+          "desc": "AXA EQUITABLE PAYMENT CENTER Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "SCE Edison",
+      "category": "Utilities",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 13,
+      "typical_month": 175.0,
+      "last3_avg": 175.0,
+      "total": -2250.0,
+      "amounts": [
+        150.0,
+        175.0
+      ],
+      "recent": [
+        {
+          "date": "05/20/2026",
+          "amount": -175.0,
+          "desc": "SOUTHER CALIFORNIA EDISON Bill Payment"
+        },
+        {
+          "date": "06/18/2026",
+          "amount": -175.0,
+          "desc": "SOUTHER CALIFORNIA EDISON Bill Payment"
+        },
+        {
+          "date": "07/20/2026",
+          "amount": -175.0,
+          "desc": "SOUTHER CALIFORNIA EDISON Bill Payment"
+        },
+        {
+          "date": "08/20/2026",
+          "amount": -175.0,
+          "desc": "SOUTHER CALIFORNIA EDISON Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Chase credit card",
+      "category": "Credit cards",
+      "cadence": "monthly",
+      "month_count": 1,
+      "tx_count": 1,
+      "typical_month": 157.0,
+      "last3_avg": 157.0,
+      "total": -157.0,
+      "amounts": [
+        157.0
+      ],
+      "recent": [
+        {
+          "date": "09/08/2026",
+          "amount": -157.0,
+          "desc": "CHASE CREDIT CRD DES:AUTOPAY ID:000000000524916 INDN:AKLILU BEHAILU CO ID:476003"
+        }
+      ]
+    },
+    {
+      "name": "Primo Brands (water)",
+      "category": "Household",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 28,
+      "typical_month": 132.08,
+      "last3_avg": 119.33,
+      "total": -1612.44,
+      "amounts": [
+        48.0,
+        54.0,
+        66.04,
+        100.0
+      ],
+      "recent": [
+        {
+          "date": "08/04/2026",
+          "amount": -100.0,
+          "desc": "Primo Brands Bill Payment"
+        },
+        {
+          "date": "08/10/2026",
+          "amount": -54.0,
+          "desc": "Primo Brands Bill Payment"
+        },
+        {
+          "date": "08/24/2026",
+          "amount": -54.0,
+          "desc": "Primo Brands Bill Payment"
+        },
+        {
+          "date": "09/04/2026",
+          "amount": -54.0,
+          "desc": "Primo Brands Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Shell credit card",
+      "category": "Auto",
+      "cadence": "monthly",
+      "month_count": 10,
+      "tx_count": 10,
+      "typical_month": 120.0,
+      "last3_avg": 120.0,
+      "total": -1440.0,
+      "amounts": [
+        120.0,
+        200.0
+      ],
+      "recent": [
+        {
+          "date": "02/27/2026",
+          "amount": -120.0,
+          "desc": "SHELL CREDIT CARD Bill Payment"
+        },
+        {
+          "date": "03/27/2026",
+          "amount": -120.0,
+          "desc": "SHELL CREDIT CARD Bill Payment"
+        },
+        {
+          "date": "04/29/2026",
+          "amount": -120.0,
+          "desc": "SHELL CREDIT CARD Bill Payment"
+        },
+        {
+          "date": "05/29/2026",
+          "amount": -120.0,
+          "desc": "SHELL CREDIT CARD Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "Dexcom",
+      "category": "Health",
+      "cadence": "monthly",
+      "month_count": 4,
+      "tx_count": 4,
+      "typical_month": 108.65,
+      "last3_avg": 108.65,
+      "total": -434.6,
+      "amounts": [
+        108.65
+      ],
+      "recent": [
+        {
+          "date": "02/25/2026",
+          "amount": -108.65,
+          "desc": "DEXCOM INC. 02/23 PURCHASE 844-607-8394 CA"
+        },
+        {
+          "date": "03/24/2026",
+          "amount": -108.65,
+          "desc": "DEXCOM INC. 03/22 PURCHASE 844-607-8394 CA"
+        },
+        {
+          "date": "04/22/2026",
+          "amount": -108.65,
+          "desc": "DEXCOM INC. 04/20 PURCHASE 844-607-8394 CA"
+        },
+        {
+          "date": "05/28/2026",
+          "amount": -108.65,
+          "desc": "DEXCOM INC. 05/26 PURCHASE 844-607-8394 CA"
+        }
+      ]
+    },
+    {
+      "name": "Robinhood auto-invest",
+      "category": "Savings/invest",
+      "cadence": "weekly",
+      "month_count": 9,
+      "tx_count": 37,
+      "typical_month": 100.0,
+      "last3_avg": 91.67,
+      "total": -925.0,
+      "amounts": [
+        25.0
+      ],
+      "recent": [
+        {
+          "date": "04/21/2026",
+          "amount": -25.0,
+          "desc": "ROBINHOOD DES:DEBITS ID:961452356 INDN:Behailu Aklilu CO ID:5326394001 WEB"
+        },
+        {
+          "date": "04/28/2026",
+          "amount": -25.0,
+          "desc": "ROBINHOOD DES:DEBITS ID:961452356 INDN:Behailu Aklilu CO ID:5326394001 WEB"
+        },
+        {
+          "date": "05/05/2026",
+          "amount": -25.0,
+          "desc": "ROBINHOOD DES:DEBITS ID:961452356 INDN:Behailu Aklilu CO ID:5326394001 WEB"
+        },
+        {
+          "date": "05/12/2026",
+          "amount": -25.0,
+          "desc": "ROBINHOOD DES:DEBITS ID:961452356 INDN:Behailu Aklilu CO ID:5326394001 WEB"
+        }
+      ]
+    },
+    {
+      "name": "Public Storage",
+      "category": "Housing",
+      "cadence": "monthly",
+      "month_count": 6,
+      "tx_count": 6,
+      "typical_month": 80.0,
+      "last3_avg": 93.33,
+      "total": -432.75,
+      "amounts": [
+        18.67,
+        54.08,
+        80.0,
+        120.0
+      ],
+      "recent": [
+        {
+          "date": "06/03/2026",
+          "amount": -80.0,
+          "desc": "PUBLIC STORAGE 21718 06/02 PURCHASE 800-567-0759 CA"
+        },
+        {
+          "date": "07/03/2026",
+          "amount": -80.0,
+          "desc": "PUBLIC STORAGE 21718 07/02 PURCHASE 800-567-0759 CA"
+        },
+        {
+          "date": "08/03/2026",
+          "amount": -80.0,
+          "desc": "PUBLIC STORAGE 21718 08/02 PURCHASE 800-567-0759 CA"
+        },
+        {
+          "date": "09/15/2026",
+          "amount": -120.0,
+          "desc": "PUBLIC STORAGE 21718 09/14 PURCHASE 800-567-0759 CA"
+        }
+      ]
+    },
+    {
+      "name": "Prepaid Legal",
+      "category": "Services",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 13,
+      "typical_month": 29.9,
+      "last3_avg": 29.9,
+      "total": -388.7,
+      "amounts": [
+        29.9
+      ],
+      "recent": [
+        {
+          "date": "06/05/2026",
+          "amount": -29.9,
+          "desc": "pre-paid legal service, Inc. Bill Payment"
+        },
+        {
+          "date": "07/06/2026",
+          "amount": -29.9,
+          "desc": "pre-paid legal service, Inc. Bill Payment"
+        },
+        {
+          "date": "08/06/2026",
+          "amount": -29.9,
+          "desc": "pre-paid legal service, Inc. Bill Payment"
+        },
+        {
+          "date": "09/04/2026",
+          "amount": -29.9,
+          "desc": "pre-paid legal service, Inc. Bill Payment"
+        }
+      ]
+    },
+    {
+      "name": "PythonAnywhere",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 35,
+      "typical_month": 25.0,
+      "last3_avg": 20.0,
+      "total": -295.0,
+      "amounts": [
+        5.0,
+        15.0
+      ],
+      "recent": [
+        {
+          "date": "07/27/2026",
+          "amount": -5.0,
+          "desc": "PYTHONANYWHERE 07/24 PURCHASE RICHMOND"
+        },
+        {
+          "date": "07/29/2026",
+          "amount": -15.0,
+          "desc": "PYTHONANYWHERE 07/29 PURCHASE RICHMOND"
+        },
+        {
+          "date": "08/10/2026",
+          "amount": -5.0,
+          "desc": "PYTHONANYWHERE 08/10 PURCHASE RICHMOND"
+        },
+        {
+          "date": "08/25/2026",
+          "amount": -5.0,
+          "desc": "PYTHONANYWHERE 08/24 PURCHASE RICHMOND"
+        }
+      ]
+    },
+    {
+      "name": "Netflix",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 13,
+      "typical_month": 24.99,
+      "last3_avg": 26.99,
+      "total": -341.86,
+      "amounts": [
+        24.99,
+        26.99,
+        31.98
+      ],
+      "recent": [
+        {
+          "date": "06/05/2026",
+          "amount": -26.99,
+          "desc": "Netflix 06/05 PURCHASE 1 8445052993 CA"
+        },
+        {
+          "date": "07/06/2026",
+          "amount": -26.99,
+          "desc": "NETFLIX.COM 07/05 PURCHASE LOS GATOS CA"
+        },
+        {
+          "date": "08/05/2026",
+          "amount": -26.99,
+          "desc": "NETFLIX.COM 08/05 PURCHASE Los Gatos CA"
+        },
+        {
+          "date": "09/08/2026",
+          "amount": -26.99,
+          "desc": "NETFLIX.COM 09/05 PURCHASE NETFLIX.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "n8n Cloud",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 12,
+      "typical_month": 24.0,
+      "last3_avg": 24.0,
+      "total": -288.0,
+      "amounts": [
+        24.0
+      ],
+      "recent": [
+        {
+          "date": "05/22/2026",
+          "amount": -24.0,
+          "desc": "PADDLE.NET* N8N CLOUD1 05/21 PURCHASE New York NY"
+        },
+        {
+          "date": "06/22/2026",
+          "amount": -24.0,
+          "desc": "PADDLE.NET* N8N CLOUD1 06/21 PURCHASE New York NY"
+        },
+        {
+          "date": "07/22/2026",
+          "amount": -24.0,
+          "desc": "PADDLE.NET* N8N CLOUD1 07/21 PURCHASE New York NY"
+        },
+        {
+          "date": "08/24/2026",
+          "amount": -24.0,
+          "desc": "PADDLE.NET* N8N CLOUD1 08/21 PURCHASE New York NY"
+        }
+      ]
+    },
+    {
+      "name": "Render.com",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 15,
+      "typical_month": 21.75,
+      "last3_avg": 37.63,
+      "total": -243.24,
+      "amounts": [
+        5.52,
+        5.98,
+        7.25,
+        7.5,
+        15.61,
+        21.75,
+        31.38,
+        39.25
+      ],
+      "recent": [
+        {
+          "date": "08/04/2026",
+          "amount": -31.38,
+          "desc": "RENDER.COM 08/04 PURCHASE RENDER.COM CA"
+        },
+        {
+          "date": "08/05/2026",
+          "amount": -7.5,
+          "desc": "RENDER.COM 08/04 PURCHASE RENDER.COM CA"
+        },
+        {
+          "date": "09/02/2026",
+          "amount": -39.25,
+          "desc": "RENDER.COM 09/01 PURCHASE RENDER.COM CA"
+        },
+        {
+          "date": "09/02/2026",
+          "amount": -7.5,
+          "desc": "RENDER.COM 09/01 PURCHASE RENDER.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "ChatGPT Plus",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 13,
+      "tx_count": 13,
+      "typical_month": 20.0,
+      "last3_avg": 20.0,
+      "total": -260.0,
+      "amounts": [
+        20.0
+      ],
+      "recent": [
+        {
+          "date": "06/08/2026",
+          "amount": -20.0,
+          "desc": "OPENAI *CHATGPT SUBSCR 06/07 PURCHASE OPENAI.COM CA"
+        },
+        {
+          "date": "07/08/2026",
+          "amount": -20.0,
+          "desc": "OPENAI *CHATGPT SUBSCR 07/07 PURCHASE OPENAI.COM CA"
+        },
+        {
+          "date": "08/10/2026",
+          "amount": -20.0,
+          "desc": "OPENAI *CHATGPT SUBSCR 08/07 PURCHASE OPENAI.COM CA"
+        },
+        {
+          "date": "09/08/2026",
+          "amount": -20.0,
+          "desc": "OPENAI *CHATGPT SUBSCR 09/07 PURCHASE OPENAI.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "Cursor",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 12,
+      "typical_month": 20.0,
+      "last3_avg": 20.0,
+      "total": -240.0,
+      "amounts": [
+        20.0
+      ],
+      "recent": [
+        {
+          "date": "05/22/2026",
+          "amount": -20.0,
+          "desc": "CURSOR, AI POWERED IDE 05/21 PURCHASE CURSOR.COM CA"
+        },
+        {
+          "date": "06/22/2026",
+          "amount": -20.0,
+          "desc": "CURSOR, AI POWERED IDE 06/21 PURCHASE CURSOR.COM CA"
+        },
+        {
+          "date": "07/22/2026",
+          "amount": -20.0,
+          "desc": "CURSOR, AI POWERED IDE 07/21 PURCHASE CURSOR.COM CA"
+        },
+        {
+          "date": "08/24/2026",
+          "amount": -20.0,
+          "desc": "CURSOR, AI POWERED IDE 08/21 PURCHASE CURSOR.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "Claude / Anthropic",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 4,
+      "tx_count": 4,
+      "typical_month": 20.0,
+      "last3_avg": 20.0,
+      "total": -80.0,
+      "amounts": [
+        20.0
+      ],
+      "recent": [
+        {
+          "date": "06/04/2026",
+          "amount": -20.0,
+          "desc": "ANTHROPIC* CLAUDE SUB 06/03 PURCHASE ANTHROPIC.COM CA"
+        },
+        {
+          "date": "07/06/2026",
+          "amount": -20.0,
+          "desc": "ANTHROPIC* CLAUDE SUB 07/03 PURCHASE ANTHROPIC.COM CA"
+        },
+        {
+          "date": "08/04/2026",
+          "amount": -20.0,
+          "desc": "ANTHROPIC* CLAUDE SUB 08/03 PURCHASE ANTHROPIC.COM CA"
+        },
+        {
+          "date": "09/04/2026",
+          "amount": -20.0,
+          "desc": "ANTHROPIC* CLAUDE SUB 09/03 PURCHASE ANTHROPIC.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "Hostinger",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 3,
+      "tx_count": 3,
+      "typical_month": 17.99,
+      "last3_avg": 15.32,
+      "total": -45.97,
+      "amounts": [
+        9.99,
+        17.99
+      ],
+      "recent": [
+        {
+          "date": "02/20/2026",
+          "amount": -9.99,
+          "desc": "HOSTINGER* HOSTINGER.C 02/16 PURCHASE WWW.HOSTINGER DE"
+        },
+        {
+          "date": "03/17/2026",
+          "amount": -17.99,
+          "desc": "HOSTINGER* HOSTINGER.C 03/16 PURCHASE WWW.HOSTINGER DE"
+        },
+        {
+          "date": "04/17/2026",
+          "amount": -17.99,
+          "desc": "HOSTINGER* HOSTINGER.C 04/16 PURCHASE WWW.HOSTINGER DE"
+        }
+      ]
+    },
+    {
+      "name": "YouTube Premium",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 12,
+      "typical_month": 13.99,
+      "last3_avg": 15.99,
+      "total": -175.88,
+      "amounts": [
+        13.99,
+        15.99
+      ],
+      "recent": [
+        {
+          "date": "05/22/2026",
+          "amount": -15.99,
+          "desc": "Google YouTubePremium 05/21 PURCHASE 650-2530000 CA"
+        },
+        {
+          "date": "06/22/2026",
+          "amount": -15.99,
+          "desc": "Google YouTubePremium 06/21 PURCHASE 650-2530000 CA"
+        },
+        {
+          "date": "07/22/2026",
+          "amount": -15.99,
+          "desc": "Google YouTubePremium 07/21 PURCHASE 650-2530000 CA"
+        },
+        {
+          "date": "08/24/2026",
+          "amount": -15.99,
+          "desc": "Google YouTubePremium 08/21 PURCHASE 650-2530000 CA"
+        }
+      ]
+    },
+    {
+      "name": "Google One",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 12,
+      "typical_month": 9.99,
+      "last3_avg": 9.99,
+      "total": -119.88,
+      "amounts": [
+        9.99
+      ],
+      "recent": [
+        {
+          "date": "05/20/2026",
+          "amount": -9.99,
+          "desc": "GOOGLE *Google 05/19 PURCHASE Mountain View CA"
+        },
+        {
+          "date": "06/22/2026",
+          "amount": -9.99,
+          "desc": "GOOGLE *Google 06/19 PURCHASE Mountain View CA"
+        },
+        {
+          "date": "07/20/2026",
+          "amount": -9.99,
+          "desc": "GOOGLE *Google 07/19 PURCHASE Mountain View CA"
+        },
+        {
+          "date": "08/20/2026",
+          "amount": -9.99,
+          "desc": "GOOGLE *Google 08/19 PURCHASE Mountain View CA"
+        }
+      ]
+    },
+    {
+      "name": "Netlify",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 4,
+      "tx_count": 4,
+      "typical_month": 9.0,
+      "last3_avg": 9.0,
+      "total": -36.0,
+      "amounts": [
+        9.0
+      ],
+      "recent": [
+        {
+          "date": "06/12/2026",
+          "amount": -9.0,
+          "desc": "NETLIFY 06/11 PURCHASE NETLIFY.COM CA"
+        },
+        {
+          "date": "07/13/2026",
+          "amount": -9.0,
+          "desc": "NETLIFY 07/12 PURCHASE NETLIFY.COM CA"
+        },
+        {
+          "date": "08/21/2026",
+          "amount": -9.0,
+          "desc": "NETLIFY 08/20 PURCHASE NETLIFY.COM CA"
+        },
+        {
+          "date": "09/14/2026",
+          "amount": -9.0,
+          "desc": "NETLIFY 09/12 PURCHASE NETLIFY.COM CA"
+        }
+      ]
+    },
+    {
+      "name": "Apple subscriptions",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 36,
+      "typical_month": 7.97,
+      "last3_avg": 10.64,
+      "total": -203.63,
+      "amounts": [
+        1.99,
+        2.99,
+        15.98,
+        39.99,
+        59.99
+      ],
+      "recent": [
+        {
+          "date": "06/30/2026",
+          "amount": -1.99,
+          "desc": "APPLE COM BILL 06/30 PURCHASE CUPERTINO CA"
+        },
+        {
+          "date": "07/02/2026",
+          "amount": -2.99,
+          "desc": "APPLE.COM/BILL 07/01 PURCHASE 866-712-7753 CA"
+        },
+        {
+          "date": "07/20/2026",
+          "amount": -15.98,
+          "desc": "APPLE.COM/BILL 07/19 PURCHASE 866-712-7753 CA"
+        },
+        {
+          "date": "08/03/2026",
+          "amount": -2.99,
+          "desc": "APPLE.COM/BILL 08/01 PURCHASE 866-712-7753 CA"
+        }
+      ]
+    },
+    {
+      "name": "Amazon Digital",
+      "category": "Subscriptions",
+      "cadence": "monthly",
+      "month_count": 11,
+      "tx_count": 11,
+      "typical_month": 5.99,
+      "last3_avg": 6.32,
+      "total": -66.89,
+      "amounts": [
+        5.99,
+        6.99
+      ],
+      "recent": [
+        {
+          "date": "04/13/2026",
+          "amount": -5.99,
+          "desc": "AMAZON DIGI* MA4ZH5BG3 04/11 PURCHASE WWW.AMAZON.CO WA"
+        },
+        {
+          "date": "05/12/2026",
+          "amount": -5.99,
+          "desc": "AMAZON DIGI* Y25AS76N3 05/11 PURCHASE WWW.AMAZON.CO WA"
+        },
+        {
+          "date": "06/12/2026",
+          "amount": -5.99,
+          "desc": "AMAZON DIGI* NX26E7OM3 06/11 PURCHASE WWW.AMAZON.CO WA"
+        },
+        {
+          "date": "07/13/2026",
+          "amount": -6.99,
+          "desc": "AMAZON DIGI* UG3QE5EB3 07/11 PURCHASE WWW.AMAZON.CO WA"
+        }
+      ]
+    },
+    {
+      "name": "Acorns",
+      "category": "Savings/invest",
+      "cadence": "monthly",
+      "month_count": 12,
+      "tx_count": 12,
+      "typical_month": 3.0,
+      "last3_avg": 3.0,
+      "total": -36.0,
+      "amounts": [
+        3.0
+      ],
+      "recent": [
+        {
+          "date": "05/26/2026",
+          "amount": -3.0,
+          "desc": "Subscription DES:Acorns ID:F6J7G9 INDN:Behailu Aklilu CO ID:9000142694 WEB"
+        },
+        {
+          "date": "06/25/2026",
+          "amount": -3.0,
+          "desc": "Subscription DES:Acorns ID:TZ63L9 INDN:Behailu Aklilu CO ID:9000142694 WEB"
+        },
+        {
+          "date": "07/27/2026",
+          "amount": -3.0,
+          "desc": "Subscription DES:Acorns ID:RL5ZP9 INDN:Behailu Aklilu CO ID:9000142694 WEB"
+        },
+        {
+          "date": "08/24/2026",
+          "amount": -3.0,
+          "desc": "Subscription DES:Acorns ID:Q8DVT9 INDN:Behailu Aklilu CO ID:9000142694 WEB"
+        }
+      ]
+    },
+    {
+      "name": "Retell AI",
+      "category": "Tech/hosting",
+      "cadence": "monthly",
+      "month_count": 9,
+      "tx_count": 9,
+      "typical_month": 2.0,
+      "last3_avg": 2.0,
+      "total": -18.0,
+      "amounts": [
+        2.0
+      ],
+      "recent": [
+        {
+          "date": "06/04/2026",
+          "amount": -2.0,
+          "desc": "WWW.RETELLAI.COM 06/03 PURCHASE RETELLAI.COM CA"
+        },
+        {
+          "date": "07/06/2026",
+          "amount": -2.0,
+          "desc": "WWW.RETELLAI.COM 07/03 PURCHASE RETELLAI.COM CA"
+        },
+        {
+          "date": "08/04/2026",
+          "amount": -2.0,
+          "desc": "WWW.RETELLAI.COM 08/03 PURCHASE RETELLAI.COM CA"
+        },
+        {
+          "date": "09/04/2026",
+          "amount": -2.0,
+          "desc": "WWW.RETELLAI.COM 09/03 PURCHASE RETELLAI.COM CA"
+        }
+      ]
+    }
+  ],
+  "expenses": [
+    {
+      "category": "Food",
+      "tx_count": 53,
+      "total": -4162.75,
+      "items": [
+        {
+          "name": "Restaurants / groceries",
+          "tx_count": 53,
+          "total": -4162.75,
+          "months": [
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-02",
+            "2026-03",
+            "2026-04",
+            "2026-05",
+            "2026-06",
+            "2026-07",
+            "2026-08"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Family / gifts",
+      "tx_count": 25,
+      "total": -4109.99,
+      "items": [
+        {
+          "name": "Zelle / Venmo / Remitly",
+          "tx_count": 25,
+          "total": -4109.99,
+          "months": [
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-02",
+            "2026-03",
+            "2026-04",
+            "2026-05",
+            "2026-06",
+            "2026-09"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Taxes",
+      "tx_count": 4,
+      "total": -2875.0,
+      "items": [
+        {
+          "name": "Tax payments / prep",
+          "tx_count": 4,
+          "total": -2875.0,
+          "months": [
+            "2025-10",
+            "2026-04"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Other",
+      "tx_count": 52,
+      "total": -2379.46,
+      "items": [
+        {
+          "name": "LA ART FRAMING 09/26 PURCHASE LOS ANGELES CA",
+          "tx_count": 1,
+          "total": -339.63,
+          "months": [
+            "2025-09"
+          ]
+        },
+        {
+          "name": "BESTBUYCOM807112510535 11/26 PURCHASE 888BESTBUY MN",
+          "tx_count": 1,
+          "total": -219.49,
+          "months": [
+            "2025-11"
+          ]
+        },
+        {
+          "name": "BKOFAMERICA ATM 12/09 #000003432 WITHDRWL BEVERLY-WILSHIRE BEVERLY HIL",
+          "tx_count": 1,
+          "total": -200.0,
+          "months": [
+            "2025-12"
+          ]
+        },
+        {
+          "name": "MATU 08/27 PURCHASE BEVERLY HILLS CA",
+          "tx_count": 1,
+          "total": -191.67,
+          "months": [
+            "2025-08"
+          ]
+        },
+        {
+          "name": "USPS PO 050668 01/07 PURCHASE BEVERLY HILLS CA",
+          "tx_count": 1,
+          "total": -106.53,
+          "months": [
+            "2026-01"
+          ]
+        },
+        {
+          "name": "FIGURE LENDING L DES:FIGUREPAYM ID:001758354018700 INDN:BEHAILU AKLILU",
+          "tx_count": 1,
+          "total": -100.0,
+          "months": [
+            "2025-09"
+          ]
+        },
+        {
+          "name": "BKOFAMERICA ATM 07/31 #000004807 WITHDRWL BEVERLY-WILSHIRE BEVERLY HIL",
+          "tx_count": 1,
+          "total": -100.0,
+          "months": [
+            "2026-07"
+          ]
+        },
+        {
+          "name": "USPS PO 050668 07/08 PURCHASE BEVERLY HILLS CA",
+          "tx_count": 1,
+          "total": -91.7,
+          "months": [
+            "2026-07"
+          ]
+        },
+        {
+          "name": "BESTBUYCOM807121992961 12/12 PURCHASE 888BESTBUY MN",
+          "tx_count": 1,
+          "total": -88.28,
+          "months": [
+            "2025-12"
+          ]
+        },
+        {
+          "name": "MONUMENTAL NEWS @DCA 44 10/07 PURCHASE ARLINGTON VA",
+          "tx_count": 2,
+          "total": -81.12,
+          "months": [
+            "2025-10"
+          ]
+        },
+        {
+          "name": "CVS STORE #-S 06/14 #000268428 WITHDRWL CVS STORE #-SD39 BEVERLY HILLS",
+          "tx_count": 2,
+          "total": -66.0,
+          "months": [
+            "2026-06"
+          ]
+        },
+        {
+          "name": "BKOFAMERICA ATM 09/03 #000004261 WITHDRWL BEVERLY-WILSHIRE BEVERLY HIL",
+          "tx_count": 1,
+          "total": -60.0,
+          "months": [
+            "2025-09"
+          ]
+        },
+        {
+          "name": "PAYPAL *THRIVEMARKE 025 08/22 PURCHASE 402-935-7733 CA",
+          "tx_count": 1,
+          "total": -59.95,
+          "months": [
+            "2026-08"
+          ]
+        },
+        {
+          "name": "Beyond, Inc. 01/03 PURCHASE Murray UT",
+          "tx_count": 1,
+          "total": -59.82,
+          "months": [
+            "2026-01"
+          ]
+        },
+        {
+          "name": "OVERSTOCK.COM 833895155 01/12 PURCHASE Murray UT",
+          "tx_count": 1,
+          "total": -54.29,
+          "months": [
+            "2026-01"
+          ]
+        },
+        {
+          "name": "ROBERTSON CLEANERS 04/22 PURCHASE LOS ANGELES CA",
+          "tx_count": 1,
+          "total": -51.21,
+          "months": [
+            "2026-04"
+          ]
+        },
+        {
+          "name": "WFB OPEN DEP TO CHK 12/03 PURCHASE 925-674-7328 CA",
+          "tx_count": 2,
+          "total": -50.0,
+          "months": [
+            "2025-12"
+          ]
+        },
+        {
+          "name": "VIKING BILLING SERVICE 07/30 PURCHASE 844-9698981 MN",
+          "tx_count": 1,
+          "total": -50.0,
+          "months": [
+            "2026-07"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Home repair",
+      "tx_count": 8,
+      "total": -2064.99,
+      "items": [
+        {
+          "name": "Home / window / electrical",
+          "tx_count": 8,
+          "total": -2064.99,
+          "months": [
+            "2025-10",
+            "2025-11",
+            "2025-12"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Travel",
+      "tx_count": 10,
+      "total": -1808.56,
+      "items": [
+        {
+          "name": "Flights / hotels / trips",
+          "tx_count": 10,
+          "total": -1808.56,
+          "months": [
+            "2025-09",
+            "2025-10",
+            "2026-01",
+            "2026-06",
+            "2026-07"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Community",
+      "tx_count": 19,
+      "total": -1611.0,
+      "items": [
+        {
+          "name": "Hibret Edir (per death, not monthly)",
+          "tx_count": 12,
+          "total": -1211.0,
+          "months": [
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-04"
+          ]
+        },
+        {
+          "name": "Wegene",
+          "tx_count": 7,
+          "total": -400.0,
+          "months": [
+            "2025-11",
+            "2026-08"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Shopping",
+      "tx_count": 29,
+      "total": -1195.89,
+      "items": [
+        {
+          "name": "Retail / Amazon",
+          "tx_count": 29,
+          "total": -1195.89,
+          "months": [
+            "2025-08",
+            "2025-09",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-03",
+            "2026-05",
+            "2026-07",
+            "2026-08",
+            "2026-09"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Medical visits",
+      "tx_count": 16,
+      "total": -1012.29,
+      "items": [
+        {
+          "name": "Copays / pharmacy / imaging",
+          "tx_count": 16,
+          "total": -1012.29,
+          "months": [
+            "2025-09",
+            "2025-10",
+            "2026-01",
+            "2026-02",
+            "2026-04",
+            "2026-05",
+            "2026-07"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Household",
+      "tx_count": 8,
+      "total": -666.23,
+      "items": [
+        {
+          "name": "Laundry",
+          "tx_count": 8,
+          "total": -666.23,
+          "months": [
+            "2025-09",
+            "2025-12",
+            "2026-02",
+            "2026-08"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Auto",
+      "tx_count": 15,
+      "total": -619.82,
+      "items": [
+        {
+          "name": "Gas / service (not CC bill)",
+          "tx_count": 15,
+          "total": -619.82,
+          "months": [
+            "2025-09",
+            "2025-11",
+            "2026-03",
+            "2026-04",
+            "2026-05",
+            "2026-06",
+            "2026-07",
+            "2026-08",
+            "2026-09"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Tech / projects",
+      "tx_count": 61,
+      "total": -459.98,
+      "items": [
+        {
+          "name": "Domains / APIs / app charges",
+          "tx_count": 61,
+          "total": -459.98,
+          "months": [
+            "2025-09",
+            "2025-11",
+            "2026-01",
+            "2026-03",
+            "2026-05",
+            "2026-06",
+            "2026-07",
+            "2026-08"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Transport",
+      "tx_count": 39,
+      "total": -457.02,
+      "items": [
+        {
+          "name": "Rides / parking",
+          "tx_count": 39,
+          "total": -457.02,
+          "months": [
+            "2025-09",
+            "2025-10",
+            "2025-11",
+            "2025-12",
+            "2026-01",
+            "2026-02",
+            "2026-03",
+            "2026-04",
+            "2026-05",
+            "2026-06",
+            "2026-07",
+            "2026-09"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Gov / licenses",
+      "tx_count": 6,
+      "total": -437.35,
+      "items": [
+        {
+          "name": "DMV / AAA / SOS",
+          "tx_count": 6,
+          "total": -437.35,
+          "months": [
+            "2025-12",
+            "2026-02",
+            "2026-04"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Fines",
+      "tx_count": 5,
+      "total": -366.5,
+      "items": [
+        {
+          "name": "Parking citations",
+          "tx_count": 5,
+          "total": -366.5,
+          "months": [
+            "2025-12",
+            "2026-05",
+            "2026-07",
+            "2026-08"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Ads / marketing",
+      "tx_count": 21,
+      "total": -232.47,
+      "items": [
+        {
+          "name": "Facebook ads",
+          "tx_count": 21,
+          "total": -232.47,
+          "months": [
+            "2026-01",
+            "2026-02"
+          ]
+        }
+      ]
+    }
+  ],
+  "months": [
+    {
+      "month": "2025-08",
+      "recurring": -215.0,
+      "expenses": -290.61,
+      "income": 0.0,
+      "transfers_out": -450.0
+    },
+    {
+      "month": "2025-09",
+      "recurring": -5099.84,
+      "expenses": -2428.13,
+      "income": 902.0,
+      "transfers_out": -900.0
+    },
+    {
+      "month": "2025-10",
+      "recurring": -5839.25,
+      "expenses": -4660.55,
+      "income": 9093.98,
+      "transfers_out": -900.0
+    },
+    {
+      "month": "2025-11",
+      "recurring": -5640.52,
+      "expenses": -1929.42,
+      "income": 6302.18,
+      "transfers_out": -2900.0
+    },
+    {
+      "month": "2025-12",
+      "recurring": -5640.83,
+      "expenses": -1839.94,
+      "income": 7727.17,
+      "transfers_out": -2500.0
+    },
+    {
+      "month": "2026-01",
+      "recurring": -5748.24,
+      "expenses": -966.66,
+      "income": 6482.48,
+      "transfers_out": -1350.0
+    },
+    {
+      "month": "2026-02",
+      "recurring": -4877.93,
+      "expenses": -1811.71,
+      "income": 7449.0,
+      "transfers_out": -900.0
+    },
+    {
+      "month": "2026-03",
+      "recurring": -6001.89,
+      "expenses": -1232.61,
+      "income": 6309.0,
+      "transfers_out": -900.0
+    },
+    {
+      "month": "2026-04",
+      "recurring": -6316.82,
+      "expenses": -4546.48,
+      "income": 7776.0,
+      "transfers_out": -900.0
+    },
+    {
+      "month": "2026-05",
+      "recurring": -5779.26,
+      "expenses": -1414.08,
+      "income": 6991.12,
+      "transfers_out": -8.0
+    },
+    {
+      "month": "2026-06",
+      "recurring": -5524.99,
+      "expenses": -689.95,
+      "income": 6508.0,
+      "transfers_out": -8.0
+    },
+    {
+      "month": "2026-07",
+      "recurring": -5675.84,
+      "expenses": -1137.34,
+      "income": 6107.71,
+      "transfers_out": -12.0
+    },
+    {
+      "month": "2026-08",
+      "recurring": -5379.16,
+      "expenses": -836.4,
+      "income": 6670.9,
+      "transfers_out": -8.0
+    },
+    {
+      "month": "2026-09",
+      "recurring": -3424.71,
+      "expenses": -675.42,
+      "income": 985.0,
+      "transfers_out": -4.0
+    }
+  ],
+  "grok_errors": [
+    {
+      "item": "Hibret Edir $110",
+      "why": "Per-death edir contribution, not a monthly subscription. Hits in clusters when a member dies."
+    },
+    {
+      "item": "The Bible Bus / Family Tree $1\u2013$6 charges",
+      "why": "App/test micro-charges, not a recurring bill."
+    },
+    {
+      "item": "Restaurants (Messob, Urth, In-N-Out)",
+      "why": "Repeat visits, not bills."
+    },
+    {
+      "item": "Parking citations / meters / Waymo",
+      "why": "Variable usage, not a subscription."
+    },
+    {
+      "item": "Scheduled transfer to CHK 5440",
+      "why": "Moving money to another account of yours, not an expense."
+    },
+    {
+      "item": "Zelle to Behailu",
+      "why": "Internal family/self transfers, not a vendor bill."
+    },
+    {
+      "item": "Amazon shopping / laundry / ATM",
+      "why": "Spending, but not a contracted monthly charge."
+    }
+  ]
+}

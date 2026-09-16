@@ -1,0 +1,229 @@
+{
+  "meta": {
+    "generated": "2026-09-16",
+    "source": "Bank of America checking statement",
+    "period": "Sep 2025 \u2013 Aug 2026",
+    "totalMonthly": 5560.76,
+    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages."
+  },
+  "charges": [
+    {
+      "name": "Tesla Insurance",
+      "amount": 1779.07,
+      "frequency": "monthly",
+      "category": "auto"
+    },
+    {
+      "name": "Rent \u2014 Mimi",
+      "amount": 1075.0,
+      "frequency": "monthly",
+      "category": "housing"
+    },
+    {
+      "name": "Lorena Abzuman",
+      "amount": 600.0,
+      "frequency": "monthly",
+      "category": "household"
+    },
+    {
+      "name": "Kaiser premium",
+      "amount": 403.35,
+      "frequency": "monthly",
+      "category": "health"
+    },
+    {
+      "name": "Freedom Flex",
+      "amount": 266.0,
+      "frequency": "monthly",
+      "category": "credit"
+    },
+    {
+      "name": "Spectrum",
+      "amount": 260.0,
+      "frequency": "monthly",
+      "category": "utilities"
+    },
+    {
+      "name": "Verizon Wireless",
+      "amount": 200.0,
+      "frequency": "monthly",
+      "category": "utilities"
+    },
+    {
+      "name": "SCE Edison",
+      "amount": 175.0,
+      "frequency": "monthly",
+      "category": "utilities"
+    },
+    {
+      "name": "Car gas",
+      "amount": 120.0,
+      "frequency": "monthly",
+      "category": "auto"
+    },
+    {
+      "name": "BofA Mastercard",
+      "amount": 120.0,
+      "frequency": "monthly",
+      "category": "credit"
+    },
+    {
+      "name": "Primo Brands",
+      "amount": 119.33,
+      "frequency": "monthly",
+      "category": "household"
+    },
+    {
+      "name": "Storage",
+      "amount": 80.0,
+      "frequency": "monthly",
+      "category": "housing"
+    },
+    {
+      "name": "Chase Slate",
+      "amount": 40.0,
+      "frequency": "monthly",
+      "category": "credit"
+    },
+    {
+      "name": "Render.com",
+      "amount": 37.63,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "BofA Business Advantage 360",
+      "amount": 35.0,
+      "frequency": "monthly",
+      "category": "credit"
+    },
+    {
+      "name": "Beverly Hills permits",
+      "amount": 31.21,
+      "frequency": "monthly",
+      "category": "auto"
+    },
+    {
+      "name": "Prepaid Legal",
+      "amount": 29.9,
+      "frequency": "monthly",
+      "category": "services"
+    },
+    {
+      "name": "Netflix",
+      "amount": 26.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "n8n Cloud",
+      "amount": 24.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "PythonAnywhere",
+      "amount": 20.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "ChatGPT Plus",
+      "amount": 20.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Cursor",
+      "amount": 20.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Anthropic",
+      "amount": 20.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "YouTube Premium",
+      "amount": 15.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Google One",
+      "amount": 9.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Netlify",
+      "amount": 9.0,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Apple",
+      "amount": 8.98,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Amazon Digital",
+      "amount": 6.32,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Mail-order pharmacy",
+      "amount": 5.0,
+      "frequency": "monthly",
+      "category": "health"
+    },
+    {
+      "name": "Acorns",
+      "amount": 3.0,
+      "frequency": "monthly",
+      "category": "savings"
+    }
+  ],
+  "categories": {
+    "housing": {
+      "label": "Housing",
+      "color": "#ffd166"
+    },
+    "household": {
+      "label": "Household",
+      "color": "#06d6a0"
+    },
+    "health": {
+      "label": "Health",
+      "color": "#ff073a"
+    },
+    "utilities": {
+      "label": "Utilities",
+      "color": "#ffe600"
+    },
+    "credit": {
+      "label": "Credit cards",
+      "color": "#ff6b35"
+    },
+    "services": {
+      "label": "Services",
+      "color": "#9d4edd"
+    },
+    "tech_subscription": {
+      "label": "Tech subscription",
+      "color": "#39ff14"
+    },
+    "savings": {
+      "label": "Savings",
+      "color": "#d4af37"
+    },
+    "auto": {
+      "label": "Auto",
+      "color": "#118ab2"
+    }
+  }
+}

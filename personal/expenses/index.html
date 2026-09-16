@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expenses | Jay's Personal Dashboard</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a25;
+      --text-primary: #f0f0f5;
+      --text-secondary: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --accent-green: #39ff14;
+      --accent-yellow: #ffe600;
+      --accent-red: #ff073a;
+      --gold: #d4af37;
+      --border: #2a2a35;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent-green); }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .summary-card .label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-card .value {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .summary-card .value.total { color: var(--accent-green); }
+    .summary-card .value.count { color: var(--accent-yellow); }
+    .summary-card .value.avg { color: var(--text-primary); }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .category-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .category-item:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--text-muted);
+    }
+
+    .category-item.active { border-color: var(--accent-green); }
+
+    .category-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .category-info { flex: 1; min-width: 0; }
+
+    .category-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .category-amount {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .charges-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .charge-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.2s;
+    }
+
+    .charge-item:hover { background: var(--bg-card-hover); }
+
+    .charge-name { font-weight: 500; }
+
+    .charge-category {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .charge-category .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .charge-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent-red);
+      text-align: right;
+      min-width: 80px;
+    }
+
+    .disclaimer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .disclaimer strong { color: var(--text-primary); }
+
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+      .summary-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/#personal" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to eJayJay
+      </a>
+      <h1>Expenses</h1>
+      <p class="subtitle">Bills that go out every month — name and current monthly amount</p>
+    </header>
+
+    <div class="summary-cards" id="summary"></div>
+
+    <h2 class="section-title">By Category</h2>
+    <div class="category-breakdown" id="categories"></div>
+
+    <h2 class="section-title">All Bills</h2>
+    <div class="charges-list" id="charges"></div>
+
+    <div class="disclaimer">
+      <strong>Note:</strong> A bill is included when it posted in at least 10 of the last 12 months,
+      usually on the same day (±2). The amount is what it is now: the last 3 months averaged,
+      so Tesla uses the latest posted premium as a static monthly amount, not an average.
+      Lorena Abzuman is $600/month for laundry.
+    </div>
+    <p class="meta" id="meta"></p>
+  </div>
+
+  <script>
+    (function() {
+      const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+      fetch('/data/bills.json', { cache: 'no-store' })
+        .then((r) => {
+          if (!r.ok) throw new Error('missing');
+          return r.json();
+        })
+        .then(render)
+        .catch(() => {
+          document.getElementById('charges').innerHTML =
+            '<p class="subtitle">Could not load bills.</p>';
+        });
+
+      function render(data) {
+        const { meta, charges, categories } = data;
+        const total = charges.reduce((sum, c) => sum + c.amount, 0);
+        const count = charges.length;
+        const avg = count ? total / count : 0;
+
+        document.getElementById('summary').innerHTML = `
+          <div class="summary-card">
+            <div class="label">Monthly Total</div>
+            <div class="value total">${fmt(total)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Bills</div>
+            <div class="value count">${count}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Avg per Bill</div>
+            <div class="value avg">${fmt(avg)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Yearly Estimate</div>
+            <div class="value avg">${fmt(total * 12)}</div>
+          </div>
+        `;
+
+        const catTotals = {};
+        charges.forEach((c) => {
+          catTotals[c.category] = (catTotals[c.category] || 0) + c.amount;
+        });
+        const sortedCats = Object.entries(catTotals).sort((a, b) => b[1] - a[1]);
+        let activeCategory = null;
+
+        function renderCategories() {
+          document.getElementById('categories').innerHTML = sortedCats.map(([cat, amount]) => {
+            const info = categories[cat] || { label: cat, color: '#888' };
+            const isActive = activeCategory === cat;
+            return `
+              <div class="category-item ${isActive ? 'active' : ''}" data-cat="${cat}">
+                <div class="category-dot" style="background: ${info.color}"></div>
+                <div class="category-info">
+                  <div class="category-name">${info.label}</div>
+                  <div class="category-amount">${fmt(amount)}/mo</div>
+                </div>
+              </div>
+            `;
+          }).join('');
+
+          document.querySelectorAll('.category-item').forEach((el) => {
+            el.addEventListener('click', () => {
+              const cat = el.dataset.cat;
+              activeCategory = activeCategory === cat ? null : cat;
+              renderCategories();
+              renderCharges();
+            });
+          });
+        }
+
+        function renderCharges() {
+          const filtered = activeCategory
+            ? charges.filter((c) => c.category === activeCategory)
+            : charges;
+          const sorted = [...filtered].sort((a, b) => b.amount - a.amount);
+          document.getElementById('charges').innerHTML = sorted.map((c) => {
+            const cat = categories[c.category] || { label: c.category, color: '#888' };
+            return `
+              <div class="charge-item">
+                <div>
+                  <div class="charge-name">${c.name}</div>
+                  <div class="charge-category">
+                    <span class="dot" style="background: ${cat.color}"></span>
+                    ${cat.label}
+                  </div>
+                </div>
+                <div class="charge-amount">${fmt(c.amount)}</div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        renderCategories();
+        renderCharges();
+        document.getElementById('meta').textContent =
+          `${meta.source} · ${meta.period}. ${meta.note}`;
+      }
+    })();
+  </script>
+</body>
+</html>

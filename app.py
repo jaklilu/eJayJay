@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from flask import Flask, send_from_directory
+from flask import Flask, abort, redirect, send_from_directory
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -25,6 +25,32 @@ def data_files(filename: str):
 def project_shortlink(project_id: str):
     """Keep short links working locally; Netlify redirects /p/* to index."""
     return send_from_directory(BASE_DIR, "index.html")
+
+
+@app.route("/expenses")
+@app.route("/expenses/")
+def expenses_redirect():
+    return redirect("/personal/expenses/")
+
+
+@app.route("/personal/<path:filename>")
+def personal_files(filename: str):
+    """Serve Grok/Netlify personal pages the same way the live static host does."""
+    filename = filename.rstrip("/")
+    folder = (BASE_DIR / "personal").resolve()
+    target = (folder / filename).resolve()
+    try:
+        target.relative_to(folder)
+    except ValueError:
+        abort(404)
+    if target.is_dir():
+        index = target / "index.html"
+        if index.is_file():
+            return send_from_directory(target, "index.html")
+        abort(404)
+    if target.is_file():
+        return send_from_directory(target.parent, target.name)
+    abort(404)
 
 
 if __name__ == "__main__":
