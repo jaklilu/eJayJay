@@ -132,6 +132,17 @@
     "year": 2023
   },
   {
+    "id": "recurring-charges",
+    "name": "Recurring charges",
+    "tagline": "Gmail-sourced estimate of personal recurring spend (~$905/mo).",
+    "about": "Dashboard showing estimated recurring charges extracted from approximately one year of Gmail receipts. May miss charges that don't generate email notifications.",
+    "url": "/personal/recurring-charges/",
+    "status": "live",
+    "visibility": "personal",
+    "tags": ["personal", "finance"],
+    "year": 2026
+  },
+  {
     "id": "notes",
     "name": "Personal notes",
     "tagline": "Private scratchpad for ideas, links, and planning.",

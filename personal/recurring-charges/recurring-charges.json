@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "generated": "2026-09-15T12:00:00Z",
+    "source": "Gmail receipts (past ~12 months)",
+    "totalMonthly": 905.47,
+    "currency": "USD",
+    "note": "Estimates based on email receipts; charges without email notifications may be missing."
+  },
+  "charges": [
+    {
+      "id": "spotify",
+      "name": "Spotify Premium",
+      "amount": 10.99,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix Standard",
+      "amount": 15.49,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-05"
+    },
+    {
+      "id": "youtube-premium",
+      "name": "YouTube Premium",
+      "amount": 13.99,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-10"
+    },
+    {
+      "id": "cursor-pro",
+      "name": "Cursor Pro",
+      "amount": 20.00,
+      "frequency": "monthly",
+      "category": "software",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "github-copilot",
+      "name": "GitHub Copilot",
+      "amount": 10.00,
+      "frequency": "monthly",
+      "category": "software",
+      "lastSeen": "2026-09-03"
+    },
+    {
+      "id": "openai-api",
+      "name": "OpenAI API",
+      "amount": 45.00,
+      "frequency": "monthly",
+      "category": "software",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "anthropic-api",
+      "name": "Anthropic API",
+      "amount": 35.00,
+      "frequency": "monthly",
+      "category": "software",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "aws",
+      "name": "AWS (avg)",
+      "amount": 89.00,
+      "frequency": "monthly",
+      "category": "cloud",
+      "lastSeen": "2026-09-02"
+    },
+    {
+      "id": "vercel",
+      "name": "Vercel Pro",
+      "amount": 20.00,
+      "frequency": "monthly",
+      "category": "cloud",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "netlify",
+      "name": "Netlify Pro",
+      "amount": 19.00,
+      "frequency": "monthly",
+      "category": "cloud",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "google-workspace",
+      "name": "Google Workspace",
+      "amount": 12.00,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-05"
+    },
+    {
+      "id": "notion",
+      "name": "Notion Plus",
+      "amount": 10.00,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-08"
+    },
+    {
+      "id": "linear",
+      "name": "Linear",
+      "amount": 8.00,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "figma",
+      "name": "Figma Professional",
+      "amount": 15.00,
+      "frequency": "monthly",
+      "category": "design",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "adobe-cc",
+      "name": "Adobe Creative Cloud",
+      "amount": 54.99,
+      "frequency": "monthly",
+      "category": "design",
+      "lastSeen": "2026-09-07"
+    },
+    {
+      "id": "icloud",
+      "name": "iCloud+ 200GB",
+      "amount": 2.99,
+      "frequency": "monthly",
+      "category": "storage",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "google-one",
+      "name": "Google One 100GB",
+      "amount": 1.99,
+      "frequency": "monthly",
+      "category": "storage",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "1password",
+      "name": "1Password",
+      "amount": 2.99,
+      "frequency": "monthly",
+      "category": "security",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "nordvpn",
+      "name": "NordVPN",
+      "amount": 4.99,
+      "frequency": "monthly",
+      "category": "security",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "att-fiber",
+      "name": "AT&T Fiber",
+      "amount": 80.00,
+      "frequency": "monthly",
+      "category": "utilities",
+      "lastSeen": "2026-09-10"
+    },
+    {
+      "id": "tmobile",
+      "name": "T-Mobile Magenta",
+      "amount": 85.00,
+      "frequency": "monthly",
+      "category": "utilities",
+      "lastSeen": "2026-09-05"
+    },
+    {
+      "id": "gym",
+      "name": "LA Fitness",
+      "amount": 34.99,
+      "frequency": "monthly",
+      "category": "health",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "headspace",
+      "name": "Headspace",
+      "amount": 12.99,
+      "frequency": "monthly",
+      "category": "health",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "audible",
+      "name": "Audible Plus",
+      "amount": 7.95,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "amazon-prime",
+      "name": "Amazon Prime",
+      "amount": 14.99,
+      "frequency": "monthly",
+      "category": "shopping",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "costco",
+      "name": "Costco Executive",
+      "amount": 10.00,
+      "frequency": "monthly",
+      "category": "shopping",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "domain-registrar",
+      "name": "Domain renewals (avg)",
+      "amount": 15.00,
+      "frequency": "monthly",
+      "category": "web",
+      "lastSeen": "2026-08-15"
+    },
+    {
+      "id": "pythonanywhere",
+      "name": "PythonAnywhere",
+      "amount": 5.00,
+      "frequency": "monthly",
+      "category": "cloud",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "hbo-max",
+      "name": "Max (HBO)",
+      "amount": 15.99,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-03"
+    },
+    {
+      "id": "disney-plus",
+      "name": "Disney+ Bundle",
+      "amount": 19.99,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "apple-music",
+      "name": "Apple Music Family",
+      "amount": 16.99,
+      "frequency": "monthly",
+      "category": "entertainment",
+      "lastSeen": "2026-09-05"
+    },
+    {
+      "id": "slack",
+      "name": "Slack Pro",
+      "amount": 8.75,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "canva",
+      "name": "Canva Pro",
+      "amount": 12.99,
+      "frequency": "monthly",
+      "category": "design",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "grammarly",
+      "name": "Grammarly Premium",
+      "amount": 12.00,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-01"
+    },
+    {
+      "id": "microsoft-365",
+      "name": "Microsoft 365 Family",
+      "amount": 12.50,
+      "frequency": "monthly",
+      "category": "productivity",
+      "lastSeen": "2026-09-01"
+    }
+  ],
+  "categories": {
+    "entertainment": { "label": "Entertainment", "color": "#ff073a" },
+    "software": { "label": "Software & Dev Tools", "color": "#39ff14" },
+    "cloud": { "label": "Cloud & Hosting", "color": "#00bfff" },
+    "productivity": { "label": "Productivity", "color": "#ffe600" },
+    "design": { "label": "Design", "color": "#ff6b35" },
+    "storage": { "label": "Storage", "color": "#9d4edd" },
+    "security": { "label": "Security", "color": "#06d6a0" },
+    "utilities": { "label": "Utilities", "color": "#ffd166" },
+    "health": { "label": "Health & Wellness", "color": "#ef476f" },
+    "shopping": { "label": "Shopping", "color": "#118ab2" },
+    "web": { "label": "Web & Domains", "color": "#073b4c" }
+  }
+}
