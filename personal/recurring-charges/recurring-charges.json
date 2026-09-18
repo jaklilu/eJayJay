@@ -1,304 +1,887 @@
 {
-  "meta": {
-    "generated": "2026-09-15T12:00:00Z",
-    "source": "Gmail receipts (past ~12 months)",
-    "totalMonthly": 905.47,
+  "generated_at": "2026-09-18T01:01:13+00:00",
+  "timezone": "America/Los_Angeles",
+  "window": {
+    "after": "2025-09-16",
+    "through": "2026-09-17",
+    "query_note": "after:2025/09/16 (last 1 year)"
+  },
+  "source": "Gmail (read-only)",
+  "caveat": "Gmail-sourced recurring charges only (after:2025/09/16). Conservative/email-evidenced. No demo merchants. Unknown amounts left at 0 \u2014 never invented. Expense-tab figures are NOT copied unless email confirms.",
+  "summary": {
+    "recurring_count": 25,
+    "previous_recurring_count": 12,
+    "new_since_previous": 7,
+    "est_monthly_total": 2004.68,
+    "est_annual_total": 24056.16,
     "currency": "USD",
-    "note": "Estimates based on email receipts; charges without email notifications may be missing."
+    "by_category": {
+      "Telecom/Internet": 419.66,
+      "Health/Fitness": 403.35,
+      "Telecom/Mobile": 352.41,
+      "Other": 301.11,
+      "Education": 290.0,
+      "Software/SaaS": 83.98,
+      "Cloud/Hosting": 52.61,
+      "Donations/Giving": 50.0,
+      "Streaming/Media": 39.98,
+      "Shopping membership": 11.58,
+      "Utilities": 0.0
+    },
+    "quality": "conservative_email_evidenced",
+    "banned_demo_merchants_present": false,
+    "last_gap_pass": "2026-09-17 targeted Expense-gap search",
+    "additions_this_pass": [
+      "PythonAnywhere",
+      "Verizon Wireless",
+      "Southern California Edison (SCE)",
+      "Spectrum",
+      "Primo Brands / ReadyRefresh",
+      "Cursor"
+    ]
   },
   "charges": [
     {
-      "id": "spotify",
-      "name": "Spotify Premium",
-      "amount": 10.99,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-01"
+      "merchant": "Spectrum",
+      "category": "Telecom/Internet",
+      "amount": 419.66,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 419.66,
+      "est_annual": 5035.92,
+      "confidence": "medium",
+      "amount_status": "email_evidenced",
+      "dates_seen": [
+        "2026-01-19"
+      ],
+      "occurrence_count": 1,
+      "notes": "Forwarded Spectrum statement ready email (account ending 3720, 324 S Rexford Dr Apt 2). Statement Amount $419.66 due Feb 1 2026. Only one statement with $ found in Gmail (others marketing). Expense tab ~$260 \u2014 using email statement amount.",
+      "sample_subjects": [
+        "Fw: Your Spectrum Statement is Ready"
+      ],
+      "thread_ids": [
+        "19bd832817473b47"
+      ]
     },
     {
-      "id": "netflix",
-      "name": "Netflix Standard",
-      "amount": 15.49,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-05"
+      "id": "kaiser-permanente-premium",
+      "merchant": "Kaiser Permanente",
+      "category": "Health/Fitness",
+      "amount": 403.35,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 403.35,
+      "est_annual": 4840.2,
+      "dates_seen": [
+        "2026-05-22",
+        "2026-05-29",
+        "2026-06-24",
+        "2026-06-30",
+        "2026-07-24",
+        "2026-07-29",
+        "2026-08-24",
+        "2026-08-29",
+        "2026-09-16"
+      ],
+      "occurrence_count": 4,
+      "confidence": "high",
+      "notes": "Monthly health-plan premium AutoPay consistently $403.35 (confirmed Jul 28 & Aug 28 2026). Premium bill notices monthly.",
+      "sample_subjects": [
+        "Your AutoPayment has been Processed",
+        "Your premium bill is available",
+        "Upcoming Scheduled AutoPayment"
+      ],
+      "thread_ids": [
+        "1a04fcb7d5687e49",
+        "19fb02499e5420c3",
+        "1a0a889e9571d654",
+        "19fff41c99909c49"
+      ]
     },
     {
-      "id": "youtube-premium",
-      "name": "YouTube Premium",
-      "amount": 13.99,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-10"
+      "merchant": "Verizon Wireless",
+      "category": "Telecom/Mobile",
+      "amount": 352.41,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 352.41,
+      "est_annual": 4228.92,
+      "confidence": "high",
+      "amount_status": "email_evidenced_variable",
+      "dates_seen": [
+        "2026-06-13",
+        "2026-07-11",
+        "2026-08-10",
+        "2026-09-10"
+      ],
+      "occurrence_count": 4,
+      "notes": "Recurring 'Your Verizon bill is ready' from VZWMail. Jul bill total due $352.41; Sep current charges $355.57 (+ past-due). Amount varies. Expense tab ~$200 \u2014 email amounts are higher.",
+      "sample_subjects": [
+        "Your Verizon bill is ready.",
+        "Your Verizon bill is ready\u2013action needed."
+      ],
+      "thread_ids": [
+        "19f51e5e72384993",
+        "1a08d0670dc580ed"
+      ]
     },
     {
-      "id": "cursor-pro",
-      "name": "Cursor Pro",
-      "amount": 20.00,
-      "frequency": "monthly",
-      "category": "software",
-      "lastSeen": "2026-09-01"
+      "id": "aidvantage-federal-student-loans",
+      "merchant": "Aidvantage (Federal Student Loans)",
+      "category": "Education",
+      "amount": 290.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 290.0,
+      "est_annual": 3480.0,
+      "dates_seen": [
+        "2025-12-03",
+        "2026-01-05",
+        "2026-02-03",
+        "2026-03-03",
+        "2026-04-03",
+        "2026-05-04",
+        "2026-06-03",
+        "2026-07-03",
+        "2026-08-03",
+        "2026-09-03"
+      ],
+      "occurrence_count": 10,
+      "confidence": "high",
+      "notes": "AutoPay federal student loan payment. $290.00 posted monthly Jan\u2013Sep 2026; Dec 2025 was $192.36 before amount change.",
+      "sample_subjects": [
+        "Thank you for your payment!",
+        "Auto Pay Payment Reminder"
+      ],
+      "thread_ids": [
+        "1a06d0cf5cbabdde",
+        "19fcdb62dd62046b",
+        "19f2db29a90488de",
+        "19e934e8ba2f579e"
+      ]
     },
     {
-      "id": "github-copilot",
-      "name": "GitHub Copilot",
-      "amount": 10.00,
-      "frequency": "monthly",
-      "category": "software",
-      "lastSeen": "2026-09-03"
+      "merchant": "Primo Brands / ReadyRefresh",
+      "category": "Other",
+      "amount": 221.11,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 221.11,
+      "est_annual": 2653.32,
+      "confidence": "high",
+      "amount_status": "email_evidenced",
+      "dates_seen": [
+        "2026-02-01",
+        "2026-02-16",
+        "2026-03-14",
+        "2026-06-27",
+        "2026-09-07"
+      ],
+      "occurrence_count": 5,
+      "notes": "Forwarded monthly invoice from Primo Brands / ReadyRefresh for MIMI MENDAYE acct #8710352505. Jun 2026 Amount Due: 221.11. Expense tab ~$119.33 \u2014 email invoice is $221.11.",
+      "sample_subjects": [
+        "Fw: Your attached invoice is ready",
+        "Thank you for your order Mimi!"
+      ],
+      "thread_ids": [
+        "19f0a6978a6f3e0e"
+      ]
     },
     {
-      "id": "openai-api",
-      "name": "OpenAI API",
-      "amount": 45.00,
-      "frequency": "monthly",
-      "category": "software",
-      "lastSeen": "2026-09-01"
+      "id": "public-storage-olympic",
+      "merchant": "Public Storage",
+      "category": "Other",
+      "amount": 80.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 80.0,
+      "est_annual": 960.0,
+      "dates_seen": [
+        "2026-06-13",
+        "2026-07-04",
+        "2026-07-12",
+        "2026-08-05",
+        "2026-08-12",
+        "2026-09-03",
+        "2026-09-13",
+        "2026-09-14"
+      ],
+      "occurrence_count": 8,
+      "confidence": "high",
+      "notes": "Monthly storage (4x5, W Olympic Blvd LA). Loyalty promo reduced rent to $80 for 3 months (approved 2026-09-03); standard rate was $119. AutoPay $80 on 2026-08-02; catch-up payment $120 on 2026-09-14 included late fee. Using $80 current promo rate.",
+      "sample_subjects": [
+        "We've received your payment",
+        "Your AutoPay confirmation",
+        "Your monthly statement",
+        "Your Account Review Request - Approved"
+      ],
+      "thread_ids": [
+        "1a0a1d608be8dd3c",
+        "19fd33f8ea857717",
+        "1a09c09d55a5e761",
+        "1a068c12fd18578d"
+      ]
     },
     {
-      "id": "anthropic-api",
-      "name": "Anthropic API",
-      "amount": 35.00,
-      "frequency": "monthly",
-      "category": "software",
-      "lastSeen": "2026-09-01"
+      "id": "render-cloud",
+      "merchant": "Render",
+      "category": "Cloud/Hosting",
+      "amount": 30.79,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 30.79,
+      "est_annual": 369.48,
+      "dates_seen": [
+        "2026-06-05",
+        "2026-07-03",
+        "2026-08-04",
+        "2026-09-01"
+      ],
+      "occurrence_count": 4,
+      "confidence": "high",
+      "notes": "Usage-based cloud (servers/Postgres/disks). Receipts: $21.75 (Jul), $31.38 (Aug), $39.25 (Sep). Amount is 3-month average.",
+      "sample_subjects": [
+        "Your receipt from Render Services, Inc dba Render #2730-3071",
+        "Your receipt from Render Services, Inc dba Render #2833-4198",
+        "Your receipt from Render Services, Inc dba Render #2109-8522"
+      ],
+      "thread_ids": [
+        "1a05d9ec7aef2b64",
+        "19fcbaa49567c704",
+        "19f29db6a26decd6",
+        "19e9592c11713145"
+      ]
     },
     {
-      "id": "aws",
-      "name": "AWS (avg)",
-      "amount": 89.00,
-      "frequency": "monthly",
-      "category": "cloud",
-      "lastSeen": "2026-09-02"
+      "id": "netflix-premium",
+      "merchant": "Netflix",
+      "category": "Streaming/Media",
+      "amount": 26.99,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 26.99,
+      "est_annual": 323.88,
+      "dates_seen": [
+        "2026-04-05",
+        "2026-08-18"
+      ],
+      "occurrence_count": 2,
+      "confidence": "medium",
+      "notes": "Premium plan price update email set monthly to $26.99 (pre-tax) effective May 5, 2026. Active membership confirmed via payment-method update Aug 18. No per-month charge receipt emails found.",
+      "sample_subjects": [
+        "Price update coming soon",
+        "Your payment information has been updated"
+      ],
+      "thread_ids": [
+        "19d5ce2e6ee13a73",
+        "1a0173083af5e2f6"
+      ]
     },
     {
-      "id": "vercel",
-      "name": "Vercel Pro",
-      "amount": 20.00,
-      "frequency": "monthly",
-      "category": "cloud",
-      "lastSeen": "2026-09-01"
+      "id": "bibleproject-monthly-gift",
+      "merchant": "BibleProject",
+      "category": "Donations/Giving",
+      "amount": 25.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 25.0,
+      "est_annual": 300.0,
+      "dates_seen": [
+        "2025-09-30",
+        "2025-10-31",
+        "2025-11-30",
+        "2025-12-31",
+        "2026-01-31",
+        "2026-03-01",
+        "2026-03-31",
+        "2026-04-30",
+        "2026-05-31",
+        "2026-06-30",
+        "2026-07-31",
+        "2026-08-31"
+      ],
+      "occurrence_count": 12,
+      "confidence": "high",
+      "notes": "Monthly Gift Summary emails from gifts@bibleproject.com show Amount $25 and Next Gift Date ~monthly. Tax statement for 2025 giving also received Jan 2026.",
+      "sample_subjects": [
+        "Thank you for your gift!",
+        "Thank you!",
+        "Your Tax Statement for 2025 Giving"
+      ],
+      "thread_ids": [
+        "1a059d62a0d7ae46",
+        "19fba30d4997cf75",
+        "19f1a8b9b1b6c99f",
+        "19e800d3a3b2ba27",
+        "19de068e01737622",
+        "19d45e88d8d2f963",
+        "19ca6dabf61ec37e",
+        "19c1616f6cca484c",
+        "19b766e02cd61e54",
+        "19ad6c9b33484905",
+        "19a3c4834ef8a44d",
+        "1999ca3aa646dc73"
+      ]
     },
     {
-      "id": "netlify",
-      "name": "Netlify Pro",
-      "amount": 19.00,
-      "frequency": "monthly",
-      "category": "cloud",
-      "lastSeen": "2026-09-01"
+      "id": "youversion-monthly-gift",
+      "merchant": "YouVersion",
+      "category": "Donations/Giving",
+      "amount": 25.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 25.0,
+      "est_annual": 300.0,
+      "dates_seen": [
+        "2025-10-11",
+        "2025-11-11",
+        "2025-12-11",
+        "2026-01-11",
+        "2026-02-11",
+        "2026-03-11",
+        "2026-04-11",
+        "2026-05-11",
+        "2026-06-11",
+        "2026-07-11",
+        "2026-08-11",
+        "2026-09-11"
+      ],
+      "occurrence_count": 12,
+      "confidence": "high",
+      "notes": "Monthly gift to YouVersion Bible App. Receipts from giving@youversion.com on the 11th each month; body shows Amount $25.00, Frequency Monthly (confirmed Sep 11 2026).",
+      "sample_subjects": [
+        "\ud83d\udc8c Jay, here's your gift receipt"
+      ],
+      "thread_ids": [
+        "1a08fe97c94fa60a",
+        "19ff045d892d48d3",
+        "19f509f19b6140e6",
+        "19eb620560f9f444",
+        "19e167b3bb65e996",
+        "19d7bfc76294e93c",
+        "19cdc57c01ac3df5",
+        "19c4c252d35c383e",
+        "19bac800fbdf9263",
+        "19b0cdb0c5eae511",
+        "19a725c2df8e1456",
+        "199d2b715dc8049c"
+      ]
     },
     {
-      "id": "google-workspace",
-      "name": "Google Workspace",
-      "amount": 12.00,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-05"
+      "id": "n8n-cloud-starter",
+      "merchant": "n8n",
+      "category": "Software/SaaS",
+      "amount": 24.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 24.0,
+      "est_annual": 288.0,
+      "dates_seen": [
+        "2026-08-22"
+      ],
+      "occurrence_count": 1,
+      "confidence": "high",
+      "notes": "Paddle receipt for Cloud Starter $24.00. Explicit renew language: subscription renews at $24 unless canceled by 2026-09-21.",
+      "sample_subjects": [
+        "Your n8n receipt"
+      ],
+      "thread_ids": [
+        "1a02708f7053568e"
+      ]
     },
     {
-      "id": "notion",
-      "name": "Notion Plus",
-      "amount": 10.00,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-08"
+      "id": "anthropic-claude-pro",
+      "merchant": "Anthropic (Claude Pro)",
+      "category": "Software/SaaS",
+      "amount": 20.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 20.0,
+      "est_annual": 240.0,
+      "dates_seen": [
+        "2026-06-04",
+        "2026-07-03",
+        "2026-08-03",
+        "2026-09-03"
+      ],
+      "occurrence_count": 4,
+      "confidence": "high",
+      "notes": "Claude Pro $20.00 monthly Stripe receipts Jun\u2013Sep 2026 (invoice periods ~3rd of each month). Amount $20/mo Jay-confirmed (2026-09-17).",
+      "sample_subjects": [
+        "Your receipt from Anthropic, PBC #2900-0434-0677",
+        "Your receipt from Anthropic, PBC #2844-3763-6476",
+        "Your receipt from Anthropic, PBC #2174-5272-3576"
+      ],
+      "thread_ids": [
+        "1a06a5eaf6d5786c",
+        "19fcab944a7a7530",
+        "19f2b14259bf5b12",
+        "19e905c1f2a22184"
+      ]
     },
     {
-      "id": "linear",
-      "name": "Linear",
-      "amount": 8.00,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-01"
+      "id": "openai-chatgpt-plus",
+      "merchant": "OpenAI ChatGPT Plus",
+      "category": "Software/SaaS",
+      "amount": 20.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 20.0,
+      "est_annual": 240.0,
+      "dates_seen": [
+        "2026-02-20",
+        "2026-04-26",
+        "2026-08-27"
+      ],
+      "occurrence_count": 3,
+      "confidence": "high",
+      "notes": "Multiple OpenAI emails reference 'Your Plus plan' (e.g. ChatGPT Images 2.0, Codex limits, Health in ChatGPT). No dollar receipt in window; amount estimated at standard ChatGPT Plus $20/mo. Separate one-time OpenAI API credit top-up $10 (Mar 2026) excluded as prepaid usage, not Plus. Amount $20/mo Jay-confirmed (2026-09-17).",
+      "sample_subjects": [
+        "Meet ChatGPT Images 2.0",
+        "Codex now has 2x usage limits",
+        "You now have access to Health in ChatGPT"
+      ],
+      "thread_ids": [
+        "19dcb19e8bcb4dfd",
+        "19c7861ff0054d08",
+        "1a044f2843cacf32"
+      ]
     },
     {
-      "id": "figma",
-      "name": "Figma Professional",
-      "amount": 15.00,
-      "frequency": "monthly",
-      "category": "design",
-      "lastSeen": "2026-09-01"
+      "merchant": "PythonAnywhere",
+      "category": "Cloud/Hosting",
+      "amount": 15.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 15.0,
+      "est_annual": 180.0,
+      "confidence": "high",
+      "amount_status": "email_evidenced",
+      "dates_seen": [
+        "2025-09-28",
+        "2025-10-28",
+        "2025-11-28",
+        "2025-12-28",
+        "2026-01-28",
+        "2026-02-28",
+        "2026-03-27",
+        "2026-04-27",
+        "2026-05-27",
+        "2026-06-27",
+        "2026-07-27"
+      ],
+      "occurrence_count": 11,
+      "notes": "Monthly billing reminders from liveusercare@pythonanywhere.com; invoice total US$15.00 for account jaklilu. (Expense tab shows ~$20 \u2014 email is $15.)",
+      "sample_subjects": [
+        "[PythonAnywhere] Billing Reminder"
+      ],
+      "thread_ids": [
+        "19fa49f92dcb6d38"
+      ]
     },
     {
-      "id": "adobe-cc",
-      "name": "Adobe Creative Cloud",
-      "amount": 54.99,
-      "frequency": "monthly",
-      "category": "design",
-      "lastSeen": "2026-09-07"
-    },
-    {
-      "id": "icloud",
-      "name": "iCloud+ 200GB",
-      "amount": 2.99,
-      "frequency": "monthly",
-      "category": "storage",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "google-one",
-      "name": "Google One 100GB",
-      "amount": 1.99,
-      "frequency": "monthly",
-      "category": "storage",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "1password",
-      "name": "1Password",
-      "amount": 2.99,
-      "frequency": "monthly",
-      "category": "security",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "nordvpn",
-      "name": "NordVPN",
-      "amount": 4.99,
-      "frequency": "monthly",
-      "category": "security",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "att-fiber",
-      "name": "AT&T Fiber",
-      "amount": 80.00,
-      "frequency": "monthly",
-      "category": "utilities",
-      "lastSeen": "2026-09-10"
-    },
-    {
-      "id": "tmobile",
-      "name": "T-Mobile Magenta",
-      "amount": 85.00,
-      "frequency": "monthly",
-      "category": "utilities",
-      "lastSeen": "2026-09-05"
-    },
-    {
-      "id": "gym",
-      "name": "LA Fitness",
-      "amount": 34.99,
-      "frequency": "monthly",
-      "category": "health",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "headspace",
-      "name": "Headspace",
+      "id": "youtube-donkey-tube-membership",
+      "merchant": "YouTube \u2014 Donkey Tube Membership",
+      "category": "Streaming/Media",
       "amount": 12.99,
-      "frequency": "monthly",
-      "category": "health",
-      "lastSeen": "2026-09-01"
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 12.99,
+      "est_annual": 155.88,
+      "dates_seen": [
+        "2026-07-18",
+        "2026-08-17",
+        "2026-08-22"
+      ],
+      "occurrence_count": 3,
+      "confidence": "high",
+      "notes": "Apple 'Subscription Confirmed' Jul 18 2026: YouTube Donkey Tube Membership $12.99/month, auto-renews starting Aug 18 until canceled. Content Provider Google LLC. Later Apple billing-problem + YouTube membership restart emails in Aug.",
+      "sample_subjects": [
+        "Your Subscription is Confirmed",
+        "There is a billing problem with a recent item",
+        "Your membership started back up"
+      ],
+      "thread_ids": [
+        "19f744a6f19f66bb",
+        "1a00a390a08df66b",
+        "1a0283dd6313466d"
+      ]
     },
     {
-      "id": "audible",
-      "name": "Audible Plus",
-      "amount": 7.95,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-01"
+      "id": "amazon-prime-annual",
+      "merchant": "Amazon Prime",
+      "category": "Shopping membership",
+      "amount": 139.0,
+      "currency": "USD",
+      "cadence": "annual",
+      "est_monthly": 11.58,
+      "est_annual": 139.0,
+      "dates_seen": [
+        "2026-01-30"
+      ],
+      "occurrence_count": 1,
+      "confidence": "medium",
+      "notes": "Renewal notice: annual Prime renews Mar 11, 2026 for $139.00 (+tax). Ongoing membership confirmed by later Prime reminders.",
+      "sample_subjects": [
+        "Behailu Aklilu, Your Prime membership renews soon.",
+        "Reminder: podcasts are included with your Prime membership."
+      ],
+      "thread_ids": [
+        "19c11284f7ef955e",
+        "1a09b9fbae8afebf"
+      ]
     },
     {
-      "id": "amazon-prime",
-      "name": "Amazon Prime",
-      "amount": 14.99,
-      "frequency": "monthly",
-      "category": "shopping",
-      "lastSeen": "2026-09-01"
+      "id": "capcut-pro-monthly",
+      "merchant": "CapCut Pro",
+      "category": "Software/SaaS",
+      "amount": 9.99,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 9.99,
+      "est_annual": 119.88,
+      "dates_seen": [
+        "2026-08-18"
+      ],
+      "occurrence_count": 1,
+      "confidence": "low",
+      "notes": "Email confirms payment for 'Pro monthly' but dollar amount not in plain text (hosted invoice link). Amount estimated at typical CapCut Pro US monthly list price; verify in CapCut billing history.",
+      "sample_subjects": [
+        "You can now request your invoice from CapCut",
+        "You received a new receipt from CapCut"
+      ],
+      "thread_ids": [
+        "1a012ab3a46ec21f",
+        "1a012ae0adf86088"
+      ]
     },
     {
-      "id": "costco",
-      "name": "Costco Executive",
-      "amount": 10.00,
-      "frequency": "monthly",
-      "category": "shopping",
-      "lastSeen": "2026-09-01"
+      "id": "godaddy-microsoft-365-email-essentials",
+      "merchant": "GoDaddy Microsoft 365 Email Essentials",
+      "category": "Software/SaaS",
+      "amount": 95.88,
+      "currency": "USD",
+      "cadence": "annual",
+      "est_monthly": 7.99,
+      "est_annual": 95.88,
+      "dates_seen": [
+        "2025-11-10"
+      ],
+      "occurrence_count": 1,
+      "confidence": "high",
+      "notes": "Order 3943918630: Microsoft 365 Email Essentials promo year $23.88; auto-renews on 11/10/2026 for $95.88. Using renewal (ongoing) price for estimates.",
+      "sample_subjects": [
+        "Jay Aklilu, thank you for your order."
+      ],
+      "thread_ids": [
+        "19a6fced43929096"
+      ]
     },
     {
-      "id": "domain-registrar",
-      "name": "Domain renewals (avg)",
-      "amount": 15.00,
-      "frequency": "monthly",
-      "category": "web",
-      "lastSeen": "2026-08-15"
+      "id": "godaddy-domains",
+      "merchant": "GoDaddy Domains (2)",
+      "category": "Cloud/Hosting",
+      "amount": 22.99,
+      "currency": "USD",
+      "cadence": "annual",
+      "est_monthly": 3.83,
+      "est_annual": 45.98,
+      "dates_seen": [
+        "2026-07-23",
+        "2026-08-23"
+      ],
+      "occurrence_count": 2,
+      "confidence": "high",
+      "notes": "Two .COM domains with auto-renew: ethiofamilytree.com (renew 2027-07-23 $22.99) and ethioroyalfamily.com (renew 2027-08-23 $22.99). First-year promo paid $13.19 each.",
+      "sample_subjects": [
+        "Jay Aklilu, thank you for your order."
+      ],
+      "thread_ids": [
+        "19f921b1bddf60e2",
+        "1a02fbfbddea318b"
+      ]
     },
     {
-      "id": "pythonanywhere",
-      "name": "PythonAnywhere",
-      "amount": 5.00,
-      "frequency": "monthly",
-      "category": "cloud",
-      "lastSeen": "2026-09-01"
+      "id": "apple-icloud-plus-200gb",
+      "merchant": "Apple iCloud+ (200 GB)",
+      "category": "Cloud/Hosting",
+      "amount": 2.99,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 2.99,
+      "est_annual": 35.88,
+      "dates_seen": [
+        "2026-06-01",
+        "2026-07-01",
+        "2026-08-01",
+        "2026-09-01"
+      ],
+      "occurrence_count": 4,
+      "confidence": "high",
+      "notes": "iCloud+ 200 GB Monthly $2.99. Receipts on the 1st each month Jun\u2013Sep 2026.",
+      "sample_subjects": [
+        "Your receipt from Apple."
+      ],
+      "thread_ids": [
+        "1a05dda272bceb46",
+        "19fbdc96c04eb34c",
+        "19f1e8932dd20152",
+        "19e83464f2283a22"
+      ]
     },
     {
-      "id": "hbo-max",
-      "name": "Max (HBO)",
-      "amount": 15.99,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-03"
+      "id": "retell-ai",
+      "merchant": "Retell AI",
+      "category": "Software/SaaS",
+      "amount": 2.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 2.0,
+      "est_annual": 24.0,
+      "dates_seen": [
+        "2026-06-04",
+        "2026-07-04",
+        "2026-08-03",
+        "2026-09-03"
+      ],
+      "occurrence_count": 4,
+      "confidence": "high",
+      "notes": "Monthly Stripe invoice primarily US Phone Number $2.00; Sep also had small usage (~$0.60 credited). Base recurring is $2/mo phone number.",
+      "sample_subjects": [
+        "Your receipt from Retell AI #2604-4512",
+        "Your receipt from Retell AI #2204-5800"
+      ],
+      "thread_ids": [
+        "1a06aa1f609a013f",
+        "19fcafaff668b833",
+        "19f2b568b53618ca",
+        "19e90d7a680cbfbe"
+      ]
     },
     {
-      "id": "disney-plus",
-      "name": "Disney+ Bundle",
-      "amount": 19.99,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-01"
+      "id": "bestbuy-annual-plan",
+      "merchant": "Best Buy Plan (annual)",
+      "category": "Software/SaaS",
+      "amount": 0.0,
+      "currency": "USD",
+      "cadence": "annual",
+      "est_monthly": 0.0,
+      "est_annual": 0.0,
+      "dates_seen": [
+        "2026-07-26",
+        "2026-08-27"
+      ],
+      "occurrence_count": 2,
+      "confidence": "low",
+      "notes": "Best Buy emails: plan auto-renews 9/26/2026 annually until cancel; also asked to update payment info. Plain-text body is link-only (no plan name or dollar amount). Likely Geek Squad / Microsoft 365 via Best Buy \u2014 verify in Best Buy account. Separate from GoDaddy Microsoft 365 Email Essentials.",
+      "sample_subjects": [
+        "Behailu, your plan will renew soon.",
+        "Behailu: Please update your payment information."
+      ],
+      "thread_ids": [
+        "1a044127be12464a",
+        "19fa04cb9b9d82d4"
+      ]
     },
     {
-      "id": "apple-music",
-      "name": "Apple Music Family",
-      "amount": 16.99,
-      "frequency": "monthly",
-      "category": "entertainment",
-      "lastSeen": "2026-09-05"
+      "id": "tony-evans-urban-alternative",
+      "merchant": "Dr. Tony Evans / The Urban Alternative",
+      "category": "Donations/Giving",
+      "amount": 0.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 0.0,
+      "est_annual": 0.0,
+      "dates_seen": [
+        "2025-01-20",
+        "2025-02-20",
+        "2025-09-20"
+      ],
+      "occurrence_count": 3,
+      "confidence": "low",
+      "notes": "Jay's 'Dr Evans' maps to Dr. Tony Evans ministry (The Urban Alternative), not a medical clinic. Multiple emails: 'Your recurring transaction was declined' (VISA cards). Confirms a recurring gift enrollment exists, but dollar amount never appears in email and charges may not be succeeding. Amount left $0 pending tonyevans.org / card statement check. No medical/dental Dr. Evans found in window.",
+      "sample_subjects": [
+        "The Urban Alternative: Your recurring transaction was declined"
+      ],
+      "thread_ids": [
+        "1996628704a5b52d",
+        "19522a1b28dee558",
+        "19482fd04020af24"
+      ]
     },
     {
-      "id": "slack",
-      "name": "Slack Pro",
-      "amount": 8.75,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-01"
+      "merchant": "Southern California Edison (SCE)",
+      "category": "Utilities",
+      "amount": 0.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 0.0,
+      "est_annual": 0.0,
+      "confidence": "high",
+      "amount_status": "unknown_variable",
+      "dates_seen": [
+        "2026-04-10",
+        "2026-05-09",
+        "2026-06-10"
+      ],
+      "occurrence_count": 3,
+      "notes": "Monthly 'Bill is Ready' emails for MIMI account. Observed Amount Due in email: $266.38 (Apr 2026), $198.48 (Jun 2026). No fixed amount \u2014 left unknown (not inventing Expense ~$175).",
+      "sample_subjects": [
+        "Bill is Ready"
+      ],
+      "thread_ids": [
+        "19d79744d00f8396",
+        "19eb39e5e6993233"
+      ],
+      "observed_amounts": [
+        266.38,
+        198.48
+      ]
     },
     {
-      "id": "canva",
-      "name": "Canva Pro",
-      "amount": 12.99,
-      "frequency": "monthly",
-      "category": "design",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "grammarly",
-      "name": "Grammarly Premium",
-      "amount": 12.00,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-01"
-    },
-    {
-      "id": "microsoft-365",
-      "name": "Microsoft 365 Family",
-      "amount": 12.50,
-      "frequency": "monthly",
-      "category": "productivity",
-      "lastSeen": "2026-09-01"
+      "merchant": "Cursor",
+      "category": "Software/SaaS",
+      "amount": 0.0,
+      "currency": "USD",
+      "cadence": "monthly",
+      "est_monthly": 0.0,
+      "est_annual": 0.0,
+      "confidence": "medium",
+      "amount_status": "unknown",
+      "dates_seen": [
+        "2025-10-15",
+        "2026-08-19"
+      ],
+      "occurrence_count": 2,
+      "notes": "Cursor subscription confirmed (billing-cycle admin email from hi@cursor.com; pricing update from team@mail.cursor.com). No receipt with dollar amount in Gmail \u2014 amount left unknown (Expense tab shows $20; not copied into email list).",
+      "sample_subjects": [
+        "We're simplifying Cursor billing cycles",
+        "Increased included usage and update to Auto pricing"
+      ],
+      "thread_ids": [
+        "199e755e47f877e4",
+        "1a01ac41d604baf4"
+      ]
     }
   ],
-  "categories": {
-    "entertainment": { "label": "Entertainment", "color": "#ff073a" },
-    "software": { "label": "Software & Dev Tools", "color": "#39ff14" },
-    "cloud": { "label": "Cloud & Hosting", "color": "#00bfff" },
-    "productivity": { "label": "Productivity", "color": "#ffe600" },
-    "design": { "label": "Design", "color": "#ff6b35" },
-    "storage": { "label": "Storage", "color": "#9d4edd" },
-    "security": { "label": "Security", "color": "#06d6a0" },
-    "utilities": { "label": "Utilities", "color": "#ffd166" },
-    "health": { "label": "Health & Wellness", "color": "#ef476f" },
-    "shopping": { "label": "Shopping", "color": "#118ab2" },
-    "web": { "label": "Web & Domains", "color": "#073b4c" }
+  "excluded_one_time_sample": [
+    {
+      "merchant": "Thrive Market",
+      "reason": "Annual membership $59.95 charged 2026-08-22 then canceled/refunded 2026-08-26 \u2014 not an ongoing recurring.",
+      "dates": [
+        "2026-08-22",
+        "2026-08-26"
+      ],
+      "thread_ids": [
+        "1a02d269c1ce2523",
+        "1a03fb68fcd316af"
+      ]
+    },
+    {
+      "merchant": "Ethio Family Tree",
+      "reason": "Multiple same-day 'New subscriber / Thank you for your payment' on 2026-08-22 look like one-time family-page purchases, not a repeating cadence.",
+      "dates": [
+        "2026-08-22"
+      ],
+      "thread_ids": [
+        "1a02b66363e233fb",
+        "1a02bb7d5c9ec061"
+      ]
+    },
+    {
+      "merchant": "Waymo",
+      "reason": "Ride receipts (sporadic) \u2014 one-time trips, not subscription.",
+      "dates": [
+        "2026-07-13",
+        "2026-09-07"
+      ]
+    },
+    {
+      "merchant": "Ferguson Home (PayPal)",
+      "reason": "One-time $16.45 retail purchase.",
+      "dates": [
+        "2026-09-08"
+      ]
+    },
+    {
+      "merchant": "Gift Nest / Link",
+      "reason": "Single receipt; no renewal language or repeat pattern.",
+      "dates": [
+        "2026-08-30"
+      ]
+    },
+    {
+      "merchant": "Laundry Breeze",
+      "reason": "Single laundry receipt \u2014 not recurring subscription.",
+      "dates": [
+        "2026-08-28"
+      ]
+    },
+    {
+      "merchant": "Equinox / LA Fitness marketing",
+      "reason": "Join/offer marketing only; no active membership charge emails.",
+      "dates": [
+        "2026-09-07",
+        "2026-09-16"
+      ]
+    },
+    {
+      "merchant": "OpenAI API credit top-up",
+      "reason": "One-time $10.00 API credit funding (Mar 27 2026) \u2014 prepaid usage balance, not a fixed recurring subscription.",
+      "dates": [
+        "2026-03-27"
+      ],
+      "thread_ids": [
+        "19d317bc1f3771e8"
+      ]
+    },
+    {
+      "merchant": "Amazon Music",
+      "reason": "Subscription ended / payment failed in window \u2014 not active recurring.",
+      "dates": []
+    },
+    {
+      "merchant": "Wikimedia",
+      "reason": "Renewal solicitations only; no active recurring gift confirmed.",
+      "dates": []
+    },
+    {
+      "merchant": "Experian membership marketing",
+      "reason": "Membership ID / promo emails; no clear charge amount or renewal receipt.",
+      "dates": []
+    }
+  ],
+  "coverage_gaps": [
+    "YouVersion & BibleProject: fully evidenced at $25/mo each \u2014 previously missed.",
+    "Dr. Tony Evans / Urban Alternative: recurring gift confirmed via decline notices, but dollar amount never in email; may not be successfully charging. Check tonyevans.org or bank statements.",
+    "Best Buy annual plan: renews 9/26/2026 but amount/plan name not in plain text.",
+    "ChatGPT Plus: Plus-plan feature emails confirm membership; no billing receipt \u2014 amount estimated at $20.",
+    "Costco: heavy membership marketing implies active membership, but no renewal receipt/amount in window (Gold Star ~$65 or Executive ~$130 typical).",
+    "Google One: Year in Review email suggests account activity; no paid-plan receipt found (may be free tier).",
+    "Netflix / CapCut / Amazon Prime: same gaps as before (price notice / estimated / renewal notice only).",
+    "Public Storage promo $80 may revert toward ~$119 after promo window.",
+    "Render usage-based \u2014 monthly varies.",
+    "Square invoices Jay SENT as merchant remain excluded.",
+    "Bank/card autopays with no email will not appear.",
+    "Further gaps deferred: waiting on Personal CEO Expense-tab review vs email before any rescan.",
+    "Unknown amounts kept at $0 (Best Buy Plan; Dr. Tony Evans / Urban Alternative) \u2014 not invented.",
+    "TARGETED GAP PASS (2026-09-17): no email $ found for Prepaid Legal / LegalShield, Tesla Insurance, Rent/Mimi, Netlify invoices, Google One payment receipt, YouTube Premium receipt (Donkey Tube membership remains separate).",
+    "Credit-card payment lines (Freedom Flex, BofA Mastercard, Chase Slate, BofA Business) treated as debt service \u2014 not added as subscriptions.",
+    "Spectrum / Verizon / SCE / Primo amounts from email differ from Expense-tab averages \u2014 email amounts used; utilities marked variable where appropriate."
+  ],
+  "meta": {
+    "threads_scanned_approx": 900,
+    "deep_reads_approx": 55,
+    "search_queries": 20,
+    "deepen_pass": true,
+    "newly_added_merchants": [
+      "YouVersion",
+      "BibleProject",
+      "YouTube \u2014 Donkey Tube Membership",
+      "GoDaddy Microsoft 365 Email Essentials",
+      "OpenAI ChatGPT Plus",
+      "Dr. Tony Evans / The Urban Alternative",
+      "Best Buy Plan (annual)"
+    ]
   }
 }

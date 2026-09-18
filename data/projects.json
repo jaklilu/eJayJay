@@ -134,7 +134,7 @@
   {
     "id": "recurring-charges",
     "name": "Recurring charges",
-    "tagline": "Gmail-sourced estimate of personal recurring spend (~$905/mo).",
+    "tagline": "~$2,004.68/mo / 25 items",
     "about": "Dashboard showing estimated recurring charges extracted from approximately one year of Gmail receipts. May miss charges that don't generate email notifications.",
     "url": "/personal/recurring-charges/",
     "status": "live",
