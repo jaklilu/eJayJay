@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-09-16",
+    "generated": "2026-09-21",
     "source": "Bank of America checking statement",
     "period": "Sep 2025 \u2013 Aug 2026",
-    "totalMonthly": 5560.76,
-    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages."
+    "totalMonthly": 5588.16,
+    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut Pro, GoDaddy Domains, Retell AI). Amounts from email-evidenced recurrings; bank averages unchanged for existing lines."
   },
   "charges": [
     {
@@ -186,6 +186,30 @@
       "amount": 3.0,
       "frequency": "monthly",
       "category": "savings"
+    },
+    {
+      "name": "Amazon Prime",
+      "amount": 11.58,
+      "frequency": "monthly",
+      "category": "shopping"
+    },
+    {
+      "name": "CapCut Pro",
+      "amount": 9.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "GoDaddy Domains (2)",
+      "amount": 3.83,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Retell AI",
+      "amount": 2,
+      "frequency": "monthly",
+      "category": "tech_subscription"
     }
   ],
   "categories": {
@@ -224,6 +248,10 @@
     "auto": {
       "label": "Auto",
       "color": "#118ab2"
+    },
+    "shopping": {
+      "label": "Shopping membership",
+      "color": "#fb8500"
     }
   }
 }
