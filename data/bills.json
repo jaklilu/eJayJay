@@ -3,8 +3,8 @@
     "generated": "2026-09-21",
     "source": "Bank of America checking statement",
     "period": "Sep 2025 \u2013 Aug 2026",
-    "totalMonthly": 5588.16,
-    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut Pro, GoDaddy Domains, Retell AI). Amounts from email-evidenced recurrings; bank averages unchanged for existing lines."
+    "totalMonthly": 5949.14,
+    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 9 Gmail-recurring gaps (Aidvantage, BibleProject, YouVersion, Donkey Tube, Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Amounts from email-evidenced recurrings; bank averages unchanged for existing lines. Best Buy Plan and Dr. Tony Evans are amount-unknown placeholders (Jay to fill)."
   },
   "charges": [
     {
@@ -210,6 +210,48 @@
       "amount": 2,
       "frequency": "monthly",
       "category": "tech_subscription"
+    },
+    {
+      "name": "Aidvantage (Federal Student Loans)",
+      "amount": 290,
+      "frequency": "monthly",
+      "category": "education"
+    },
+    {
+      "name": "BibleProject",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "giving"
+    },
+    {
+      "name": "YouVersion",
+      "amount": 25,
+      "frequency": "monthly",
+      "category": "giving"
+    },
+    {
+      "name": "YouTube — Donkey Tube Membership",
+      "amount": 12.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "GoDaddy Microsoft 365 Email Essentials",
+      "amount": 7.99,
+      "frequency": "monthly",
+      "category": "tech_subscription"
+    },
+    {
+      "name": "Best Buy Plan (annual)",
+      "amount": 0,
+      "frequency": "annual",
+      "category": "services"
+    },
+    {
+      "name": "Dr. Tony Evans / The Urban Alternative",
+      "amount": 0,
+      "frequency": "monthly",
+      "category": "giving"
     }
   ],
   "categories": {
@@ -252,6 +294,14 @@
     "shopping": {
       "label": "Shopping membership",
       "color": "#fb8500"
+    },
+    "education": {
+      "label": "Education / loans",
+      "color": "#4cc9f0"
+    },
+    "giving": {
+      "label": "Giving",
+      "color": "#f72585"
     }
   }
 }
