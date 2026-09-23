@@ -200,6 +200,19 @@
       detailActions.appendChild(visit);
     }
 
+    if (project.links && project.links.length) {
+      project.links.forEach((link) => {
+        const linkEl = document.createElement("a");
+        linkEl.className = "btn btn--ghost";
+        linkEl.href = link.url;
+        linkEl.target = "_blank";
+        linkEl.rel = "noopener noreferrer";
+        linkEl.textContent = link.label;
+        linkEl.setAttribute("data-gated-link", link.url);
+        detailActions.appendChild(linkEl);
+      });
+    }
+
     detail.hidden = false;
     document.body.classList.add("is-detail-open");
     const closeBtn = detail.querySelector(".detail__close");

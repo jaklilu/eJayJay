@@ -8,7 +8,13 @@
     "status": "live",
     "visibility": "public",
     "tags": ["web", "faith"],
-    "year": 2025
+    "year": 2025,
+    "links": [
+      {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61594815174745"
+      }
+    ]
   },
   {
     "id": "family-tree",
