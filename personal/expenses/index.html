@@ -73,9 +73,9 @@
 
     .summary-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
 
     .summary-card {
@@ -96,13 +96,56 @@
 
     .summary-card .value {
       font-family: 'Syne', sans-serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
     }
 
     .summary-card .value.total { color: var(--accent-green); }
     .summary-card .value.count { color: var(--accent-yellow); }
     .summary-card .value.avg { color: var(--text-primary); }
+    .summary-card .value.income { color: #39ff14; }
+    .summary-card .value.net-negative { color: var(--accent-red); }
+    .summary-card .value.net-positive { color: var(--accent-green); }
+
+    .page-note {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .tab {
+      padding: 0.75rem 1.25rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px 8px 0 0;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+    }
+
+    .tab:hover { background: var(--bg-card); }
+    .tab.active {
+      background: var(--bg-card);
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
 
     .section-title {
       font-family: 'Syne', sans-serif;
@@ -188,8 +231,33 @@
     }
 
     .charge-item:hover { background: var(--bg-card-hover); }
+    .charge-item.info-only { opacity: 0.6; }
 
-    .charge-name { font-weight: 500; }
+    .charge-name {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .badge.info-only {
+      background: var(--text-muted);
+      color: var(--bg-dark);
+    }
+
+    .badge.one-off {
+      background: #ff6b35;
+      color: #fff;
+    }
 
     .charge-category {
       font-size: 0.8rem;
@@ -205,6 +273,12 @@
       border-radius: 50%;
     }
 
+    .charge-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
     .charge-amount {
       font-family: 'Syne', sans-serif;
       font-weight: 600;
@@ -212,6 +286,134 @@
       color: var(--accent-red);
       text-align: right;
       min-width: 80px;
+    }
+
+    .charge-item.info-only .charge-amount { color: var(--text-muted); }
+
+    .misc-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .misc-stat {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .misc-stat .label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .misc-stat .value {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .misc-stat .value.used { color: var(--accent-green); }
+    .misc-stat .note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .month-breakdown {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .month-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .month-item.not-averaged { opacity: 0.6; }
+
+    .month-name {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .month-total {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .filter-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--text-muted); }
+    .filter-btn.active {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border-color: var(--gold);
+    }
+
+    .misc-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .misc-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .misc-item.one-off { border-left: 3px solid #ff6b35; }
+
+    .misc-date {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      min-width: 80px;
+    }
+
+    .misc-merchant {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .misc-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
     }
 
     .disclaimer {
@@ -236,7 +438,8 @@
     @media (max-width: 600px) {
       .container { padding: 1rem; }
       h1 { font-size: 1.8rem; }
-      .summary-cards { grid-template-columns: 1fr; }
+      .summary-cards { grid-template-columns: 1fr 1fr; }
+      .tabs { overflow-x: auto; }
     }
   </style>
 </head>
@@ -254,18 +457,38 @@
     </header>
 
     <div class="summary-cards" id="summary"></div>
+    <div class="page-note">
+      Card purchases, interest and fees are counted where they're charged. Card payments are shown for reference only and aren't in the total.
+    </div>
 
-    <h2 class="section-title">By Category</h2>
-    <div class="category-breakdown" id="categories"></div>
+    <div class="tabs">
+      <button class="tab active" data-tab="bills">Bills</button>
+      <button class="tab" data-tab="misc">Miscellaneous</button>
+    </div>
 
-    <h2 class="section-title">All Bills</h2>
-    <div class="charges-list" id="charges"></div>
+    <div id="bills-tab" class="tab-content active">
+      <h2 class="section-title">By Category</h2>
+      <div class="category-breakdown" id="categories"></div>
+
+      <h2 class="section-title">All Bills</h2>
+      <div class="charges-list" id="charges"></div>
+    </div>
+
+    <div id="misc-tab" class="tab-content">
+      <div class="misc-summary" id="misc-summary"></div>
+
+      <h2 class="section-title">By Month</h2>
+      <div class="month-breakdown" id="month-breakdown"></div>
+
+      <h2 class="section-title">All Items</h2>
+      <div class="filter-row" id="misc-filters"></div>
+      <div class="misc-items-list" id="misc-items"></div>
+    </div>
 
     <div class="disclaimer">
       <strong>Note:</strong> A bill is included when it posted in at least 10 of the last 12 months,
       usually on the same day (±2). The amount is what it is now: the last 3 months averaged,
       so Tesla uses the latest posted premium as a static monthly amount, not an average.
-      Lorena Abzuman is $600/month for laundry.
     </div>
     <p class="meta" id="meta"></p>
   </div>
@@ -274,22 +497,39 @@
     (function() {
       const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-      fetch('/data/bills.json', { cache: 'no-store' })
-        .then((r) => {
-          if (!r.ok) throw new Error('missing');
-          return r.json();
-        })
-        .then(render)
-        .catch(() => {
-          document.getElementById('charges').innerHTML =
-            '<p class="subtitle">Could not load bills.</p>';
-        });
+      let billsData = null;
+      let miscData = null;
 
-      function render(data) {
-        const { meta, charges, categories } = data;
-        const total = charges.reduce((sum, c) => sum + c.amount, 0);
-        const count = charges.length;
+      Promise.all([
+        fetch('/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
+        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+      ]).then(([bills, misc]) => {
+        billsData = bills;
+        miscData = misc;
+        if (bills) renderBills(bills);
+        if (misc) renderMisc(misc);
+      }).catch(() => {
+        document.getElementById('charges').innerHTML =
+          '<p class="subtitle">Could not load bills.</p>';
+      });
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById(tab.dataset.tab + '-tab').classList.add('active');
+        });
+      });
+
+      function renderBills(data) {
+        const { meta, income, charges, categories } = data;
+        const countedCharges = charges.filter(c => !c.infoOnly);
+        const total = countedCharges.reduce((sum, c) => sum + c.amount, 0);
+        const count = countedCharges.length;
         const avg = count ? total / count : 0;
+        const incomeAmt = income ? income.amount : 0;
+        const net = incomeAmt - total;
 
         document.getElementById('summary').innerHTML = `
           <div class="summary-card">
@@ -297,12 +537,16 @@
             <div class="value total">${fmt(total)}</div>
           </div>
           <div class="summary-card">
-            <div class="label">Bills</div>
+            <div class="label">Bills Counted</div>
             <div class="value count">${count}</div>
           </div>
           <div class="summary-card">
-            <div class="label">Avg per Bill</div>
-            <div class="value avg">${fmt(avg)}</div>
+            <div class="label">Income</div>
+            <div class="value income">${fmt(incomeAmt)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Net</div>
+            <div class="value ${net >= 0 ? 'net-positive' : 'net-negative'}">${net >= 0 ? '+' : ''}${fmt(net)}</div>
           </div>
           <div class="summary-card">
             <div class="label">Yearly Estimate</div>
@@ -311,7 +555,7 @@
         `;
 
         const catTotals = {};
-        charges.forEach((c) => {
+        countedCharges.forEach((c) => {
           catTotals[c.category] = (catTotals[c.category] || 0) + c.amount;
         });
         const sortedCats = Object.entries(catTotals).sort((a, b) => b[1] - a[1]);
@@ -349,14 +593,16 @@
           const sorted = [...filtered].sort((a, b) => b.amount - a.amount);
           document.getElementById('charges').innerHTML = sorted.map((c) => {
             const cat = categories[c.category] || { label: c.category, color: '#888' };
+            const infoOnlyBadge = c.infoOnly ? '<span class="badge info-only">Not in total</span>' : '';
             return `
-              <div class="charge-item">
+              <div class="charge-item ${c.infoOnly ? 'info-only' : ''}">
                 <div>
-                  <div class="charge-name">${c.name}</div>
+                  <div class="charge-name">${c.name} ${infoOnlyBadge}</div>
                   <div class="charge-category">
                     <span class="dot" style="background: ${cat.color}"></span>
                     ${cat.label}
                   </div>
+                  ${c.note ? `<div class="charge-note">${c.note}</div>` : ''}
                 </div>
                 <div class="charge-amount">${fmt(c.amount)}</div>
               </div>
@@ -368,6 +614,83 @@
         renderCharges();
         document.getElementById('meta').textContent =
           `${meta.source} · ${meta.period}. ${meta.note}`;
+      }
+
+      function renderMisc(data) {
+        const { averageMonthly, averageMonthlyExOneOffs, recommended, months, items } = data;
+        const oneOffItems = items.filter(i => i.oneOff);
+        const regularItems = items.filter(i => !i.oneOff);
+
+        const usedValue = recommended === 'averageMonthlyExOneOffs' ? averageMonthlyExOneOffs : averageMonthly;
+
+        document.getElementById('misc-summary').innerHTML = `
+          <div class="misc-stat">
+            <div class="label">With one-offs</div>
+            <div class="value">${fmt(averageMonthly)}/mo</div>
+          </div>
+          <div class="misc-stat">
+            <div class="label">Without one-offs</div>
+            <div class="value ${recommended === 'averageMonthlyExOneOffs' ? 'used' : ''}">${fmt(averageMonthlyExOneOffs)}/mo</div>
+            ${recommended === 'averageMonthlyExOneOffs' ? '<div class="note">Used in the total</div>' : ''}
+          </div>
+          <div class="misc-stat">
+            <div class="label">Total items</div>
+            <div class="value">${items.length}</div>
+          </div>
+          <div class="misc-stat">
+            <div class="label">One-off items</div>
+            <div class="value">${oneOffItems.length}</div>
+            <div class="note">${fmt(oneOffItems.reduce((s, i) => s + i.amount, 0))} total</div>
+          </div>
+        `;
+
+        document.getElementById('month-breakdown').innerHTML = months.map(m => `
+          <div class="month-item ${m.inAverage ? '' : 'not-averaged'}">
+            <div class="month-name">${m.month}</div>
+            <div class="month-total">${fmt(m.total)}</div>
+            ${!m.inAverage ? '<div style="font-size:0.7rem;color:var(--text-muted)">Not averaged</div>' : ''}
+          </div>
+        `).join('');
+
+        let filterMode = 'all';
+
+        function renderMiscFilters() {
+          document.getElementById('misc-filters').innerHTML = `
+            <button class="filter-btn ${filterMode === 'all' ? 'active' : ''}" data-filter="all">All (${items.length})</button>
+            <button class="filter-btn ${filterMode === 'oneoff' ? 'active' : ''}" data-filter="oneoff">One-offs (${oneOffItems.length})</button>
+            <button class="filter-btn ${filterMode === 'regular' ? 'active' : ''}" data-filter="regular">Regular (${regularItems.length})</button>
+          `;
+
+          document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              filterMode = btn.dataset.filter;
+              renderMiscFilters();
+              renderMiscItems();
+            });
+          });
+        }
+
+        function renderMiscItems() {
+          let filtered = items;
+          if (filterMode === 'oneoff') filtered = oneOffItems;
+          else if (filterMode === 'regular') filtered = regularItems;
+
+          const sorted = [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          document.getElementById('misc-items').innerHTML = sorted.map(item => `
+            <div class="misc-item ${item.oneOff ? 'one-off' : ''}">
+              <div class="misc-date">${item.date}</div>
+              <div class="misc-merchant">
+                ${item.merchant}
+                ${item.oneOff ? '<span class="badge one-off">One-off</span>' : ''}
+              </div>
+              <div class="misc-amount">${fmt(item.amount)}</div>
+            </div>
+          `).join('');
+        }
+
+        renderMiscFilters();
+        renderMiscItems();
       }
     })();
   </script>

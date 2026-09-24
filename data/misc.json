@@ -1,0 +1,585 @@
+{
+  "generated": "2026-09-24",
+  "source": "Plaid (BofA 1045/1375/8604/6704; Chase 3697/4243/4570; WF 1205 returned no transactions). Chase 6657 (Tirus) and 8091 (Gods) excluded pending Jay.",
+  "period": "2026-06-26 to 2026-09-23",
+  "method": "Average = total Jul 1–Sep 23 / 2.7667 months (2 full months + 23/30 of Sep). Late-June partial shown separately, not averaged.",
+  "averageMonthly": 1727.57,
+  "averageMonthlyExOneOffs": 389.00,
+  "recommended": "averageMonthlyExOneOffs",
+  "months": [
+    {
+      "month": "2026-06 (26–30, partial)",
+      "total": 2.5,
+      "inAverage": false
+    },
+    {
+      "month": "2026-07",
+      "total": 1838.01,
+      "inAverage": true
+    },
+    {
+      "month": "2026-08",
+      "total": 1214.29,
+      "inAverage": true
+    },
+    {
+      "month": "2026-09 (1–23, partial)",
+      "total": 1727.31,
+      "inAverage": true
+    }
+  ],
+  "items": [
+    {
+      "date": "2026-06-26",
+      "merchant": "City of Los Angeles Department of Transportation",
+      "description": "CHECKCARD 0625 LADOT METER PARKING LOS ANGELES CA XXXXX1661XXXXXXXXXX5916",
+      "amount": 2.5,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-01",
+      "merchant": "City of Culver City",
+      "description": "CHECKCARD 0630 PARKING METERS - IPS CULVER CITY CA XXXXX6861XXXXXXXXXX8181",
+      "amount": 3,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-01",
+      "merchant": "LAZ Parking",
+      "description": "PURCHASE 0630 LAZ PARKING ECOMMERCE CT XXXXX2261XXXXXXXXXX3884",
+      "amount": 20.65,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-06",
+      "merchant": "CHECKCARD 0704 CITATION-PERMITS PROCES CA XXXXX9861XXXXXXXXXX3842",
+      "description": "CHECKCARD 0704 CITATION-PERMITS PROCES CA XXXXX9861XXXXXXXXXX3842",
+      "amount": 71.5,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-06",
+      "merchant": "LAZ Parking",
+      "description": "PURCHASE 0705 LAZ PARKING ECOMMERCE CT XXXXX2261XXXXXXXXXX5136",
+      "amount": 10.65,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-07",
+      "merchant": "Waymo",
+      "description": "PURCHASE 0706 WAYMO CA XXXXX4161XXXXXXXXXX4999",
+      "amount": 8.79,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-08",
+      "merchant": "Gift Nest Giftnestapp.cca",
+      "description": "PURCHASE 0708 GIFT NEST GIFTNESTAPP.CCA XXXXX3461XXXXXXXXXX9330",
+      "amount": 0.5,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-08",
+      "merchant": "U.S. Post Office",
+      "description": "USPS PO 050668 07/08 #XXXXX3035 PURCHASE USPS PO 05066804",
+      "amount": 91.7,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-10",
+      "merchant": "Gift Nest Giftnestapp.cca",
+      "description": "PURCHASE 0710 GIFT NEST GIFTNESTAPP.CCA XXXXX3461XXXXXXXXXX8902",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-13",
+      "merchant": "Waymo",
+      "description": "PURCHASE 0713 WAYMO CA XXXXX4161XXXXXXXXXX2880",
+      "amount": 10.5,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-14",
+      "merchant": "Waymo",
+      "description": "PURCHASE 0714 WAYMO CA XXXXX4161XXXXXXXXXX3129",
+      "amount": 11.36,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-15",
+      "merchant": "Kaiser Permanente",
+      "description": "CHECKCARD 0714 KP SCAL 0809305 LOS ANGELES CA XXXXX0661XXXXXXXXXX9433",
+      "amount": 50,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-17",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0716 AMAZON MKTPL*H66JJ4L73 Amzn.com/billWA XXXXX1661XXXXXXXXXX3022",
+      "amount": 24.91,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-20",
+      "merchant": "Marriott",
+      "description": "CHECKCARD 0718 MARRIOTT LA JOLLA PARK LA JOLLA CA XXXXX1661XXXXXXXXXX7504",
+      "amount": 8,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-20",
+      "merchant": "Embassy Suites By Hilton",
+      "description": "Embassy Suites",
+      "amount": 28,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-21",
+      "merchant": "Marriott",
+      "description": "MARRIOTT LA JOLLA",
+      "amount": 239.41,
+      "account": "4243",
+      "oneOff": true
+    },
+    {
+      "date": "2026-07-22",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0721 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX5130",
+      "amount": 5.99,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-22",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0722 AMAZON MKTPL*6M5D383H3 Amzn.com/billWA XXXXX1662XXXXXXXXXX7840",
+      "amount": 12.61,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-23",
+      "merchant": "Targosports",
+      "description": "CHECKCARD 0722 TARGOSPORTS.COM XXX-XX47145 UT XXXXX0662XXXXXXXXXX0600",
+      "amount": 20.98,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-23",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0722 AMAZON RETA* WT3T10FN3 WWW.AMAZON.COWA XXXXX3462XXXXXXXXXX5935",
+      "amount": 6.46,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-07-29",
+      "merchant": "Josh Handyman (Zelle, \"Per Mamo\")",
+      "description": "Zelle payment to Josh Handyman Per Mamo 30192995006",
+      "amount": 1112.0,
+      "account": "3697",
+      "oneOff": true
+    },
+    {
+      "date": "2026-07-31",
+      "merchant": "BKOFAMERICA ATM 07/31 #XXXXX4807 WITHDRWL BEVERLY-WILSHIRE",
+      "description": "BKOFAMERICA ATM 07/31 #XXXXX4807 WITHDRWL BEVERLY-WILSHIRE",
+      "amount": 100,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-05",
+      "merchant": "Wegene",
+      "description": "CHECKCARD 0804 WEGENE CA XXXXX6262XXXXXXXXXX7491",
+      "amount": 40,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-05",
+      "merchant": "Wegene",
+      "description": "CHECKCARD 0804 WEGENE CA XXXXX6262XXXXXXXXXX7598",
+      "amount": 40,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-05",
+      "merchant": "Walmart",
+      "description": "Walmart",
+      "amount": 20.15,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-10",
+      "merchant": "Moon House",
+      "description": "PURCHASE 0810 PT* MOON HOUSE PROTON-SYSTEMCA XXXXX7762XXXXXXXXXX4055",
+      "amount": 337.79,
+      "account": "1045",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-17",
+      "merchant": "Gigatires LLC",
+      "description": "GIGATIRES LLC",
+      "amount": 364.08,
+      "account": "4243",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "CVS",
+      "description": "CVS",
+      "amount": 9.87,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "CVS",
+      "description": "CVS",
+      "amount": 9.87,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 7.0,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "CHECKCARD 0821 CITATION-PERMITS PROCES CA XXXXX9862XXXXXXXXXX7083",
+      "description": "CHECKCARD 0821 CITATION-PERMITS PROCES CA XXXXX9862XXXXXXXXXX7083",
+      "amount": 71.5,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX0157",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX1026",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX1212",
+      "amount": 2,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX2478",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX3655",
+      "amount": 2,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX3668",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX5272",
+      "amount": 2,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX6792",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX7300",
+      "amount": 2,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX7705",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX8501",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX8795",
+      "amount": 2,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0822 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX8991",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0823 AMAZON MKTPL*5O0AN2FN2 Amzn.com/billWA XXXXX1662XXXXXXXXXX3122",
+      "amount": 9.87,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0823 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX0931 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0823 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX1407 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0823 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX4055 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0823 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX7779 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Link.com DES:FAMILY TRE ID:ST-B4U4C6V2F9Y5 INDN:LINK CO ID:XXXXX48598 WEB",
+      "description": "Link.com DES:FAMILY TRE ID:ST-B4U4C6V2F9Y5 INDN:LINK CO ID:XXXXX48598 WEB",
+      "amount": 2,
+      "account": "1375",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Link.com DES:FAMILY TRE ID:ST-K6W4R8W7H8R6 INDN:LINK CO ID:XXXXX48598 WEB",
+      "description": "Link.com DES:FAMILY TRE ID:ST-K6W4R8W7H8R6 INDN:LINK CO ID:XXXXX48598 WEB",
+      "amount": 2,
+      "account": "1375",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-24",
+      "merchant": "Link.com DES:FAMILY TRE ID:ST-X0Z9B6V1J9F0 INDN:LINK CO ID:XXXXX48598 WEB",
+      "description": "Link.com DES:FAMILY TRE ID:ST-X0Z9B6V1J9F0 INDN:LINK CO ID:XXXXX48598 WEB",
+      "amount": 2,
+      "account": "1375",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-25",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0824 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX2789 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-25",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0824 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX6792 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-25",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0824 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX7067 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-25",
+      "merchant": "Family Tree Jays",
+      "description": "PURCHASE 0824 FAMILY TREE JAYS-FAMILY-TCA XXXXX7762XXXXXXXXXX8247 RECURRING",
+      "amount": 1,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-26",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 7.0,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-28",
+      "merchant": "FlowerShopping.com",
+      "description": "TLF*FLOWERSHOPPING.COM (R",
+      "amount": 109.07,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-31",
+      "merchant": "Laundry Breeze",
+      "description": "CHECKCARD 0828 LAUNDRY BREEZE XXX-XX60383 CA XXXXX1062XXXXXXXXXX8600",
+      "amount": 151.1,
+      "account": "1045",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-31",
+      "merchant": "Link",
+      "description": "PURCHASE 0830 LINK.COM* GIFT NEST LINK.COM CA XXXXX7762XXXXXXXXXX7198",
+      "amount": 4.99,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-01",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 20.0,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-02",
+      "merchant": "HR Jetpack (SHRM certification prep)",
+      "description": "WWW.HRJETPACK.COM",
+      "amount": 1299.0,
+      "account": "4243",
+      "oneOff": true
+    },
+    {
+      "date": "2026-09-08",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0906 AMAZON MKTPL*538PV8E62 Amzn.com/billWA XXXXX1662XXXXXXXXXX2291",
+      "amount": 9.87,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-08",
+      "merchant": "Waymo",
+      "description": "PURCHASE 0907 WAYMO CA XXXXX4162XXXXXXXXXX6668",
+      "amount": 17.19,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-08",
+      "merchant": "Zelle payment to Garea Brook Local for \"For Gilu and the kids\"; Conf# nmx78116m",
+      "description": "Zelle payment to Garea Brook Local for \"For Gilu and the kids\"; Conf# nmx78116m",
+      "amount": 200,
+      "account": "1045",
+      "oneOff": true
+    },
+    {
+      "date": "2026-09-11",
+      "merchant": "Ferguson Home",
+      "description": "PURCHASE 0910 FERGUSONHOM VA XXXXX6262XXXXXXXXXX7662",
+      "amount": 16.45,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-20",
+      "merchant": "The Home Depot",
+      "description": "Home Depot",
+      "amount": 49.37,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-21",
+      "merchant": "Amazon",
+      "description": "PURCHASE 0918 AMAZON MKTPL*5R4O349K1 Amzn.com/billWA XXXXX1662XXXXXXXXXX6822",
+      "amount": 35.43,
+      "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-21",
+      "merchant": "Zelle payment to Mimi for \"Breakfast for two days $50 N $30\"; Conf# ovamjevr4",
+      "description": "Zelle payment to Mimi for \"Breakfast for two days $50 N $30\"; Conf# ovamjevr4",
+      "amount": 80,
+      "account": "1045",
+      "oneOff": false
+    }
+  ]
+}
