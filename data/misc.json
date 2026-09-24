@@ -1,10 +1,10 @@
 {
   "generated": "2026-09-24",
-  "source": "Plaid (BofA 1045/1375/8604/6704; Chase 3697/4243/4570; WF 1205 returned no transactions). Chase 6657 (Tirus) and 8091 (Gods) excluded pending Jay.",
+  "source": "Plaid (BofA 1045/1375/8604/6704; Chase 4243/4570).",
   "period": "2026-06-26 to 2026-09-23",
   "method": "Average = total Jul 1–Sep 23 / 2.7667 months (2 full months + 23/30 of Sep). Late-June partial shown separately, not averaged.",
-  "averageMonthly": 1727.57,
-  "averageMonthlyExOneOffs": 389.00,
+  "averageMonthly": 1786.46,
+  "averageMonthlyExOneOffs": 388.99,
   "recommended": "averageMonthlyExOneOffs",
   "months": [
     {
@@ -14,12 +14,12 @@
     },
     {
       "month": "2026-07",
-      "total": 1838.01,
+      "total": 1476.01,
       "inAverage": true
     },
     {
       "month": "2026-08",
-      "total": 1214.29,
+      "total": 1739.29,
       "inAverage": true
     },
     {
@@ -100,6 +100,14 @@
       "amount": 1,
       "account": "1045",
       "oneOff": false
+    },
+    {
+      "date": "2026-07-13",
+      "merchant": "Chase balance-transfer fee",
+      "description": "Balance transfer fee",
+      "amount": 750.00,
+      "account": "4570",
+      "oneOff": true
     },
     {
       "date": "2026-07-13",
@@ -188,15 +196,6 @@
       "amount": 6.46,
       "account": "1045",
       "oneOff": false
-    },
-    {
-      "date": "2026-07-29",
-      "merchant": "Josh Handyman (Zelle, \"Per Mamo\")",
-      "description": "Zelle payment to Josh Handyman Per Mamo 30192995006",
-      "amount": 1112.0,
-      "account": "3697",
-      "oneOff": true,
-      "note": "May be rental; pending Jay."
     },
     {
       "date": "2026-07-31",
@@ -500,6 +499,14 @@
       "description": "CHECKCARD 0828 LAUNDRY BREEZE XXX-XX60383 CA XXXXX1062XXXXXXXXXX8600",
       "amount": 151.1,
       "account": "1045",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-31",
+      "merchant": "Chase balance-transfer fee",
+      "description": "Balance transfer fee",
+      "amount": 525.00,
+      "account": "4570",
       "oneOff": true
     },
     {

@@ -833,7 +833,7 @@
       }
 
       function renderRental(data, personalNetAmount) {
-        const { accountNote, income, costs } = data;
+        const { sectionTitle, accountNote, income, costs, oneOffs } = data;
         const rentalIncome = income.reduce((sum, i) => sum + i.amount, 0);
         const rentalCosts = costs.reduce((sum, c) => sum + c.amount, 0);
         const rentalNet = rentalIncome - rentalCosts;
@@ -842,7 +842,7 @@
         const section = document.getElementById('rental-section');
         section.style.display = 'block';
         section.innerHTML = `
-          <h2>Rental Property</h2>
+          <h2>${sectionTitle || 'Rental Property'}</h2>
           <div class="rental-summary">
             <div class="rental-stat">
               <div class="label">Rental Income</div>
@@ -884,10 +884,26 @@
             `).join('')}
           </div>
 
+          ${oneOffs && oneOffs.length > 0 ? `
+            <h3 class="section-title">One-off charges (info only, not in costs total)</h3>
+            <div class="rental-items">
+              ${oneOffs.map(o => `
+                <div class="rental-item info-only" style="opacity: 0.6;">
+                  <div>
+                    <div class="rental-item-name">${o.name} <span class="badge info-only">Not in total</span></div>
+                    ${o.date ? `<div class="rental-item-note">${o.date}</div>` : ''}
+                    ${o.note ? `<div class="rental-item-note">${o.note}</div>` : ''}
+                  </div>
+                  <div class="rental-item-amount cost" style="color: var(--text-muted);">${fmt(o.amount)}</div>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+
           <div class="rental-note">${accountNote}</div>
 
           <div class="combined-reference">
-            <div class="label">Personal net + rental net (reference only)</div>
+            <div class="label">Personal net + rental/joint net (reference only)</div>
             <div class="value ${combinedNet >= 0 ? 'positive' : 'negative'}">${fmtSigned(combinedNet)}/mo</div>
           </div>
         `;

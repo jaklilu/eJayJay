@@ -3,7 +3,7 @@
     "generated": "2026-09-24",
     "source": "Bank of America checking statement; Plaid (BofA, Wells Fargo, Chase)",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 6696.67,
+    "totalMonthly": 6416.67,
     "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases, interest and fees are counted where they are charged; card payments (BofA Mastercard, Chase 4570, Chase 4243) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
   },
   "income": {
@@ -236,7 +236,7 @@
       "frequency": "monthly",
       "category": "credit",
       "infoOnly": true,
-      "note": "Debt service, info only. $100 from Chase 3697 on Jul 22, Aug 24 and Sep 22. Purchases on 4243 are counted in Food, Misc and bills."
+      "note": "Debt service, info only. $100 autopay on Jul 22, Aug 24 and Sep 22. Purchases on 4243 are counted in Food, Misc and bills."
     },
     {
       "name": "Viking Billing Service",
@@ -245,13 +245,6 @@
       "category": "payment_plans",
       "endDate": "2026-12",
       "note": "4 payments left; last about Dec 31, 2026."
-    },
-    {
-      "name": "IRS payment",
-      "amount": 280.0,
-      "frequency": "monthly",
-      "category": "payment_plans",
-      "note": "Monthly since Jul; plan details pending."
     },
     {
       "name": "Card interest & fees",
@@ -283,11 +276,11 @@
     },
     {
       "name": "One-off charges (3-mo avg)",
-      "amount": 1338.57,
+      "amount": 1397.47,
       "frequency": "monthly",
       "category": "misc",
       "infoOnly": true,
-      "note": "Large one-offs (HR Jetpack, handyman, tires, hotel); some may be business or rental, pending Jay."
+      "note": "Large one-offs on personal cards (HR Jetpack, Chase balance-transfer fees, tires, hotel). Not in total."
     }
   ],
   "categories": {

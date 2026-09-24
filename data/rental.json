@@ -1,8 +1,9 @@
 {
-  "accountNote": "Chase 'Jay n Mimi' ...3697 is the rental account.",
+  "sectionTitle": "Rental / joint account (Chase ...3697 + mortgage ...6340)",
+  "accountNote": "Chase 'Jay n Mimi' ...3697 is the rental/joint account.",
   "income": [
     {
-      "name": "Rent from tenant (Ethan Longhenry, Zelle to Chase ...3697)",
+      "name": "Rent from tenant (Ethan Longhenry)",
       "amount": 2864.00,
       "frequency": "monthly"
     }
@@ -22,13 +23,27 @@
       "name": "Mercury Insurance",
       "amount": 112.63,
       "frequency": "monthly",
-      "note": "$337.88 quarterly (estimated frequency)"
+      "note": "$337.88 quarterly, estimated"
     },
     {
       "name": "Stillwater Insurance",
       "amount": 57.17,
       "frequency": "monthly",
-      "note": "$343 twice a year (estimated frequency)"
+      "note": "$343 twice a year, estimated"
+    },
+    {
+      "name": "IRS payment",
+      "amount": 280.00,
+      "frequency": "monthly",
+      "note": "Ongoing monthly, paid from 3697"
+    }
+  ],
+  "oneOffs": [
+    {
+      "name": "Josh Handyman",
+      "amount": 1112.00,
+      "date": "2026-07-29",
+      "note": "Zelle from 3697; not averaged."
     }
   ]
 }
