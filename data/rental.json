@@ -32,6 +32,12 @@
       "note": "$343 twice a year, estimated"
     },
     {
+      "name": "Property tax (rental)",
+      "amount": 516.67,
+      "frequency": "monthly",
+      "note": "About $6,200/yr, per Jay; usually paid in two installments. Confirm not in escrow."
+    },
+    {
       "name": "IRS payment",
       "amount": 280.00,
       "frequency": "monthly",
