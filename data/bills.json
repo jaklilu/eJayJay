@@ -202,7 +202,7 @@
       "amount": 19.99,
       "frequency": "monthly",
       "category": "tech_subscription",
-      "note": "Chase 4243: $11.99 Aug 18, $19.99 Sep 18. Uses the latest charge."
+      "note": "Price jumped from $11.99; Jay expects under $10, so review or cancel."
     },
     {
       "name": "GoDaddy Domains (2)",
@@ -265,7 +265,7 @@
       "amount": 45.04,
       "frequency": "monthly",
       "category": "food",
-      "note": "Groceries partly visible (Chase 4243); likely incomplete."
+      "note": "Mostly Pavilions (Chase 4243); linked spend likely incomplete."
     },
     {
       "name": "Miscellaneous",

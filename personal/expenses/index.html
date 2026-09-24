@@ -280,6 +280,12 @@
       margin-top: 0.25rem;
     }
 
+    .charge-end-date {
+      font-size: 0.75rem;
+      color: var(--accent-yellow);
+      margin-top: 0.25rem;
+    }
+
     .charge-amount {
       font-family: 'Syne', sans-serif;
       font-weight: 600;
@@ -511,6 +517,13 @@
       const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       const fmtSigned = (n) => (n >= 0 ? '+' : '') + fmt(n);
 
+      const formatEndDate = (endDate) => {
+        if (!endDate) return null;
+        const [year, month] = endDate.split('-');
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        return `Ends ${months[parseInt(month, 10) - 1]} ${year}`;
+      };
+
       Promise.all([
         fetch('/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
         fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
@@ -602,6 +615,7 @@
           document.getElementById('charges').innerHTML = sorted.map((c) => {
             const cat = categories[c.category] || { label: c.category, color: '#888' };
             const infoOnlyBadge = c.infoOnly ? '<span class="badge info-only">Not in total</span>' : '';
+            const endDateStr = formatEndDate(c.endDate);
             return `
               <div class="charge-item ${c.infoOnly ? 'info-only' : ''}">
                 <div>
@@ -611,6 +625,7 @@
                     ${cat.label}
                   </div>
                   ${c.note ? `<div class="charge-note">${c.note}</div>` : ''}
+                  ${endDateStr ? `<div class="charge-end-date">${endDateStr}</div>` : ''}
                 </div>
                 <div class="charge-amount">${fmt(c.amount)}</div>
               </div>
