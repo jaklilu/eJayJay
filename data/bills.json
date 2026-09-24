@@ -243,17 +243,25 @@
     },
     {
       "name": "Food (dining out)",
-      "amount": 212.77,
+      "amount": 334.86,
       "frequency": "monthly",
       "category": "food",
-      "note": "Linked accounts only; groceries not visible, so this is a floor. Includes $80 Zelle to Mimi for breakfast (Sep 21)."
+      "note": "Linked accounts only; groceries not visible, so this is a floor. Includes $80 Zelle to Mimi for breakfast (Sep 21). Includes Moon House $337.79 (Aug 10)."
     },
     {
       "name": "Miscellaneous",
-      "amount": 532.38,
+      "amount": 283.39,
       "frequency": "monthly",
       "category": "misc",
-      "note": "Average of non-bill charges; details in the Miscellaneous tab."
+      "note": "Average of non-bill, non-one-off charges; details in the Miscellaneous tab."
+    },
+    {
+      "name": "One-off charges (3-mo avg)",
+      "amount": 126.9,
+      "frequency": "monthly",
+      "category": "misc",
+      "infoOnly": true,
+      "note": "Large occasional charges (Laundry Breeze, Zelle gifts); not in monthly total."
     }
   ],
   "categories": {
