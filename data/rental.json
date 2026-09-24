@@ -42,6 +42,12 @@
       "amount": 280.00,
       "frequency": "monthly",
       "note": "Ongoing monthly, paid from 3697"
+    },
+    {
+      "name": "AC unit payoff (Chase 4243 autopay)",
+      "amount": 100.00,
+      "frequency": "monthly",
+      "note": "Paid from 3697; ongoing until the AC balance is paid off."
     }
   ],
   "oneOffs": [

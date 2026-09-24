@@ -434,6 +434,102 @@
       color: var(--accent-red);
     }
 
+    .merchant-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 0.4rem;
+    }
+
+    .merchant-group.has-oneoff { border-left: 3px solid #ff6b35; }
+
+    .merchant-group summary {
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .merchant-group summary::-webkit-details-marker { display: none; }
+
+    .merchant-group summary:hover { background: var(--bg-card-hover); }
+
+    .merchant-group-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+
+    .merchant-group-count {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      min-width: 60px;
+    }
+
+    .merchant-group-avg {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .merchant-group-total {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    .merchant-group-items {
+      border-top: 1px solid var(--border);
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .merchant-group-item {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: start;
+      gap: 0.75rem;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      border-radius: 4px;
+    }
+
+    .merchant-group-item:hover { background: var(--bg-card); }
+    .merchant-group-item.one-off { border-left: 2px solid #ff6b35; }
+
+    .merchant-group-item .date {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      min-width: 70px;
+    }
+
+    .merchant-group-item .desc {
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      word-break: break-word;
+    }
+
+    .merchant-group-item .amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+
+    .expand-icon {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .merchant-group[open] .expand-icon { transform: rotate(90deg); }
+
     .disclaimer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -643,6 +739,7 @@
         const { averageMonthly, averageMonthlyExOneOffs, recommended, months, items } = data;
         const oneOffItems = items.filter(i => i.oneOff);
         const regularItems = items.filter(i => !i.oneOff);
+        const MONTHS_IN_PERIOD = 2.7667;
 
         document.getElementById('misc-summary').innerHTML = `
           <div class="misc-stat">
@@ -675,9 +772,28 @@
 
         let filterMode = 'all';
 
+        function groupByMerchant(itemsToGroup) {
+          const groups = {};
+          itemsToGroup.forEach(item => {
+            const key = item.merchantKey || item.merchant;
+            if (!groups[key]) {
+              groups[key] = { name: key, items: [], total: 0, hasOneOff: false };
+            }
+            groups[key].items.push(item);
+            groups[key].total += item.amount;
+            if (item.oneOff) groups[key].hasOneOff = true;
+          });
+          return Object.values(groups).sort((a, b) => b.total - a.total);
+        }
+
         function renderMiscFilters() {
+          const groups = groupByMerchant(items);
+          const groupCount = groups.length;
+          const oneOffGroups = groupByMerchant(oneOffItems);
+          const regularGroups = groupByMerchant(regularItems);
+
           document.getElementById('misc-filters').innerHTML = `
-            <button class="filter-btn ${filterMode === 'all' ? 'active' : ''}" data-filter="all">All (${items.length})</button>
+            <button class="filter-btn ${filterMode === 'all' ? 'active' : ''}" data-filter="all">All (${items.length} items, ${groupCount} groups)</button>
             <button class="filter-btn ${filterMode === 'oneoff' ? 'active' : ''}" data-filter="oneoff">One-offs (${oneOffItems.length})</button>
             <button class="filter-btn ${filterMode === 'regular' ? 'active' : ''}" data-filter="regular">Regular (${regularItems.length})</button>
           `;
@@ -696,21 +812,56 @@
           if (filterMode === 'oneoff') filtered = oneOffItems;
           else if (filterMode === 'regular') filtered = regularItems;
 
-          const sorted = [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date));
+          const groups = groupByMerchant(filtered);
 
-          document.getElementById('misc-items').innerHTML = sorted.map(item => `
-            <div class="misc-item ${item.oneOff ? 'one-off' : ''}">
-              <div class="misc-date">${item.date}</div>
-              <div class="misc-merchant">
-                <div class="misc-merchant-name">
-                  ${item.merchant}
-                  ${item.oneOff ? '<span class="badge one-off">One-off</span>' : ''}
+          document.getElementById('misc-items').innerHTML = groups.map(group => {
+            const monthlyAvg = group.total / MONTHS_IN_PERIOD;
+            
+            if (group.items.length === 1) {
+              const item = group.items[0];
+              return `
+                <div class="misc-item ${item.oneOff ? 'one-off' : ''}">
+                  <div class="misc-date">${item.date}</div>
+                  <div class="misc-merchant">
+                    <div class="misc-merchant-name">
+                      ${group.name}
+                      ${item.oneOff ? '<span class="badge one-off">One-off</span>' : ''}
+                    </div>
+                    <div class="misc-note">${item.description || ''}</div>
+                  </div>
+                  <div class="misc-amount">${fmt(item.amount)}</div>
                 </div>
-                ${item.note ? `<div class="misc-note">${item.note}</div>` : ''}
-              </div>
-              <div class="misc-amount">${fmt(item.amount)}</div>
-            </div>
-          `).join('');
+              `;
+            }
+
+            const sortedItems = [...group.items].sort((a, b) => new Date(b.date) - new Date(a.date));
+            return `
+              <details class="merchant-group ${group.hasOneOff ? 'has-oneoff' : ''}">
+                <summary>
+                  <div class="merchant-group-name">
+                    <span class="expand-icon">▶</span>
+                    ${group.name}
+                    ${group.hasOneOff ? '<span class="badge one-off">Has one-off</span>' : ''}
+                  </div>
+                  <div class="merchant-group-count">${group.items.length} charges</div>
+                  <div class="merchant-group-avg">${fmt(monthlyAvg)}/mo</div>
+                  <div class="merchant-group-total">${fmt(group.total)}</div>
+                </summary>
+                <div class="merchant-group-items">
+                  ${sortedItems.map(item => `
+                    <div class="merchant-group-item ${item.oneOff ? 'one-off' : ''}">
+                      <div class="date">${item.date}</div>
+                      <div class="desc">
+                        ${item.description}
+                        ${item.oneOff ? '<span class="badge one-off">One-off</span>' : ''}
+                      </div>
+                      <div class="amount">${fmt(item.amount)}</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </details>
+            `;
+          }).join('');
         }
 
         renderMiscFilters();
