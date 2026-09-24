@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental | Jay's Personal Dashboard</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a25;
+      --text-primary: #f0f0f5;
+      --text-secondary: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --accent-green: #39ff14;
+      --accent-yellow: #ffe600;
+      --accent-red: #ff073a;
+      --gold: #d4af37;
+      --border: #2a2a35;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent-green); }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .summary-card .label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-card .value {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .summary-card .value.income { color: var(--accent-green); }
+    .summary-card .value.costs { color: var(--accent-red); }
+    .summary-card .value.net-positive { color: var(--accent-green); }
+    .summary-card .value.net-negative { color: var(--accent-red); }
+    .summary-card .value.count { color: var(--accent-yellow); }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .costs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cost-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      transition: all 0.2s;
+    }
+
+    .cost-item:hover { background: var(--bg-card-hover); }
+
+    .cost-name { font-weight: 500; }
+
+    .cost-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .cost-frequency {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .cost-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent-red);
+      text-align: right;
+      min-width: 100px;
+    }
+
+    .disclaimer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .disclaimer strong { color: var(--text-primary); }
+
+    .meta {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+      .summary-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/#personal" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to eJayJay
+      </a>
+      <h1>Rental Property</h1>
+      <p class="subtitle">Monthly rental income and costs</p>
+    </header>
+
+    <div class="summary-cards" id="summary"></div>
+
+    <h2 class="section-title">Monthly Costs</h2>
+    <div class="costs-list" id="costs"></div>
+
+    <div class="disclaimer">
+      <strong>Note:</strong> All costs are monthly amounts. Net income is rental income minus total costs.
+    </div>
+    <p class="meta" id="meta"></p>
+  </div>
+
+  <script>
+    (function() {
+      const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+      fetch('/data/rental.json', { cache: 'no-store' })
+        .then((r) => {
+          if (!r.ok) throw new Error('missing');
+          return r.json();
+        })
+        .then(render)
+        .catch(() => {
+          document.getElementById('costs').innerHTML =
+            '<p class="subtitle">Could not load rental data.</p>';
+        });
+
+      function render(data) {
+        const { meta, income, costs } = data;
+        const totalCosts = costs.reduce((sum, c) => sum + c.amount, 0);
+        const net = income.amount - totalCosts;
+        const netClass = net >= 0 ? 'net-positive' : 'net-negative';
+
+        document.getElementById('summary').innerHTML = `
+          <div class="summary-card">
+            <div class="label">Monthly Income</div>
+            <div class="value income">${fmt(income.amount)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Total Costs</div>
+            <div class="value costs">${fmt(totalCosts)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Net Income</div>
+            <div class="value ${netClass}">${net >= 0 ? '+' : ''}${fmt(net)}</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Cost Items</div>
+            <div class="value count">${costs.length}</div>
+          </div>
+        `;
+
+        const sorted = [...costs].sort((a, b) => b.amount - a.amount);
+        document.getElementById('costs').innerHTML = sorted.map((c) => `
+          <div class="cost-item">
+            <div>
+              <div class="cost-name">${c.name}</div>
+              ${c.note ? `<div class="cost-note">${c.note}</div>` : ''}
+              <div class="cost-frequency">${c.frequency}</div>
+            </div>
+            <div class="cost-amount">${fmt(c.amount)}</div>
+          </div>
+        `).join('');
+
+        document.getElementById('meta').textContent =
+          `${meta.source} · Generated ${meta.generated}. ${meta.note || ''}`;
+      }
+    })();
+  </script>
+</body>
+</html>
