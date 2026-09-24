@@ -422,6 +422,133 @@
       font-size: 0.8rem;
     }
 
+    .merchant-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+
+    .merchant-group summary {
+      padding: 1rem;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: 1fr auto auto auto;
+      gap: 1rem;
+      align-items: center;
+      list-style: none;
+    }
+
+    .merchant-group summary::-webkit-details-marker { display: none; }
+
+    .merchant-group summary:hover { background: var(--bg-card-hover); }
+
+    .merchant-group[open] summary { border-bottom: 1px solid var(--border); }
+
+    .group-name {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .group-name .expand-icon {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+
+    .merchant-group[open] .expand-icon { transform: rotate(90deg); }
+
+    .group-count {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      background: var(--bg-dark);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .group-total {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+
+    .group-avg {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .group-has-oneoff {
+      font-size: 0.7rem;
+      color: var(--accent-yellow);
+      margin-left: 0.25rem;
+    }
+
+    .group-items {
+      padding: 0.5rem 1rem 1rem;
+      background: var(--bg-dark);
+    }
+
+    .group-items table {
+      width: 100%;
+      font-size: 0.85rem;
+    }
+
+    .group-items th {
+      text-align: left;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .group-items td {
+      padding: 0.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .group-items .raw-desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      word-break: break-all;
+    }
+
+    .single-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .single-item:hover { background: var(--bg-card-hover); }
+
+    .single-item .merchant-name { font-weight: 500; }
+
+    .single-item .item-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .single-item .item-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+
+    .single-item .item-avg {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
     .disclaimer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -666,6 +793,7 @@
 
       function renderMisc(data) {
         const { months, items, averageMonthly, averageMonthlyExOneOffs, method } = data;
+        const DIVISOR = 2.7667;
 
         document.getElementById('misc-summary').innerHTML = `
           <h3>Monthly Totals</h3>
@@ -684,33 +812,87 @@
           <div class="misc-method">${method}</div>
         `;
 
-        const sortedItems = [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
+        // Group items by merchantKey
+        const groups = {};
+        items.forEach(item => {
+          const key = item.merchantKey || item.merchant;
+          if (!groups[key]) {
+            groups[key] = { name: key, items: [], total: 0, hasOneOff: false };
+          }
+          groups[key].items.push(item);
+          groups[key].total += item.amount;
+          if (item.oneOff) groups[key].hasOneOff = true;
+        });
 
-        document.getElementById('misc-charges').innerHTML = `
-          <table class="misc-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Merchant</th>
-                <th>Amount</th>
-                <th>Account</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${sortedItems.map(item => `
-                <tr>
-                  <td>${item.date}</td>
-                  <td>
-                    ${item.merchant}
+        // Sort groups by total descending
+        const sortedGroups = Object.values(groups).sort((a, b) => b.total - a.total);
+
+        // Render grouped view
+        let html = '';
+        sortedGroups.forEach(group => {
+          const avg = group.total / DIVISOR;
+          const sortedItems = [...group.items].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          if (group.items.length === 1) {
+            // Single item - render as simple row
+            const item = group.items[0];
+            html += `
+              <div class="single-item">
+                <div>
+                  <div class="merchant-name">
+                    ${group.name}
                     ${item.oneOff ? '<span class="one-off-flag" title="One-off charge">&#9873;</span>' : ''}
-                  </td>
-                  <td class="amount">${fmt(item.amount)}</td>
-                  <td class="account">${item.account}</td>
-                </tr>
-              `).join('')}
-            </tbody>
-          </table>
-        `;
+                  </div>
+                  <div class="item-date">${item.date} · ${item.account}</div>
+                </div>
+                <div class="item-amount">${fmt(item.amount)}</div>
+                <div class="item-avg">${fmt(avg)}/mo</div>
+              </div>
+            `;
+          } else {
+            // Multiple items - render as expandable group
+            html += `
+              <details class="merchant-group">
+                <summary>
+                  <div class="group-name">
+                    <span class="expand-icon">▶</span>
+                    ${group.name}
+                    ${group.hasOneOff ? '<span class="group-has-oneoff" title="Contains one-off charge(s)">★</span>' : ''}
+                  </div>
+                  <div class="group-count">${group.items.length} charges</div>
+                  <div class="group-total">${fmt(group.total)}</div>
+                  <div class="group-avg">${fmt(avg)}/mo</div>
+                </summary>
+                <div class="group-items">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Account</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      ${sortedItems.map(item => `
+                        <tr>
+                          <td>
+                            ${item.date}
+                            ${item.oneOff ? '<span class="one-off-flag" title="One-off charge">&#9873;</span>' : ''}
+                            <div class="raw-desc">${item.description || item.merchant}</div>
+                          </td>
+                          <td class="amount">${fmt(item.amount)}</td>
+                          <td class="account">${item.account}</td>
+                        </tr>
+                      `).join('')}
+                    </tbody>
+                  </table>
+                </div>
+              </details>
+            `;
+          }
+        });
+
+        document.getElementById('misc-charges').innerHTML = html;
       }
     })();
   </script>
