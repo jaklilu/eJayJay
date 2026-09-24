@@ -3,7 +3,7 @@
   "source": "Plaid (BofA 1045/1375/8604/6704; WF 1205 returned no transactions)",
   "period": "2026-06-26 to 2026-09-23",
   "method": "Average = total Jul 1–Sep 23 / 2.7667 months (2 full months + 23/30 of Sep). Late-June partial shown separately, not averaged.",
-  "averageMonthly": 627.56,
+  "averageMonthly": 561.30,
   "averageMonthlyExOneOffs": 312.31,
   "recommended": "averageMonthly",
   "months": [
@@ -14,7 +14,7 @@
     },
     {
       "month": "2026-07",
-      "total": 669.92,
+      "total": 486.60,
       "inAverage": true
     },
     {
@@ -164,14 +164,6 @@
       "amount": 12.61,
       "account": "1045",
       "oneOff": false
-    },
-    {
-      "date": "2026-07-23",
-      "merchant": "AXA Equitable",
-      "description": "AXA EQUITABLE PAYMENT CENTER Bill Payment",
-      "amount": 183.32,
-      "account": "1045",
-      "oneOff": true
     },
     {
       "date": "2026-07-23",
