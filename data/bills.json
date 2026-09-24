@@ -3,7 +3,7 @@
     "generated": "2026-09-24",
     "source": "Bank of America checking statement",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 6511.53,
+    "totalMonthly": 6506.38,
     "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses). BofA statement reconciliation 2026-09-24: updated Render.com, GoDaddy Domains, Amazon Digital amounts; removed PythonAnywhere; added BofA Savings fee. Plaid verification 2026-09-24: Verizon net $191; Lorena $650; gas $61.69; BofA Mastercard $356; Chase autopay $157 replaces Freedom Flex/Slate; permits $44.42; pharmacy $6.67; added Viking ($50, ends Dec 2026), Food $183.85, Miscellaneous $627.56; Card interest tracked as info-only; removed BofA Business Advantage 360; merged Housing/Services/Utilities into Household."
   },
   "income": {
@@ -176,6 +176,13 @@
       "note": "KP refill estimate."
     },
     {
+      "name": "AXA Equitable term life",
+      "amount": 61.11,
+      "frequency": "monthly",
+      "category": "health",
+      "note": "Quarterly $183.32; next due about Oct 23."
+    },
+    {
       "name": "Acorns",
       "amount": 3.0,
       "frequency": "monthly",
@@ -243,7 +250,7 @@
     },
     {
       "name": "Miscellaneous",
-      "amount": 627.56,
+      "amount": 561.30,
       "frequency": "monthly",
       "category": "misc",
       "note": "Average of non-bill charges; details in the Miscellaneous tab."
