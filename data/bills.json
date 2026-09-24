@@ -3,8 +3,14 @@
     "generated": "2026-09-24",
     "source": "Bank of America checking statement",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 5600.55,
-    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses). BofA statement reconciliation 2026-09-24: updated Render.com, GoDaddy Domains, Amazon Digital amounts; removed PythonAnywhere; added BofA Savings fee."
+    "totalMonthly": 6511.53,
+    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses). BofA statement reconciliation 2026-09-24: updated Render.com, GoDaddy Domains, Amazon Digital amounts; removed PythonAnywhere; added BofA Savings fee. Plaid verification 2026-09-24: Verizon net $191; Lorena $650; gas $61.69; BofA Mastercard $356; Chase autopay $157 replaces Freedom Flex/Slate; permits $44.42; pharmacy $6.67; added Viking ($50, ends Dec 2026), Food $183.85, Miscellaneous $627.56; Card interest tracked as info-only; removed BofA Business Advantage 360; merged Housing/Services/Utilities into Household."
+  },
+  "income": {
+    "amount": 6000,
+    "frequency": "monthly",
+    "source": "Jay (stated; Fidelity deposit $6,000 monthly)",
+    "note": "Kids' phone repayments (Amanuel, Bethel, Abel) are netted into the Verizon line, not counted as income."
   },
   "charges": [
     {
@@ -17,13 +23,14 @@
       "name": "Rent — Mimi",
       "amount": 1075.0,
       "frequency": "monthly",
-      "category": "housing"
+      "category": "household"
     },
     {
       "name": "Lorena Abzuman",
-      "amount": 600.0,
+      "amount": 650.0,
       "frequency": "monthly",
-      "category": "household"
+      "category": "household",
+      "note": "Standing laundry $300 biweekly."
     },
     {
       "name": "Kaiser premium",
@@ -32,40 +39,37 @@
       "category": "health"
     },
     {
-      "name": "Freedom Flex",
-      "amount": 266.0,
-      "frequency": "monthly",
-      "category": "credit"
-    },
-    {
       "name": "Spectrum",
       "amount": 260.0,
       "frequency": "monthly",
-      "category": "utilities"
+      "category": "household"
     },
     {
       "name": "Verizon Wireless",
-      "amount": 200.0,
+      "amount": 191.0,
       "frequency": "monthly",
-      "category": "utilities"
+      "category": "household",
+      "note": "Gross $350; kids' Zelles netted."
     },
     {
       "name": "SCE Edison",
       "amount": 175.0,
       "frequency": "monthly",
-      "category": "utilities"
+      "category": "household"
     },
     {
       "name": "Car gas",
-      "amount": 120.0,
+      "amount": 61.69,
       "frequency": "monthly",
-      "category": "auto"
+      "category": "auto",
+      "note": "Shell only, Jul–Sep average."
     },
     {
       "name": "BofA Mastercard",
-      "amount": 120.0,
+      "amount": 356.0,
       "frequency": "monthly",
-      "category": "credit"
+      "category": "credit",
+      "note": "Autopay average Jul–Sep."
     },
     {
       "name": "Primo Brands",
@@ -77,25 +81,13 @@
       "name": "Storage",
       "amount": 80.0,
       "frequency": "monthly",
-      "category": "housing"
-    },
-    {
-      "name": "Chase Slate",
-      "amount": 40.0,
-      "frequency": "monthly",
-      "category": "credit"
+      "category": "household"
     },
     {
       "name": "Render.com",
-      "amount": 47.00,
+      "amount": 47.0,
       "frequency": "monthly",
       "category": "tech_subscription"
-    },
-    {
-      "name": "BofA Business Advantage 360",
-      "amount": 35.0,
-      "frequency": "monthly",
-      "category": "credit"
     },
     {
       "name": "BofA Savings Maintenance Fee (...1375)",
@@ -105,15 +97,16 @@
     },
     {
       "name": "Beverly Hills permits",
-      "amount": 31.21,
+      "amount": 44.42,
       "frequency": "monthly",
-      "category": "auto"
+      "category": "auto",
+      "note": "12-month permit receipts averaged."
     },
     {
       "name": "Prepaid Legal",
       "amount": 29.9,
       "frequency": "monthly",
-      "category": "services"
+      "category": "household"
     },
     {
       "name": "Netflix",
@@ -177,9 +170,10 @@
     },
     {
       "name": "Mail-order pharmacy",
-      "amount": 5.0,
+      "amount": 6.67,
       "frequency": "monthly",
-      "category": "health"
+      "category": "health",
+      "note": "KP refill estimate."
     },
     {
       "name": "Acorns",
@@ -207,7 +201,7 @@
     },
     {
       "name": "Retell AI",
-      "amount": 2,
+      "amount": 2.0,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -216,13 +210,46 @@
       "amount": 7.99,
       "frequency": "monthly",
       "category": "tech_subscription"
+    },
+    {
+      "name": "Chase autopay",
+      "amount": 157.0,
+      "frequency": "monthly",
+      "category": "credit",
+      "note": "Replaces Freedom Flex + Chase Slate."
+    },
+    {
+      "name": "Viking Billing Service",
+      "amount": 50.0,
+      "frequency": "monthly",
+      "category": "payment_plans",
+      "endDate": "2026-12",
+      "note": "4 payments left; last about Dec 31, 2026."
+    },
+    {
+      "name": "Card interest & fees",
+      "amount": 125.75,
+      "frequency": "monthly",
+      "category": "credit",
+      "infoOnly": true,
+      "note": "Paid through the BofA Mastercard payment."
+    },
+    {
+      "name": "Food (dining out)",
+      "amount": 183.85,
+      "frequency": "monthly",
+      "category": "food",
+      "note": "Linked accounts only; groceries not visible, so this is a floor."
+    },
+    {
+      "name": "Miscellaneous",
+      "amount": 627.56,
+      "frequency": "monthly",
+      "category": "misc",
+      "note": "Average of non-bill charges; details in the Miscellaneous tab."
     }
   ],
   "categories": {
-    "housing": {
-      "label": "Housing",
-      "color": "#ffd166"
-    },
     "household": {
       "label": "Household",
       "color": "#06d6a0"
@@ -231,17 +258,9 @@
       "label": "Health",
       "color": "#ff073a"
     },
-    "utilities": {
-      "label": "Utilities",
-      "color": "#ffe600"
-    },
     "credit": {
       "label": "Credit cards",
       "color": "#ff6b35"
-    },
-    "services": {
-      "label": "Services",
-      "color": "#9d4edd"
     },
     "tech_subscription": {
       "label": "Tech subscription",
@@ -270,6 +289,18 @@
     "bank_fees": {
       "label": "Bank fees",
       "color": "#607d8b"
+    },
+    "misc": {
+      "label": "Miscellaneous",
+      "color": "#9e9e9e"
+    },
+    "food": {
+      "label": "Food",
+      "color": "#e67e22"
+    },
+    "payment_plans": {
+      "label": "Payment plans",
+      "color": "#9b59b6"
     }
   }
 }
