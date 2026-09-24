@@ -1,10 +1,10 @@
 {
   "meta": {
     "generated": "2026-09-24",
-    "source": "Bank of America checking statement",
+    "source": "Bank of America checking statement; Plaid (BofA, Wells Fargo, Chase)",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 6506.38,
-    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses). BofA statement reconciliation 2026-09-24: updated Render.com, GoDaddy Domains, Amazon Digital amounts; removed PythonAnywhere; added BofA Savings fee. Plaid verification 2026-09-24: Verizon net $191; Lorena $650; gas $61.69; BofA Mastercard $356; Chase autopay $157 replaces Freedom Flex/Slate; permits $44.42; pharmacy $6.67; added Viking ($50, ends Dec 2026), Food $183.85, Miscellaneous $627.56; Card interest tracked as info-only; removed BofA Business Advantage 360; merged Housing/Services/Utilities into Household."
+    "totalMonthly": 6416.67,
+    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases, interest and fees are counted where they are charged; card payments (BofA Mastercard, Chase 4570, Chase 4243) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
   },
   "income": {
     "amount": 6000,
@@ -23,7 +23,8 @@
       "name": "Rent — Mimi",
       "amount": 1075.0,
       "frequency": "monthly",
-      "category": "household"
+      "category": "household",
+      "note": "Home apartment (separate from rental)."
     },
     {
       "name": "Lorena Abzuman",
@@ -59,17 +60,18 @@
     },
     {
       "name": "Car gas",
-      "amount": 61.69,
+      "amount": 66.03,
       "frequency": "monthly",
       "category": "auto",
-      "note": "Shell only, Jul–Sep average."
+      "note": "Shell on BofA + Chase 4243, Jul–Sep average."
     },
     {
       "name": "BofA Mastercard",
       "amount": 356.0,
       "frequency": "monthly",
       "category": "credit",
-      "note": "Autopay average Jul–Sep."
+      "note": "Debt service, info only. Purchases, interest and fees are counted where they are charged, so the payment is not counted again. Jul–Sep payments $415/$216/$437.",
+      "infoOnly": true
     },
     {
       "name": "Primo Brands",
@@ -158,9 +160,10 @@
     },
     {
       "name": "Apple",
-      "amount": 8.98,
+      "amount": 5.98,
       "frequency": "monthly",
-      "category": "tech_subscription"
+      "category": "tech_subscription",
+      "note": "iCloud+ $2.99 + Google Photos $2.99. Apple charges total $18.97/mo; Donkey Tube $12.99 stays excluded as before."
     },
     {
       "name": "Amazon Digital",
@@ -173,7 +176,7 @@
       "amount": 6.67,
       "frequency": "monthly",
       "category": "health",
-      "note": "KP refill estimate."
+      "note": "KP refill $20.01 on Aug 20 (Chase 4243); 90-day cadence assumed."
     },
     {
       "name": "AXA Equitable term life",
@@ -196,9 +199,10 @@
     },
     {
       "name": "CapCut Pro",
-      "amount": 9.99,
+      "amount": 19.99,
       "frequency": "monthly",
-      "category": "tech_subscription"
+      "category": "tech_subscription",
+      "note": "Chase 4243: $11.99 Aug 18, $19.99 Sep 18. Uses the latest charge."
     },
     {
       "name": "GoDaddy Domains (2)",
@@ -219,11 +223,20 @@
       "category": "tech_subscription"
     },
     {
-      "name": "Chase autopay",
+      "name": "Chase Ultimate Rewards ...4570 autopay",
       "amount": 157.0,
       "frequency": "monthly",
       "category": "credit",
-      "note": "Replaces Freedom Flex + Chase Slate."
+      "note": "Debt service, info only. $157 from BofA 1045 posted to card 4570 on Sep 3. The card holds about $26.6k of balance transfers to BofA 8604. Replaces Freedom Flex and Chase Slate.",
+      "infoOnly": true
+    },
+    {
+      "name": "Chase Slate Edge ...4243 autopay",
+      "amount": 100.0,
+      "frequency": "monthly",
+      "category": "credit",
+      "infoOnly": true,
+      "note": "Debt service, info only. $100 autopay on Jul 22, Aug 24 and Sep 22. Purchases on 4243 are counted in Food, Misc and bills."
     },
     {
       "name": "Viking Billing Service",
@@ -235,25 +248,39 @@
     },
     {
       "name": "Card interest & fees",
-      "amount": 125.75,
+      "amount": 141.48,
       "frequency": "monthly",
       "category": "credit",
-      "infoOnly": true,
-      "note": "Paid through the BofA Mastercard payment."
+      "note": "Counted (card payments are info only). Interest posted Jul–Aug: BofA 8604 $251.49 + Chase 4243 $31.47 = $282.96, divided by 2 statements. One-off balance-transfer and late fees ($1,384) are not averaged."
     },
     {
-      "name": "Food (dining out)",
-      "amount": 183.85,
+      "name": "Dining out",
+      "amount": 581.58,
       "frequency": "monthly",
       "category": "food",
-      "note": "Linked accounts only; groceries not visible, so this is a floor."
+      "note": "BofA + Chase 4243, Jul 1–Sep 23 average. Linked accounts only."
+    },
+    {
+      "name": "Groceries",
+      "amount": 45.04,
+      "frequency": "monthly",
+      "category": "food",
+      "note": "Groceries partly visible (Chase 4243); likely incomplete."
     },
     {
       "name": "Miscellaneous",
-      "amount": 561.30,
+      "amount": 389.00,
       "frequency": "monthly",
       "category": "misc",
-      "note": "Average of non-bill charges; details in the Miscellaneous tab."
+      "note": "Average of non-bill charges on BofA + Chase, excluding large one-offs. Details in the Miscellaneous tab."
+    },
+    {
+      "name": "One-off charges (3-mo avg)",
+      "amount": 1397.47,
+      "frequency": "monthly",
+      "category": "misc",
+      "infoOnly": true,
+      "note": "Large one-offs on personal cards (HR Jetpack, Chase balance-transfer fees, tires, hotel). Not in total."
     }
   ],
   "categories": {

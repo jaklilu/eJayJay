@@ -1,11 +1,11 @@
 {
   "generated": "2026-09-24",
-  "source": "Plaid (BofA 1045/1375/8604/6704; WF 1205 returned no transactions)",
+  "source": "Plaid (BofA 1045/1375/8604/6704; Chase 4243/4570).",
   "period": "2026-06-26 to 2026-09-23",
   "method": "Average = total Jul 1–Sep 23 / 2.7667 months (2 full months + 23/30 of Sep). Late-June partial shown separately, not averaged.",
-  "averageMonthly": 561.30,
-  "averageMonthlyExOneOffs": 312.31,
-  "recommended": "averageMonthly",
+  "averageMonthly": 1786.46,
+  "averageMonthlyExOneOffs": 388.99,
+  "recommended": "averageMonthlyExOneOffs",
   "months": [
     {
       "month": "2026-06 (26–30, partial)",
@@ -14,17 +14,17 @@
     },
     {
       "month": "2026-07",
-      "total": 486.60,
+      "total": 1476.01,
       "inAverage": true
     },
     {
       "month": "2026-08",
-      "total": 707.4,
+      "total": 1739.29,
       "inAverage": true
     },
     {
       "month": "2026-09 (1–23, partial)",
-      "total": 358.94,
+      "total": 1727.31,
       "inAverage": true
     }
   ],
@@ -103,6 +103,14 @@
     },
     {
       "date": "2026-07-13",
+      "merchant": "Chase balance-transfer fee",
+      "description": "Balance transfer fee",
+      "amount": 750.00,
+      "account": "4570",
+      "oneOff": true
+    },
+    {
+      "date": "2026-07-13",
       "merchant": "Waymo",
       "description": "PURCHASE 0713 WAYMO CA XXXXX4161XXXXXXXXXX2880",
       "amount": 10.5,
@@ -148,6 +156,14 @@
       "amount": 28,
       "account": "1045",
       "oneOff": false
+    },
+    {
+      "date": "2026-07-21",
+      "merchant": "Marriott",
+      "description": "MARRIOTT LA JOLLA",
+      "amount": 239.41,
+      "account": "4243",
+      "oneOff": true
     },
     {
       "date": "2026-07-22",
@@ -220,6 +236,38 @@
       "amount": 337.79,
       "account": "1045",
       "oneOff": true
+    },
+    {
+      "date": "2026-08-17",
+      "merchant": "Gigatires LLC",
+      "description": "GIGATIRES LLC",
+      "amount": 364.08,
+      "account": "4243",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "CVS",
+      "description": "CVS",
+      "amount": 9.87,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "CVS",
+      "description": "CVS",
+      "amount": 9.87,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-18",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 7.0,
+      "account": "4243",
+      "oneOff": false
     },
     {
       "date": "2026-08-24",
@@ -430,6 +478,22 @@
       "oneOff": false
     },
     {
+      "date": "2026-08-26",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 7.0,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-08-28",
+      "merchant": "FlowerShopping.com",
+      "description": "TLF*FLOWERSHOPPING.COM (R",
+      "amount": 109.07,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
       "date": "2026-08-31",
       "merchant": "Laundry Breeze",
       "description": "CHECKCARD 0828 LAUNDRY BREEZE XXX-XX60383 CA XXXXX1062XXXXXXXXXX8600",
@@ -439,11 +503,35 @@
     },
     {
       "date": "2026-08-31",
+      "merchant": "Chase balance-transfer fee",
+      "description": "Balance transfer fee",
+      "amount": 525.00,
+      "account": "4570",
+      "oneOff": true
+    },
+    {
+      "date": "2026-08-31",
       "merchant": "Link",
       "description": "PURCHASE 0830 LINK.COM* GIFT NEST LINK.COM CA XXXXX7762XXXXXXXXXX7198",
       "amount": 4.99,
       "account": "1045",
       "oneOff": false
+    },
+    {
+      "date": "2026-09-01",
+      "merchant": "LAZ Parking",
+      "description": "LAZ PARKING M47250WC",
+      "amount": 20.0,
+      "account": "4243",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-02",
+      "merchant": "HR Jetpack (SHRM certification prep)",
+      "description": "WWW.HRJETPACK.COM",
+      "amount": 1299.0,
+      "account": "4243",
+      "oneOff": true
     },
     {
       "date": "2026-09-08",
@@ -475,6 +563,14 @@
       "description": "PURCHASE 0910 FERGUSONHOM VA XXXXX6262XXXXXXXXXX7662",
       "amount": 16.45,
       "account": "1045",
+      "oneOff": false
+    },
+    {
+      "date": "2026-09-20",
+      "merchant": "The Home Depot",
+      "description": "Home Depot",
+      "amount": 49.37,
+      "account": "4243",
       "oneOff": false
     },
     {
