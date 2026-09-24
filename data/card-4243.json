@@ -1,0 +1,245 @@
+{
+ "asOf": "2026-09-24",
+ "card": "Chase Slate Edge ...4243",
+ "purpose": "Unplanned expenses",
+ "balance": 3441.38,
+ "limit": 3900.0,
+ "available": 458.62,
+ "utilizationPct": 88.2,
+ "window": "Jul 1 \u2013 Sep 23, 2026 (3 months)",
+ "totalCharges": 3470.08,
+ "oneOffs": [
+  {
+   "name": "HR Jetpack",
+   "date": "2026-09-02",
+   "amount": 1299.0
+  }
+ ],
+ "avgMonthlyExOneOffs": 723.69,
+ "avgMonthlyInclOneOffs": 1156.69,
+ "byMonth": {
+  "2026-07": 258.69,
+  "2026-08": 1320.04,
+  "2026-09": 1891.35
+ },
+ "byCategoryExOneOffs": {
+  "Dining & groceries": 1225.0,
+  "Shopping": 473.15,
+  "Travel": 239.41,
+  "Home": 49.37,
+  "Auto & transport": 46.0,
+  "Medical": 39.75,
+  "Entertainment": 34.95,
+  "Services": 31.98,
+  "Interest & fees": 31.47
+ },
+ "payments": [
+  {
+   "date": "2026-07-09",
+   "amount": 2000,
+   "name": "Payment Thank You Bill"
+  },
+  {
+   "date": "2026-07-21",
+   "amount": 100,
+   "name": "AUTOMATIC PAYMENT - THANK"
+  },
+  {
+   "date": "2026-08-21",
+   "amount": 100,
+   "name": "AUTOMATIC PAYMENT - THANK"
+  },
+  {
+   "date": "2026-09-21",
+   "amount": 100,
+   "name": "AUTOMATIC PAYMENT - THANK"
+  }
+ ],
+ "charges": [
+  {
+   "date": "2026-09-23",
+   "amount": 53.78,
+   "merchant": "Esso Caff\u00e9"
+  },
+  {
+   "date": "2026-09-20",
+   "amount": 49.37,
+   "merchant": "The Home Depot"
+  },
+  {
+   "date": "2026-09-20",
+   "amount": 15.98,
+   "merchant": "Apple"
+  },
+  {
+   "date": "2026-09-18",
+   "amount": 19.99,
+   "merchant": "CapCut"
+  },
+  {
+   "date": "2026-09-16",
+   "amount": 98.65,
+   "merchant": "California Pizza Kitchen"
+  },
+  {
+   "date": "2026-09-16",
+   "amount": 102.31,
+   "merchant": "Barcote Ethiopian Restaurant"
+  },
+  {
+   "date": "2026-09-14",
+   "amount": 36.85,
+   "merchant": "In-N-Out Burger"
+  },
+  {
+   "date": "2026-09-13",
+   "amount": 31.28,
+   "merchant": "Urth Caffe"
+  },
+  {
+   "date": "2026-09-07",
+   "amount": 24.06,
+   "merchant": "Whole Foods"
+  },
+  {
+   "date": "2026-09-06",
+   "amount": 74.49,
+   "merchant": "Pavilions"
+  },
+  {
+   "date": "2026-09-06",
+   "amount": 3.8,
+   "merchant": "Pavilions"
+  },
+  {
+   "date": "2026-09-06",
+   "amount": 58.8,
+   "merchant": "Awash Restaurant"
+  },
+  {
+   "date": "2026-09-02",
+   "amount": 1299,
+   "merchant": "Hrjetpack"
+  },
+  {
+   "date": "2026-09-02",
+   "amount": 2.99,
+   "merchant": "Apple"
+  },
+  {
+   "date": "2026-09-01",
+   "amount": 20,
+   "merchant": "LAZ Parking"
+  },
+  {
+   "date": "2026-08-31",
+   "amount": 21.4,
+   "merchant": "In-N-Out Burger"
+  },
+  {
+   "date": "2026-08-28",
+   "amount": 109.07,
+   "merchant": "FlowerShopping.com"
+  },
+  {
+   "date": "2026-08-28",
+   "amount": 218.84,
+   "merchant": "The Cheesecake Factory"
+  },
+  {
+   "date": "2026-08-27",
+   "amount": 92.17,
+   "merchant": "Zankou Chicken"
+  },
+  {
+   "date": "2026-08-26",
+   "amount": 24.15,
+   "merchant": "Esso Caff\u00e9"
+  },
+  {
+   "date": "2026-08-26",
+   "amount": 24.12,
+   "merchant": "Zankou Chicken"
+  },
+  {
+   "date": "2026-08-26",
+   "amount": 7,
+   "merchant": "LAZ Parking"
+  },
+  {
+   "date": "2026-08-24",
+   "amount": 12.19,
+   "merchant": "PURCHASE INTEREST CHARGE"
+  },
+  {
+   "date": "2026-08-23",
+   "amount": 12,
+   "merchant": "Shell"
+  },
+  {
+   "date": "2026-08-20",
+   "amount": 8.34,
+   "merchant": "Kaiser Permanente"
+  },
+  {
+   "date": "2026-08-20",
+   "amount": 11.67,
+   "merchant": "Kaiser Permanente"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 2.99,
+   "merchant": "Apple"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 11.99,
+   "merchant": "CapCut"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 7,
+   "merchant": "LAZ Parking"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 12.99,
+   "merchant": "Apple"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 9.87,
+   "merchant": "CVS"
+  },
+  {
+   "date": "2026-08-18",
+   "amount": 9.87,
+   "merchant": "CVS"
+  },
+  {
+   "date": "2026-08-17",
+   "amount": 364.08,
+   "merchant": "Gigatires LLC"
+  },
+  {
+   "date": "2026-08-10",
+   "amount": 22.26,
+   "merchant": "Pavilions"
+  },
+  {
+   "date": "2026-08-07",
+   "amount": 338.04,
+   "merchant": "Beverly's Bar and Grill"
+  },
+  {
+   "date": "2026-07-24",
+   "amount": 19.28,
+   "merchant": "PURCHASE INTEREST CHARGE"
+  },
+  {
+   "date": "2026-07-21",
+   "amount": 239.41,
+   "merchant": "Marriott"
+  }
+ ]
+}
