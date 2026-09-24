@@ -4,7 +4,7 @@
     "source": "Bank of America checking statement; Plaid (BofA, Wells Fargo, Chase)",
     "period": "Sep 2025 – Aug 2026",
     "totalMonthly": 6416.67,
-    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases, interest and fees are counted where they are charged; card payments (BofA Mastercard, Chase 4570, Chase 4243) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
+    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases, interest and fees are counted where they are charged; card payments (BofA Mastercard, Chase 4570) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
   },
   "income": {
     "amount": 6000,
@@ -231,14 +231,6 @@
       "infoOnly": true
     },
     {
-      "name": "Chase Slate Edge ...4243 autopay",
-      "amount": 100.0,
-      "frequency": "monthly",
-      "category": "credit",
-      "infoOnly": true,
-      "note": "Debt service, info only. $100 autopay on Jul 22, Aug 24 and Sep 22. Purchases on 4243 are counted in Food, Misc and bills."
-    },
-    {
       "name": "Viking Billing Service",
       "amount": 50.0,
       "frequency": "monthly",
@@ -255,10 +247,10 @@
     },
     {
       "name": "Dining out",
-      "amount": 581.58,
+      "amount": 732.58,
       "frequency": "monthly",
       "category": "food",
-      "note": "BofA + Chase 4243, Jul 1–Sep 23 average. Linked accounts only."
+      "note": "BofA + Chase 4243, Jul 1–Sep 23 average. Linked accounts only. Includes $80 Zelle to Mimi for breakfast (Sep 21). Includes Moon House $337.79 (Aug 10)."
     },
     {
       "name": "Groceries",
@@ -269,14 +261,14 @@
     },
     {
       "name": "Miscellaneous",
-      "amount": 389.00,
+      "amount": 360.08,
       "frequency": "monthly",
       "category": "misc",
       "note": "Average of non-bill charges on BofA + Chase, excluding large one-offs. Details in the Miscellaneous tab."
     },
     {
       "name": "One-off charges (3-mo avg)",
-      "amount": 1397.47,
+      "amount": 1275.38,
       "frequency": "monthly",
       "category": "misc",
       "infoOnly": true,
