@@ -135,6 +135,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 0.95rem;
       transition: all 0.2s;
+      text-decoration: none;
     }
 
     .tab:hover { background: var(--bg-card); }
@@ -427,121 +428,6 @@
       color: var(--accent-red);
     }
 
-    .rental-section {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 2px solid var(--border);
-    }
-
-    .rental-section h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.5rem;
-      color: #9b59b6;
-      margin-bottom: 1rem;
-    }
-
-    .rental-summary {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .rental-stat {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem;
-    }
-
-    .rental-stat .label {
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.25rem;
-    }
-
-    .rental-stat .value {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-    }
-
-    .rental-stat .value.income { color: var(--accent-green); }
-    .rental-stat .value.cost { color: var(--accent-red); }
-    .rental-stat .value.net-positive { color: var(--accent-green); }
-    .rental-stat .value.net-negative { color: var(--accent-red); }
-
-    .rental-items {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .rental-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 0.75rem 1rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .rental-item-name {
-      font-weight: 500;
-    }
-
-    .rental-item-note {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    .rental-item-amount {
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-    }
-
-    .rental-item-amount.income { color: var(--accent-green); }
-    .rental-item-amount.cost { color: var(--accent-red); }
-
-    .rental-note {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
-
-    .combined-reference {
-      background: var(--bg-card);
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    .combined-reference .label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
-    }
-
-    .combined-reference .value {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .combined-reference .value.positive { color: var(--accent-green); }
-    .combined-reference .value.negative { color: var(--accent-red); }
-
     .disclaimer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -590,6 +476,7 @@
     <div class="tabs">
       <button class="tab active" data-tab="bills">Bills</button>
       <button class="tab" data-tab="misc">Miscellaneous</button>
+      <a href="/personal/rental/" class="tab">Rental →</a>
     </div>
 
     <div id="bills-tab" class="tab-content active">
@@ -611,8 +498,6 @@
       <div class="misc-items-list" id="misc-items"></div>
     </div>
 
-    <div class="rental-section" id="rental-section" style="display: none;"></div>
-
     <div class="disclaimer">
       <strong>Note:</strong> A bill is included when it posted in at least 10 of the last 12 months,
       usually on the same day (±2). The amount is what it is now: the last 3 months averaged,
@@ -626,28 +511,18 @@
       const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
       const fmtSigned = (n) => (n >= 0 ? '+' : '') + fmt(n);
 
-      let billsData = null;
-      let miscData = null;
-      let rentalData = null;
-      let personalNet = 0;
-
       Promise.all([
         fetch('/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
-        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
-        fetch('/data/rental.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
-      ]).then(([bills, misc, rental]) => {
-        billsData = bills;
-        miscData = misc;
-        rentalData = rental;
-        if (bills) personalNet = renderBills(bills);
+        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+      ]).then(([bills, misc]) => {
+        if (bills) renderBills(bills);
         if (misc) renderMisc(misc);
-        if (rental) renderRental(rental, personalNet);
       }).catch(() => {
         document.getElementById('charges').innerHTML =
           '<p class="subtitle">Could not load bills.</p>';
       });
 
-      document.querySelectorAll('.tab').forEach(tab => {
+      document.querySelectorAll('.tab[data-tab]').forEach(tab => {
         tab.addEventListener('click', () => {
           document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
           document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
@@ -661,7 +536,6 @@
         const countedCharges = charges.filter(c => !c.infoOnly);
         const total = countedCharges.reduce((sum, c) => sum + c.amount, 0);
         const count = countedCharges.length;
-        const avg = count ? total / count : 0;
         const incomeAmt = income ? income.amount : 0;
         const net = incomeAmt - total;
 
@@ -748,16 +622,12 @@
         renderCharges();
         document.getElementById('meta').textContent =
           `${meta.source} · ${meta.period}. ${meta.note}`;
-
-        return net;
       }
 
       function renderMisc(data) {
         const { averageMonthly, averageMonthlyExOneOffs, recommended, months, items } = data;
         const oneOffItems = items.filter(i => i.oneOff);
         const regularItems = items.filter(i => !i.oneOff);
-
-        const usedValue = recommended === 'averageMonthlyExOneOffs' ? averageMonthlyExOneOffs : averageMonthly;
 
         document.getElementById('misc-summary').innerHTML = `
           <div class="misc-stat">
@@ -830,83 +700,6 @@
 
         renderMiscFilters();
         renderMiscItems();
-      }
-
-      function renderRental(data, personalNetAmount) {
-        const { sectionTitle, accountNote, income, costs, oneOffs } = data;
-        const rentalIncome = income.reduce((sum, i) => sum + i.amount, 0);
-        const rentalCosts = costs.reduce((sum, c) => sum + c.amount, 0);
-        const rentalNet = rentalIncome - rentalCosts;
-        const combinedNet = personalNetAmount + rentalNet;
-
-        const section = document.getElementById('rental-section');
-        section.style.display = 'block';
-        section.innerHTML = `
-          <h2>${sectionTitle || 'Rental Property'}</h2>
-          <div class="rental-summary">
-            <div class="rental-stat">
-              <div class="label">Rental Income</div>
-              <div class="value income">${fmt(rentalIncome)}/mo</div>
-            </div>
-            <div class="rental-stat">
-              <div class="label">Rental Costs</div>
-              <div class="value cost">${fmt(rentalCosts)}/mo</div>
-            </div>
-            <div class="rental-stat">
-              <div class="label">Rental Net</div>
-              <div class="value ${rentalNet >= 0 ? 'net-positive' : 'net-negative'}">${fmtSigned(rentalNet)}/mo</div>
-            </div>
-          </div>
-
-          <h3 class="section-title" style="margin-top: 1rem;">Income</h3>
-          <div class="rental-items">
-            ${income.map(i => `
-              <div class="rental-item">
-                <div>
-                  <div class="rental-item-name">${i.name}</div>
-                  ${i.note ? `<div class="rental-item-note">${i.note}</div>` : ''}
-                </div>
-                <div class="rental-item-amount income">${fmt(i.amount)}</div>
-              </div>
-            `).join('')}
-          </div>
-
-          <h3 class="section-title">Costs</h3>
-          <div class="rental-items">
-            ${costs.map(c => `
-              <div class="rental-item">
-                <div>
-                  <div class="rental-item-name">${c.name}</div>
-                  ${c.note ? `<div class="rental-item-note">${c.note}</div>` : ''}
-                </div>
-                <div class="rental-item-amount cost">${fmt(c.amount)}</div>
-              </div>
-            `).join('')}
-          </div>
-
-          ${oneOffs && oneOffs.length > 0 ? `
-            <h3 class="section-title">One-off charges (info only, not in costs total)</h3>
-            <div class="rental-items">
-              ${oneOffs.map(o => `
-                <div class="rental-item info-only" style="opacity: 0.6;">
-                  <div>
-                    <div class="rental-item-name">${o.name} <span class="badge info-only">Not in total</span></div>
-                    ${o.date ? `<div class="rental-item-note">${o.date}</div>` : ''}
-                    ${o.note ? `<div class="rental-item-note">${o.note}</div>` : ''}
-                  </div>
-                  <div class="rental-item-amount cost" style="color: var(--text-muted);">${fmt(o.amount)}</div>
-                </div>
-              `).join('')}
-            </div>
-          ` : ''}
-
-          <div class="rental-note">${accountNote}</div>
-
-          <div class="combined-reference">
-            <div class="label">Personal net + rental/joint net (reference only)</div>
-            <div class="value ${combinedNet >= 0 ? 'positive' : 'negative'}">${fmtSigned(combinedNet)}/mo</div>
-          </div>
-        `;
       }
     })();
   </script>

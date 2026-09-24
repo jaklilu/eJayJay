@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Property | Jay's Personal Dashboard</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-hover: #1a1a25;
+      --text-primary: #f0f0f5;
+      --text-secondary: #8a8a9a;
+      --text-muted: #5a5a6a;
+      --accent-green: #39ff14;
+      --accent-yellow: #ffe600;
+      --accent-red: #ff073a;
+      --gold: #d4af37;
+      --border: #2a2a35;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent-green); }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #9b59b6;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .summary-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .summary-card .label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .summary-card .value {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .summary-card .value.income { color: var(--accent-green); }
+    .summary-card .value.cost { color: var(--accent-red); }
+    .summary-card .value.net-positive { color: var(--accent-green); }
+    .summary-card .value.net-negative { color: var(--accent-red); }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .item.info-only { opacity: 0.6; }
+
+    .item-name {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .item-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .item-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: right;
+      min-width: 100px;
+    }
+
+    .item-amount.income { color: var(--accent-green); }
+    .item-amount.cost { color: var(--accent-red); }
+
+    .badge {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: var(--text-muted);
+      color: var(--bg-dark);
+    }
+
+    .page-note {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 1rem; }
+      h1 { font-size: 1.8rem; }
+      .summary-cards { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="/personal/expenses/" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Expenses
+      </a>
+      <h1 id="page-title">Rental Property</h1>
+      <p class="subtitle">Income and costs for the rental property</p>
+    </header>
+
+    <div class="summary-cards" id="summary"></div>
+
+    <div id="income-section"></div>
+    <div id="costs-section"></div>
+    <div id="oneoffs-section"></div>
+
+    <div class="page-note" id="page-note"></div>
+  </div>
+
+  <script>
+    (function() {
+      const fmt = (n) => '$' + Number(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      const fmtSigned = (n) => (n >= 0 ? '+' : '') + fmt(n);
+
+      fetch('/data/rental.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(render)
+        .catch(() => {
+          document.getElementById('summary').innerHTML = '<p class="subtitle">Could not load rental data.</p>';
+        });
+
+      function render(data) {
+        if (!data) return;
+
+        const { sectionTitle, accountNote, income, costs, oneOffs } = data;
+        const totalIncome = income.reduce((sum, i) => sum + i.amount, 0);
+        const totalCosts = costs.reduce((sum, c) => sum + c.amount, 0);
+        const net = totalIncome - totalCosts;
+
+        if (sectionTitle) {
+          document.getElementById('page-title').textContent = sectionTitle;
+        }
+
+        document.getElementById('summary').innerHTML = `
+          <div class="summary-card">
+            <div class="label">Rental Income</div>
+            <div class="value income">${fmt(totalIncome)}/mo</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Rental Costs</div>
+            <div class="value cost">${fmt(totalCosts)}/mo</div>
+          </div>
+          <div class="summary-card">
+            <div class="label">Rental Net</div>
+            <div class="value ${net >= 0 ? 'net-positive' : 'net-negative'}">${fmtSigned(net)}/mo</div>
+          </div>
+        `;
+
+        document.getElementById('income-section').innerHTML = `
+          <h2 class="section-title">Income</h2>
+          <div class="items-list">
+            ${income.map(i => `
+              <div class="item">
+                <div>
+                  <div class="item-name">${i.name}</div>
+                  ${i.note ? `<div class="item-note">${i.note}</div>` : ''}
+                </div>
+                <div class="item-amount income">${fmt(i.amount)}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        document.getElementById('costs-section').innerHTML = `
+          <h2 class="section-title">Costs</h2>
+          <div class="items-list">
+            ${costs.map(c => `
+              <div class="item">
+                <div>
+                  <div class="item-name">${c.name}</div>
+                  ${c.note ? `<div class="item-note">${c.note}</div>` : ''}
+                </div>
+                <div class="item-amount cost">${fmt(c.amount)}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+
+        if (oneOffs && oneOffs.length > 0) {
+          document.getElementById('oneoffs-section').innerHTML = `
+            <h2 class="section-title">One-off Charges</h2>
+            <div class="items-list">
+              ${oneOffs.map(o => `
+                <div class="item info-only">
+                  <div>
+                    <div class="item-name">${o.name} <span class="badge">Not in net</span></div>
+                    ${o.date ? `<div class="item-note">${o.date}</div>` : ''}
+                    ${o.note ? `<div class="item-note">${o.note}</div>` : ''}
+                  </div>
+                  <div class="item-amount cost" style="color: var(--text-muted);">${fmt(o.amount)}</div>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        document.getElementById('page-note').textContent = accountNote;
+      }
+    })();
+  </script>
+</body>
+</html>
