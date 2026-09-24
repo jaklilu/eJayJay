@@ -1,0 +1,34 @@
+{
+  "accountNote": "Chase 'Jay n Mimi' ...3697 is the rental account.",
+  "income": [
+    {
+      "name": "Rent from tenant (Ethan Longhenry, Zelle to Chase ...3697)",
+      "amount": 2864.00,
+      "frequency": "monthly"
+    }
+  ],
+  "costs": [
+    {
+      "name": "Mortgage (Chase ...6340)",
+      "amount": 1537.68,
+      "frequency": "monthly"
+    },
+    {
+      "name": "Gardener (Juan Zavala)",
+      "amount": 60.00,
+      "frequency": "monthly"
+    },
+    {
+      "name": "Mercury Insurance",
+      "amount": 112.63,
+      "frequency": "monthly",
+      "note": "$337.88 quarterly (estimated frequency)"
+    },
+    {
+      "name": "Stillwater Insurance",
+      "amount": 57.17,
+      "frequency": "monthly",
+      "note": "$343 twice a year (estimated frequency)"
+    }
+  ]
+}

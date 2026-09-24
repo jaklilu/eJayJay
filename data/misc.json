@@ -195,7 +195,8 @@
       "description": "Zelle payment to Josh Handyman Per Mamo 30192995006",
       "amount": 1112.0,
       "account": "3697",
-      "oneOff": true
+      "oneOff": true,
+      "note": "May be rental; pending Jay."
     },
     {
       "date": "2026-07-31",

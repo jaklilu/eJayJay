@@ -23,7 +23,8 @@
       "name": "Rent — Mimi",
       "amount": 1075.0,
       "frequency": "monthly",
-      "category": "household"
+      "category": "household",
+      "note": "Home apartment (separate from rental)."
     },
     {
       "name": "Lorena Abzuman",
