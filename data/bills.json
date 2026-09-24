@@ -21,13 +21,13 @@
     },
     {
       "name": "Rent — Mimi",
-      "amount": 1075.0,
+      "amount": 1075,
       "frequency": "monthly",
       "category": "household"
     },
     {
       "name": "Lorena Abzuman",
-      "amount": 650.0,
+      "amount": 650,
       "frequency": "monthly",
       "category": "household",
       "note": "Standing laundry $300 biweekly."
@@ -40,20 +40,20 @@
     },
     {
       "name": "Spectrum",
-      "amount": 260.0,
+      "amount": 260,
       "frequency": "monthly",
       "category": "household"
     },
     {
       "name": "Verizon Wireless",
-      "amount": 191.0,
+      "amount": 191,
       "frequency": "monthly",
       "category": "household",
       "note": "Gross $350; kids' Zelles netted."
     },
     {
       "name": "SCE Edison",
-      "amount": 175.0,
+      "amount": 175,
       "frequency": "monthly",
       "category": "household"
     },
@@ -66,7 +66,7 @@
     },
     {
       "name": "BofA Mastercard",
-      "amount": 356.0,
+      "amount": 356,
       "frequency": "monthly",
       "category": "credit",
       "note": "Autopay average Jul–Sep."
@@ -79,19 +79,19 @@
     },
     {
       "name": "Storage",
-      "amount": 80.0,
+      "amount": 80,
       "frequency": "monthly",
       "category": "household"
     },
     {
       "name": "Render.com",
-      "amount": 47.0,
+      "amount": 47,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
     {
       "name": "BofA Savings Maintenance Fee (...1375)",
-      "amount": 5.0,
+      "amount": 5,
       "frequency": "monthly",
       "category": "bank_fees"
     },
@@ -116,25 +116,25 @@
     },
     {
       "name": "n8n Cloud",
-      "amount": 24.0,
+      "amount": 24,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
     {
       "name": "ChatGPT Plus",
-      "amount": 20.0,
+      "amount": 20,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
     {
       "name": "Cursor",
-      "amount": 20.0,
+      "amount": 20,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
     {
       "name": "Anthropic",
-      "amount": 20.0,
+      "amount": 20,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -152,7 +152,7 @@
     },
     {
       "name": "Netlify",
-      "amount": 9.0,
+      "amount": 9,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -184,7 +184,7 @@
     },
     {
       "name": "Acorns",
-      "amount": 3.0,
+      "amount": 3,
       "frequency": "monthly",
       "category": "savings"
     },
@@ -208,7 +208,7 @@
     },
     {
       "name": "Retell AI",
-      "amount": 2.0,
+      "amount": 2,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -220,14 +220,14 @@
     },
     {
       "name": "Chase autopay",
-      "amount": 157.0,
+      "amount": 157,
       "frequency": "monthly",
       "category": "credit",
       "note": "Replaces Freedom Flex + Chase Slate."
     },
     {
       "name": "Viking Billing Service",
-      "amount": 50.0,
+      "amount": 50,
       "frequency": "monthly",
       "category": "payment_plans",
       "endDate": "2026-12",
@@ -243,14 +243,14 @@
     },
     {
       "name": "Food (dining out)",
-      "amount": 183.85,
+      "amount": 212.77,
       "frequency": "monthly",
       "category": "food",
-      "note": "Linked accounts only; groceries not visible, so this is a floor."
+      "note": "Linked accounts only; groceries not visible, so this is a floor. Includes $80 Zelle to Mimi for breakfast (Sep 21)."
     },
     {
       "name": "Miscellaneous",
-      "amount": 561.30,
+      "amount": 532.38,
       "frequency": "monthly",
       "category": "misc",
       "note": "Average of non-bill charges; details in the Miscellaneous tab."

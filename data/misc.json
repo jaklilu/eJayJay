@@ -3,8 +3,8 @@
   "source": "Plaid (BofA 1045/1375/8604/6704; WF 1205 returned no transactions)",
   "period": "2026-06-26 to 2026-09-23",
   "method": "Average = total Jul 1–Sep 23 / 2.7667 months (2 full months + 23/30 of Sep). Late-June partial shown separately, not averaged.",
-  "averageMonthly": 561.30,
-  "averageMonthlyExOneOffs": 312.31,
+  "averageMonthly": 532.38,
+  "averageMonthlyExOneOffs": 283.39,
   "recommended": "averageMonthly",
   "months": [
     {
@@ -14,7 +14,7 @@
     },
     {
       "month": "2026-07",
-      "total": 486.60,
+      "total": 486.6,
       "inAverage": true
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "month": "2026-09 (1–23, partial)",
-      "total": 358.94,
+      "total": 278.94,
       "inAverage": true
     }
   ],
@@ -482,14 +482,6 @@
       "merchant": "Amazon",
       "description": "PURCHASE 0918 AMAZON MKTPL*5R4O349K1 Amzn.com/billWA XXXXX1662XXXXXXXXXX6822",
       "amount": 35.43,
-      "account": "1045",
-      "oneOff": false
-    },
-    {
-      "date": "2026-09-21",
-      "merchant": "Zelle payment to Mimi for \"Breakfast for two days $50 N $30\"; Conf# ovamjevr4",
-      "description": "Zelle payment to Mimi for \"Breakfast for two days $50 N $30\"; Conf# ovamjevr4",
-      "amount": 80,
       "account": "1045",
       "oneOff": false
     }
