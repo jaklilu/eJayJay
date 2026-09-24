@@ -530,6 +530,160 @@
 
     .merchant-group[open] .expand-icon { transform: rotate(90deg); }
 
+    .usage-bar-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .usage-bar-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .usage-bar {
+      height: 12px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .usage-bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.3s;
+    }
+
+    .usage-bar-fill.normal { background: var(--accent-green); }
+    .usage-bar-fill.high { background: var(--accent-red); }
+
+    .card-section {
+      margin-bottom: 2rem;
+    }
+
+    .card-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .card-avg-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-avg-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+
+    .card-avg-item .label {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-avg-item .value {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .card-window-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .payment-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .payment-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      min-width: 80px;
+    }
+
+    .payment-name {
+      font-size: 0.9rem;
+    }
+
+    .payment-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .payment-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
+    .charge-list-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: start;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .charge-list-item.one-off { border-left: 3px solid #ff6b35; }
+
+    .charge-list-date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      min-width: 80px;
+    }
+
+    .charge-list-merchant {
+      font-size: 0.9rem;
+    }
+
+    .charge-list-amount {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      color: var(--accent-red);
+    }
+
+    .card-info-note {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .card-info-note strong { color: var(--text-primary); }
+
+    .card-as-of {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
     .disclaimer {
       margin-top: 3rem;
       padding: 1.5rem;
@@ -578,6 +732,7 @@
     <div class="tabs">
       <button class="tab active" data-tab="bills">Bills</button>
       <button class="tab" data-tab="misc">Miscellaneous</button>
+      <button class="tab" data-tab="card4243">Chase 4243</button>
       <a href="/personal/rental/" class="tab">Rental →</a>
     </div>
 
@@ -598,6 +753,10 @@
       <h2 class="section-title">All Items</h2>
       <div class="filter-row" id="misc-filters"></div>
       <div class="misc-items-list" id="misc-items"></div>
+    </div>
+
+    <div id="card4243-tab" class="tab-content">
+      <div id="card4243-content"></div>
     </div>
 
     <div class="disclaimer">
@@ -622,10 +781,12 @@
 
       Promise.all([
         fetch('/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
-        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
-      ]).then(([bills, misc]) => {
+        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/data/card-4243.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+      ]).then(([bills, misc, card4243]) => {
         if (bills) renderBills(bills);
         if (misc) renderMisc(misc);
+        if (card4243) renderCard4243(card4243);
       }).catch(() => {
         document.getElementById('charges').innerHTML =
           '<p class="subtitle">Could not load bills.</p>';
@@ -866,6 +1027,148 @@
 
         renderMiscFilters();
         renderMiscItems();
+      }
+
+      function renderCard4243(data) {
+        const {
+          asOf, card, purpose, balance, limit, available, utilizationPct,
+          window, avgMonthlyExOneOffs, avgMonthlyInclOneOffs,
+          byMonth, byCategoryExOneOffs, payments, charges, oneOffs
+        } = data;
+
+        const oneOffNames = (oneOffs || []).map(o => o.name.toLowerCase());
+        const isOneOff = (charge) => {
+          if (charge.oneOff) return true;
+          const merchantLower = (charge.merchant || '').toLowerCase();
+          return oneOffNames.some(name => merchantLower.includes(name.split(' ')[0].toLowerCase()));
+        };
+
+        const usageBarClass = utilizationPct > 80 ? 'high' : 'normal';
+
+        const sortedCharges = [...(charges || [])].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const sortedByMonth = Object.entries(byMonth || {}).sort((a, b) => b[0].localeCompare(a[0]));
+        const sortedByCategory = Object.entries(byCategoryExOneOffs || {}).sort((a, b) => b[1] - a[1]);
+
+        const sortedPayments = [...(payments || [])].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const formatPaymentName = (payment) => {
+          if (payment.amount === 100 && payment.name && payment.name.toUpperCase().includes('AUTOMATIC PAYMENT')) {
+            return 'Rental AC payoff (from 3697)';
+          }
+          return payment.name || 'Payment';
+        };
+
+        document.getElementById('card4243-content').innerHTML = `
+          <div class="card-as-of">
+            <strong>${card || 'Chase Card'}</strong> · As of ${asOf || 'N/A'}
+          </div>
+
+          <div class="summary-cards">
+            <div class="summary-card">
+              <div class="label">Balance</div>
+              <div class="value" style="color: var(--accent-red);">${fmt(balance || 0)}</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Limit</div>
+              <div class="value avg">${fmt(limit || 0)}</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">Available</div>
+              <div class="value" style="color: var(--accent-green);">${fmt(available || 0)}</div>
+            </div>
+            <div class="summary-card">
+              <div class="label">% Used</div>
+              <div class="value ${utilizationPct > 80 ? 'net-negative' : 'avg'}">${(utilizationPct || 0).toFixed(1)}%</div>
+            </div>
+          </div>
+
+          <div class="usage-bar-container">
+            <div class="usage-bar-label">Credit utilization</div>
+            <div class="usage-bar">
+              <div class="usage-bar-fill ${usageBarClass}" style="width: ${Math.min(utilizationPct || 0, 100)}%"></div>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <div class="card-section-title">Average Monthly Spend</div>
+            <div class="card-avg-summary">
+              <div class="card-avg-item">
+                <div class="label">Without one-offs</div>
+                <div class="value">${fmt(avgMonthlyExOneOffs || 0)}/mo</div>
+                <div class="card-window-note">${window || ''}</div>
+              </div>
+              <div class="card-avg-item">
+                <div class="label">With one-offs</div>
+                <div class="value">${fmt(avgMonthlyInclOneOffs || 0)}/mo</div>
+                <div class="card-window-note">${window || ''}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-section">
+            <div class="card-section-title">By Month</div>
+            <div class="month-breakdown">
+              ${sortedByMonth.map(([month, total]) => `
+                <div class="month-item">
+                  <div class="month-name">${month}</div>
+                  <div class="month-total">${fmt(total)}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="card-section">
+            <div class="card-section-title">By Category (excluding one-offs)</div>
+            <div class="category-breakdown">
+              ${sortedByCategory.map(([cat, amount]) => `
+                <div class="category-item" style="cursor: default;">
+                  <div class="category-dot" style="background: var(--text-secondary);"></div>
+                  <div class="category-info">
+                    <div class="category-name">${cat}</div>
+                    <div class="category-amount">${fmt(amount)}</div>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+
+          <div class="card-section">
+            <div class="card-section-title">Payments</div>
+            ${sortedPayments.map(p => `
+              <div class="payment-item">
+                <div class="payment-date">${p.date}</div>
+                <div>
+                  <div class="payment-name">${formatPaymentName(p)}</div>
+                </div>
+                <div class="payment-amount">${fmt(p.amount)}</div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="card-section">
+            <div class="card-section-title">All Charges (newest first)</div>
+            ${sortedCharges.map(c => {
+              const oneOff = isOneOff(c);
+              return `
+                <div class="charge-list-item ${oneOff ? 'one-off' : ''}">
+                  <div class="charge-list-date">${c.date}</div>
+                  <div>
+                    <div class="charge-list-merchant">
+                      ${c.merchant || 'Unknown'}
+                      ${oneOff ? '<span class="badge one-off">One-off</span>' : ''}
+                    </div>
+                  </div>
+                  <div class="charge-list-amount">${fmt(c.amount)}</div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+
+          <div class="card-info-note">
+            <strong>${purpose || 'Card purpose'}:</strong> Information only. These purchases are already counted in Food and Miscellaneous.
+          </div>
+        `;
       }
     })();
   </script>
