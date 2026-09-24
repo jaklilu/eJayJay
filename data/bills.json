@@ -1,10 +1,10 @@
 {
   "meta": {
-    "generated": "2026-09-21",
+    "generated": "2026-09-24",
     "source": "Bank of America checking statement",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 5596.15,
-    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses)."
+    "totalMonthly": 5600.55,
+    "note": "Most bills use the last 3 months. Tesla uses the latest posted premium. Lorena Abzuman is $600/mo for laundry. Storage is $80/mo. Car gas is $120/mo. Verizon is $200/mo after kids' share. Netlify is $9/mo. Freedom Flex is $266/mo. BofA Mastercard is $120/mo. Chase Slate is $40/mo. BofA Business Advantage 360 is $35/mo. Mail-order pharmacy and Beverly Hills permits are 12-month averages. Added 4 Gmail-recurring gaps (Amazon Prime, CapCut, GoDaddy M365, GoDaddy Domains, Retell). Removed: Aidvantage (daughter pays), BibleProject, YouVersion, Donkey Tube, Best Buy Plan, Dr. Tony Evans (spiritual giving / not Jay's expenses). BofA statement reconciliation 2026-09-24: updated Render.com, GoDaddy Domains, Amazon Digital amounts; removed PythonAnywhere; added BofA Savings fee."
   },
   "charges": [
     {
@@ -87,7 +87,7 @@
     },
     {
       "name": "Render.com",
-      "amount": 37.63,
+      "amount": 47.00,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -96,6 +96,12 @@
       "amount": 35.0,
       "frequency": "monthly",
       "category": "credit"
+    },
+    {
+      "name": "BofA Savings Maintenance Fee (...1375)",
+      "amount": 5.0,
+      "frequency": "monthly",
+      "category": "bank_fees"
     },
     {
       "name": "Beverly Hills permits",
@@ -118,12 +124,6 @@
     {
       "name": "n8n Cloud",
       "amount": 24.0,
-      "frequency": "monthly",
-      "category": "tech_subscription"
-    },
-    {
-      "name": "PythonAnywhere",
-      "amount": 20.0,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -171,7 +171,7 @@
     },
     {
       "name": "Amazon Digital",
-      "amount": 6.32,
+      "amount": 6.99,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -201,7 +201,7 @@
     },
     {
       "name": "GoDaddy Domains (2)",
-      "amount": 3.83,
+      "amount": 13.19,
       "frequency": "monthly",
       "category": "tech_subscription"
     },
@@ -266,6 +266,10 @@
     "giving": {
       "label": "Giving",
       "color": "#f72585"
+    },
+    "bank_fees": {
+      "label": "Bank fees",
+      "color": "#607d8b"
     }
   }
 }
