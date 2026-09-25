@@ -31,7 +31,7 @@ function unauthorized(): Response {
   return new Response("Unauthorized", {
     status: 401,
     headers: {
-      "WWW-Authenticate": 'Basic realm="ejayjay personal"',
+      "WWW-Authenticate": 'Basic realm="ejayjay"',
       "Cache-Control": "private, no-store",
       "Content-Type": "text/plain",
     },
@@ -86,5 +86,5 @@ export default async function handler(
 }
 
 export const config: Config = {
-  path: "/personal/*",
+  path: "/*",
 };
