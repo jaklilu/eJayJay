@@ -35,11 +35,6 @@
  },
  "payments": [
   {
-   "date": "2026-07-09",
-   "amount": 2000,
-   "name": "Payment Thank You Bill"
-  },
-  {
    "date": "2026-07-21",
    "amount": 100,
    "name": "AUTOMATIC PAYMENT - THANK"
