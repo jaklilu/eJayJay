@@ -12,3 +12,6 @@ Thumbs.db
 *.log
 instance/
 .pytest_cache/
+
+# Netlify build output
+dist/

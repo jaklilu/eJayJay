@@ -233,7 +233,7 @@
         return `${monthNames[month - 1]} ${day}, ${year}`;
       };
 
-      fetch('/data/rental-balance.json', { cache: 'no-store' })
+      fetch('/personal/data/rental-balance.json', { cache: 'no-store' })
         .then(r => r.ok ? r.json() : null)
         .then(renderBalance)
         .catch(() => {});
@@ -254,7 +254,7 @@
         `;
       }
 
-      fetch('/data/rental.json', { cache: 'no-store' })
+      fetch('/personal/data/rental.json', { cache: 'no-store' })
         .then(r => r.ok ? r.json() : null)
         .then(render)
         .catch(() => {
