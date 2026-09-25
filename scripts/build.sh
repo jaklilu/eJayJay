@@ -12,11 +12,16 @@ rm -rf dist
 mkdir -p dist
 
 # PUBLIC FILES ALLOWLIST
-# Hub
+# Hub page
 cp index.html dist/
 
-# Static assets
-cp -r static dist/
+# Static assets - explicit allowlist (only files the hub actually uses)
+# This prevents future private files in static/ from shipping automatically
+mkdir -p dist/static/css dist/static/js dist/static/img
+cp static/css/style.css dist/static/css/
+cp static/js/main.js dist/static/js/
+cp static/img/hero-atmosphere.png dist/static/img/
+# NOTE: static/js/money.js is NOT shipped publicly (fetches /data/money.json, unused by public pages)
 
 # Public data (only projects.json is public)
 mkdir -p dist/data
