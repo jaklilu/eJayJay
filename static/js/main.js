@@ -1,7 +1,4 @@
 (() => {
-  // Change this password anytime. Client-side only (not bank-level security).
-  const GATE_PASSWORD = "ejayjay";
-  const GATE_STORAGE_KEY = "ejayjay-link-unlocked";
   const STATUS_STORAGE_KEY = "ejayjay-site-status";
 
   const detail = document.getElementById("project-detail");
@@ -15,30 +12,9 @@
   const publicDir = document.querySelector('[data-directory="public"]');
   const personalDir = document.querySelector('[data-directory="personal"]');
   const filters = document.querySelectorAll(".filter");
-  const gate = document.getElementById("link-gate");
-  const gateForm = document.getElementById("link-gate-form");
-  const gateInput = document.getElementById("gate-password");
-  const gateError = document.getElementById("gate-error");
 
   let byId = {};
   let lastFocus = null;
-  let pendingUrl = null;
-
-  const isUnlocked = () => {
-    if (localStorage.getItem(GATE_STORAGE_KEY) === "1") return true;
-    // Migrate older session-only unlocks
-    if (sessionStorage.getItem(GATE_STORAGE_KEY) === "1") {
-      localStorage.setItem(GATE_STORAGE_KEY, "1");
-      sessionStorage.removeItem(GATE_STORAGE_KEY);
-      return true;
-    }
-    return false;
-  };
-
-  const markUnlocked = () => {
-    localStorage.setItem(GATE_STORAGE_KEY, "1");
-    sessionStorage.removeItem(GATE_STORAGE_KEY);
-  };
 
   const escapeHtml = (value) =>
     String(value)
@@ -47,47 +23,9 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
 
-  const openUrl = (url) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const closeGate = () => {
-    if (!gate || gate.hidden) return;
-    gate.hidden = true;
-    document.body.classList.remove("is-gate-open");
-    pendingUrl = null;
-    if (gateError) gateError.hidden = true;
-    if (gateForm) gateForm.reset();
-  };
-
-  const openGate = (url, trigger) => {
-    if (!gate) {
-      openUrl(url);
-      return;
-    }
-    pendingUrl = url;
-    lastFocus = trigger || document.activeElement;
-    gate.hidden = false;
-    document.body.classList.add("is-gate-open");
-    if (gateError) gateError.hidden = true;
-    if (gateInput) {
-      gateInput.value = "";
-      gateInput.focus();
-    }
-  };
-
-  const requirePasswordThenOpen = (url, trigger) => {
-    if (!url) return;
-    if (isUnlocked()) {
-      openUrl(url);
-      return;
-    }
-    openGate(url, trigger);
-  };
-
   const cardHtml = (p, i) => {
     const title = p.url
-      ? `<a class="entry__title-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer" data-title-link data-gated-link="${escapeHtml(p.url)}">${escapeHtml(p.name)}</a>`
+      ? `<a class="entry__title-link" href="${escapeHtml(p.url)}" target="_blank" rel="noopener noreferrer" data-title-link>${escapeHtml(p.name)}</a>`
       : `<span class="entry__title-text">${escapeHtml(p.name)}</span>`;
 
     return `
@@ -196,7 +134,6 @@
       visit.target = "_blank";
       visit.rel = "noopener noreferrer";
       visit.textContent = "Visit site";
-      visit.setAttribute("data-gated-link", project.url);
       detailActions.appendChild(visit);
     }
 
@@ -208,7 +145,6 @@
         linkEl.target = "_blank";
         linkEl.rel = "noopener noreferrer";
         linkEl.textContent = link.label;
-        linkEl.setAttribute("data-gated-link", link.url);
         detailActions.appendChild(linkEl);
       });
     }
@@ -232,41 +168,7 @@
     });
   });
 
-  if (gateForm) {
-    gateForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const value = gateInput ? gateInput.value : "";
-      if (value === GATE_PASSWORD) {
-        markUnlocked();
-        const url = pendingUrl;
-        closeGate();
-        if (url) openUrl(url);
-        return;
-      }
-      if (gateError) gateError.hidden = false;
-      if (gateInput) {
-        gateInput.select();
-        gateInput.focus();
-      }
-    });
-  }
-
   document.addEventListener("click", (event) => {
-    const gated = event.target.closest("[data-gated-link]");
-    if (gated) {
-      event.preventDefault();
-      event.stopPropagation();
-      const url = gated.getAttribute("data-gated-link") || gated.getAttribute("href");
-      requirePasswordThenOpen(url, gated);
-      return;
-    }
-
-    const closerGate = event.target.closest("[data-close-gate]");
-    if (closerGate) {
-      closeGate();
-      return;
-    }
-
     const closer = event.target.closest("[data-close-detail]");
     if (closer) {
       closeDetail();
@@ -284,19 +186,13 @@
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      if (gate && !gate.hidden) {
-        closeGate();
-        return;
-      }
       closeDetail();
       return;
     }
 
     if (event.key !== "Enter" && event.key !== " ") return;
-    if (event.target.closest("#link-gate-form")) return;
     const opener = event.target.closest("[data-open-detail]");
     if (!opener) return;
-    if (event.target.closest("[data-gated-link]")) return;
     event.preventDefault();
     const card = opener.closest(".entry");
     if (card && card.dataset.projectId) {

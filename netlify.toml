@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  command = "echo 'Static eJayJay hub — no build step'"
+  publish = "dist"
+  command = "bash scripts/build.sh"
 
 [[redirects]]
   from = "/expenses"
@@ -16,3 +16,7 @@
   for = "/data/*"
   [headers.values]
     Cache-Control = "public, max-age=60"
+
+[[edge_functions]]
+  function = "personal-gate"
+  path = "/personal/*"

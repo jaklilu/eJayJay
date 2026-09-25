@@ -780,9 +780,9 @@
       };
 
       Promise.all([
-        fetch('/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
-        fetch('/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
-        fetch('/data/card-4243.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
+        fetch('/personal/data/bills.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null),
+        fetch('/personal/data/misc.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/personal/data/card-4243.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).catch(() => null)
       ]).then(([bills, misc, card4243]) => {
         if (bills) renderBills(bills);
         if (misc) renderMisc(misc);
