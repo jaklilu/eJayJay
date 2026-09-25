@@ -3,8 +3,8 @@
     "generated": "2026-09-24",
     "source": "Bank of America checking statement; Plaid (BofA, Wells Fargo, Chase)",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 6397.27,
-    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases are counted where they are charged; card interest and one-off fees are shown for reference only; card payments (BofA Mastercard, Chase 4570) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
+    "totalMonthly": 6554.27,
+    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases are counted where they are charged; card interest and one-off fees are shown for reference only; card payments are shown for reference only, except the fixed Chase 4570 balance-transfer payment, which is counted. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
   },
   "income": {
     "amount": 6000,
@@ -227,8 +227,7 @@
       "amount": 157.0,
       "frequency": "monthly",
       "category": "credit",
-      "note": "Debt service, info only. $157 from BofA 1045 posted to card 4570 on Sep 3. The card holds about $26.6k of balance transfers to BofA 8604. Replaces Freedom Flex and Chase Slate.",
-      "infoOnly": true
+      "note": "Fixed monthly payment on the balance-transfer card (about $26.6k moved to BofA 8604). Autopay from BofA 1045, posted Sep 3. Counted: card 4570 has no counted purchases, so this isn't double counting. Balance-transfer fees are one-off and info only."
     },
     {
       "name": "Viking Billing Service",
