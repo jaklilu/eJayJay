@@ -1,15 +1,15 @@
 import type { Config, Context } from "@netlify/edge-functions";
 
-function getEnvVar(name: string): { value: string; api: string } {
+function getEnvVar(name: string): string {
   const netlifyValue = Netlify.env.get(name);
   if (netlifyValue !== undefined && netlifyValue !== null) {
-    return { value: netlifyValue, api: "Netlify.env" };
+    return netlifyValue;
   }
   const denoValue = Deno.env.get(name);
   if (denoValue !== undefined && denoValue !== null) {
-    return { value: denoValue, api: "Deno.env" };
+    return denoValue;
   }
-  return { value: "", api: "Netlify.env" };
+  return "";
 }
 
 function constantTimeCompare(a: string, b: string): boolean {
@@ -42,39 +42,8 @@ export default async function handler(
   request: Request,
   context: Context
 ): Promise<Response> {
-  const url = new URL(request.url);
-
-  // TODO: REMOVE THIS DIAGNOSTIC ENDPOINT BEFORE MERGE
-  // Temporary diagnostic to debug env var loading
-  if (url.pathname === "/personal/__gate-status") {
-    const authPwResult = getEnvVar("PERSONAL_AUTH_PASSWORD");
-    const tokenResult = getEnvVar("PERSONAL_SERVICE_TOKEN");
-    const authPwTrimmed = authPwResult.value.trim();
-    const tokenTrimmed = tokenResult.value.trim();
-
-    const status = {
-      deployContext: context.deploy?.context ?? null,
-      authPwSet: authPwResult.value.length > 0,
-      authPwLen: authPwResult.value.length,
-      tokenSet: tokenResult.value.length > 0,
-      tokenLen: tokenResult.value.length,
-      tokenTrimmedLen: tokenTrimmed.length,
-      envApi: authPwResult.api,
-    };
-
-    return new Response(JSON.stringify(status), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store",
-      },
-    });
-  }
-
-  const authPwResult = getEnvVar("PERSONAL_AUTH_PASSWORD");
-  const tokenResult = getEnvVar("PERSONAL_SERVICE_TOKEN");
-  const authPassword = authPwResult.value.trim();
-  const serviceToken = tokenResult.value.trim();
+  const authPassword = getEnvVar("PERSONAL_AUTH_PASSWORD").trim();
+  const serviceToken = getEnvVar("PERSONAL_SERVICE_TOKEN").trim();
 
   const serviceHeader = (request.headers.get("X-Service-Token") || "").trim();
   if (serviceToken && serviceHeader && constantTimeCompare(serviceHeader, serviceToken)) {
