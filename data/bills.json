@@ -3,8 +3,8 @@
     "generated": "2026-09-24",
     "source": "Bank of America checking statement; Plaid (BofA, Wells Fargo, Chase)",
     "period": "Sep 2025 – Aug 2026",
-    "totalMonthly": 6416.67,
-    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases, interest and fees are counted where they are charged; card payments (BofA Mastercard, Chase 4570) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
+    "totalMonthly": 6397.27,
+    "note": "Most bills use the last 3 months (Jul–Sep 2026) from BofA, Chase and Plaid. Tesla uses the latest posted premium. Card purchases are counted where they are charged; card interest and one-off fees are shown for reference only; card payments (BofA Mastercard, Chase 4570) are shown for reference only. Miscellaneous uses the average without large one-offs; the one-off average is shown separately and not counted. Mortgage, rent received and business accounts are not included."
   },
   "income": {
     "amount": 6000,
@@ -239,11 +239,12 @@
       "note": "4 payments left; last about Dec 31, 2026."
     },
     {
-      "name": "Card interest & fees",
+      "name": "Card interest (one-time, info only)",
       "amount": 141.48,
       "frequency": "monthly",
       "category": "credit",
-      "note": "Counted (card payments are info only). Interest posted Jul–Aug: BofA 8604 $251.49 + Chase 4243 $31.47 = $282.96, divided by 2 statements. One-off balance-transfer and late fees ($1,384) are not averaged."
+      "infoOnly": true,
+      "note": "Mostly a one-time BofA 8604 cash-advance interest charge ($237.44, Aug 25). Other interest Jul–Aug: BofA 8604 $14.05, Chase 4243 $31.47 (shown on the Chase 4243 tab). Not counted monthly, same as the balance-transfer and late fees."
     },
     {
       "name": "Dining out",
