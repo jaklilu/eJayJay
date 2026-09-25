@@ -1059,6 +1059,86 @@
           return payment.name || 'Payment';
         };
 
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const formatMonthLabel = (monthKey) => {
+          const [year, month] = monthKey.split('-');
+          return `${monthNames[parseInt(month, 10) - 1]} ${year}`;
+        };
+
+        const getOneOffsForMonth = (monthKey) => {
+          return (oneOffs || []).filter(o => o.date && o.date.startsWith(monthKey));
+        };
+
+        const getOneOffsTotalForMonth = (monthKey) => {
+          return getOneOffsForMonth(monthKey).reduce((sum, o) => sum + (o.amount || 0), 0);
+        };
+
+        const formatAsOfDate = (asOfDate) => {
+          if (!asOfDate) return '';
+          const [year, month, day] = asOfDate.split('-');
+          return `${monthNames[parseInt(month, 10) - 1]} ${parseInt(day, 10)}`;
+        };
+
+        const currentMonth = sortedByMonth.length > 0 ? sortedByMonth[0][0] : null;
+        const currentMonthTotal = currentMonth ? sortedByMonth[0][1] : 0;
+        const currentMonthOneOffs = currentMonth ? getOneOffsForMonth(currentMonth) : [];
+        const currentMonthOneOffsTotal = currentMonthOneOffs.reduce((sum, o) => sum + (o.amount || 0), 0);
+        const currentMonthExOneOffs = currentMonthTotal - currentMonthOneOffsTotal;
+        const earlierMonths = sortedByMonth.slice(1);
+
+        const renderMonthlyChargesCard = () => {
+          if (!currentMonth) return '';
+
+          const oneOffLine = currentMonthOneOffs.length > 0
+            ? `<div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                Includes ${currentMonthOneOffs.map(o => `${o.name} ${fmt(o.amount)}`).join(', ')} (one-off)
+              </div>`
+            : '';
+
+          const earlierMonthsHtml = earlierMonths.map(([monthKey, total]) => {
+            const monthOneOffsTotal = getOneOffsTotalForMonth(monthKey);
+            const exOneOffs = total - monthOneOffsTotal;
+            const hasOneOffs = monthOneOffsTotal > 0;
+            return `
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--border);">
+                <span style="color: var(--text-secondary);">${formatMonthLabel(monthKey)}</span>
+                <span>
+                  <span style="font-family: 'Syne', sans-serif; font-weight: 600;">${fmt(total)}</span>
+                  ${hasOneOffs ? `<span style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;">(${fmt(exOneOffs)} w/o one-offs)</span>` : ''}
+                </span>
+              </div>
+            `;
+          }).join('');
+
+          return `
+            <div class="card-section" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem;">
+              <div class="card-section-title" style="margin-top: 0;">Monthly Charges</div>
+              <div style="margin-bottom: 1rem;">
+                <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">
+                  ${formatMonthLabel(currentMonth)} so far (as of ${formatAsOfDate(asOf)})
+                </div>
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                  <div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Total</div>
+                    <div style="font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent-red);">${fmt(currentMonthTotal)}</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Without one-offs</div>
+                    <div style="font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">${fmt(currentMonthExOneOffs)}</div>
+                  </div>
+                </div>
+                ${oneOffLine}
+              </div>
+              ${earlierMonths.length > 0 ? `
+                <div style="margin-top: 1rem;">
+                  <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Earlier months</div>
+                  ${earlierMonthsHtml}
+                </div>
+              ` : ''}
+            </div>
+          `;
+        };
+
         document.getElementById('card4243-content').innerHTML = `
           <div class="card-as-of">
             <strong>${card || 'Chase Card'}</strong> · As of ${asOf || 'N/A'}
@@ -1082,6 +1162,8 @@
               <div class="value ${utilizationPct > 80 ? 'net-negative' : 'avg'}">${(utilizationPct || 0).toFixed(1)}%</div>
             </div>
           </div>
+
+          ${renderMonthlyChargesCard()}
 
           <div class="usage-bar-container">
             <div class="usage-bar-label">Credit utilization</div>
